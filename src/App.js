@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./components/header/header";
 import Footer from "./components/footer/footer";
-import Slider from "./components/slider/slider";
-
+import Inicio from "./components/inicio/inicio";
+import Contacto from "./components/contacto/contacto";
 
 
 
@@ -15,7 +15,8 @@ function App() {
 
       <Routes>
 
-        <Route path="/" element={<Slider />} />
+        <Route path="/" element={<Inicio />} />
+        <Route path="/contacto" element={<Contacto />} />
 
       </Routes>
 

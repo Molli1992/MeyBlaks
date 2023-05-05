@@ -8,10 +8,11 @@
 .footer {
     width: 100%;
     height: 75px;
-    background: #0B0125;
+    background: #101922;
     z-index: 10;
     left: 0;
     bottom: 0;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.4);
 }
 
 .footer-container {

@@ -1,0 +1,83 @@
+.body-inicio {
+    background-image: url("https://img.olympicchannel.com/images/image/private/t_social_share_thumb/f_auto/primary/vqys54onceefbza1qu9p");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.titulo-inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.titulo-inicio ion-icon {
+    color: yellowgreen;
+}
+
+.sub-titulo-inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-inicio {
+    padding: 15px;
+    height: 350px;
+    text-align: center;
+}
+
+.stack-inicio-img {
+    padding: 10px;
+    width: 50%;
+}
+
+.stack-img {
+    width: 100%;
+    height: 100%;
+}
+
+.stack-inicio-text {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    width: 50%;
+}
+
+.stack-inicio-img-2 {
+    width: 50%;
+    height: 100%;
+}
+
+.stack-img-2 {
+    width: 100%;
+    height: 100%;
+}
+
+.button-inicio-prenda {
+    background-color: blueviolet;
+    height: 30px;
+    width: 130px;
+    border-radius: 20px;
+    border: none;
+    font-size: 22px;
+    color: white;
+    cursor: pointer;
+}
+
+.button-inicio-prenda:hover {
+    color: lightcoral;
+    background-color: blue;
+    height: 35px;
+    width: 140px;
+}
+
+.stack-inicio-text-3 {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+}
