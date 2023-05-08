@@ -1,5 +1,6 @@
 .body-contacto {
-    background-image: url("https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-youthful-background-to-youthful-struggle-image_190160.jpg");
+    background-color: aliceblue;
+    background-image: url("");
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -7,7 +8,7 @@
 
 .titulo-contacto {
     padding-top: 25px;
-    padding-left: 150px;
+    padding-left: 45px;
 }
 
 .body-form {
@@ -15,8 +16,8 @@
 }
 
 .form-contacto {
-    text-align: center;
-    min-width: 45%;
+    justify-content: center;
+    min-width: 100%;
     padding: 40px;
 }
 
@@ -31,4 +32,56 @@
 .redes-contacto-button:hover {
     color: brown;
     font-size: 17px;
+}
+
+.boton-contacto {
+    text-align: center;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.boton-contacto-2 {
+    width: 200px;
+}
+
+.container-intputs {
+    display: flex;
+}
+
+.container-intputs-1 {
+    width: 50%;
+    padding: 0 10px;
+}
+
+.container-intputs-2 {
+    width: 50%;
+    padding: 0 10px;
+}
+
+@media(max-width: 650px) {
+
+    .titulo-contacto {
+        padding-top: 10px;
+        padding-left: 10px;
+    }
+
+    .container-intputs {
+        display: inline-block;
+    }
+
+    .form-contacto {
+        justify-content: center;
+        min-width: 100%;
+        padding: 10px;
+    }
+
+    .container-intputs-1 {
+        width: 100%;
+        padding: 0;
+    }
+
+    .container-intputs-2 {
+        width: 100%;
+        padding: 0;
+    }
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "../slider/slider";
-import { Card, Stack, Image, Heading, Text } from '@chakra-ui/react'
+import { Card, Stack, Image, Heading, Text } from '@chakra-ui/react';
 import "./inicio.css";
 
 function Inicio() {

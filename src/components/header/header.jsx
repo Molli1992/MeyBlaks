@@ -36,7 +36,7 @@ function header() {
                         Contacto
                     </Link>
 
-                    <Link to="/servicios" className="rutasNav">
+                    <Link to="/nosotros" className="rutasNav">
                         Quienes somos ?
                     </Link>
 

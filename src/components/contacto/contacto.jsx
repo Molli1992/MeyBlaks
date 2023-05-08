@@ -1,12 +1,46 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import "./contacto.css";
 import { Button, Form, Input } from 'antd';
-//import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 
 function Contacto() {
 
     const { TextArea } = Input;
+
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_cd5dmdm', 'template_mht6aun', form.current, 'PvHbawws_-6fNNwSb')
+            .then((result) => {
+                console.log(result.text);
+                Swal.fire({
+                    title: "Exito!",
+                    text: 'Mail enviado correctamente, le responderemos a la brevedad',
+                    icon: "success",
+                    confirmButtonText: 'Ok'
+                }).then((res) => {
+                    window.location.href = `/`
+                });
+            }, (error) => {
+                console.log(error.text);
+                Swal.fire({
+                    title: "Error!",
+                    text: 'Error en el envio del mail, intentelo de nuevo mas tarde',
+                    icon: "error",
+                    confirmButtonText: 'Ok',
+                    customClass: {
+                        confirmButton: "swalButton"
+                    }
+                }).then((res) => {
+                    window.location.reload();
+                });
+            });
+    };
+
 
     return (
 
@@ -25,61 +59,49 @@ function Contacto() {
 
             <div className='body-form'>
 
-                <Form
-                    labelCol={{ span: 4 }}
-                    layout="horizontal"
-                    className='form-contacto'
-                >
+                <form ref={form} onSubmit={sendEmail} className='form-contacto'>
 
-                    <Form.Item label="Nombre">
-                        <Input placeholder="Nombre" />
-                    </Form.Item>
+                    <div className='container-intputs'>
 
-                    <Form.Item label="Telefono">
-                        <Input placeholder="Whatsapp / Telefono" />
-                    </Form.Item>
+                        <div className='container-intputs-1'>
+                            <label>Nombre</label>
+                            <Input placeholder="Nombre" name='nombre' />
 
-                    <Form.Item label="Mail">
-                        <Input placeholder="Mail" />
-                    </Form.Item>
+                            <label>Telefono</label>
+                            <Input placeholder="Whatsapp / Telefono" name='telefono' />
 
-                    <Form.Item label="Colegio">
-                        <Input placeholder="Colegio" />
-                    </Form.Item>
+                            <label>Mail</label>
+                            <Input placeholder="Mail" name='mail' />
 
-                    <Form.Item label="Cantidad">
-                        <Input placeholder="Cantidad de Alumnos (minimo 12)" />
-                    </Form.Item>
+                            <label>Colegio</label>
+                            <Input placeholder="Colegio" name='colegio' />
 
-                </Form>
+                            <label>Cantidad</label>
+                            <Input placeholder="Cantidad de Alumnos (minimo 12)" name='cantidad' />
+                        </div>
 
-                <Form
-                    labelCol={{ span: 4 }}
-                    layout="horizontal"
-                    className='form-contacto'
-                >
+                        <div className='container-intputs-2'>
+                            <label>Promo</label>
+                            <Input placeholder="Año de Egreso" name='promo' />
 
-                    <Form.Item label="Promo">
-                        <Input placeholder="Año de Egreso" />
-                    </Form.Item>
+                            <label>Provincia</label>
+                            <Input placeholder="Provincia" name='provincia' />
 
-                    <Form.Item label="Provincia">
-                        <Input placeholder="Provincia" />
-                    </Form.Item>
+                            <label>Localidad</label>
+                            <Input placeholder="Localidad" name='localidad' />
 
-                    <Form.Item label="Localidad">
-                        <Input placeholder="Localidad" />
-                    </Form.Item>
+                            <label>Mensaje</label>
+                            <TextArea rows={4} placeholder="Mensaje" name='message' />
 
-                    <Form.Item label="Mensaje">
-                        <TextArea rows={4} placeholder="Mensaje" />
-                    </Form.Item>
+                        </div>
 
-                    <Form.Item>
-                        <Button>Enviar</Button>
-                    </Form.Item>
+                    </div>
 
-                </Form>
+                    <div className='boton-contacto'>
+                        <Input type="submit" value="Enviar" className='boton-contacto-2' />
+                    </div>
+
+                </form>
 
             </div>
 
