@@ -1,0 +1,50 @@
+.imgTshirt {
+    position: relative;
+}
+
+.imgTshirt img {
+    height: 550px;
+    width: 75%;
+}
+
+.memeText {
+    position: absolute;
+    top: 150px;
+    left: 235px;
+}
+
+.memeText img {
+    max-width: 300px;
+    border: #fff solid 6px;
+}
+
+.memeText p {
+    font-family: Impact, Charcoal, sans-serif;
+    color: #fff;
+}
+
+.tshirt-color {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.tshirt-color img {
+    width: 100%;
+    height: 100%;
+}
+
+.button-tshirt-color {
+    text-decoration: none;
+    background: none;
+    border: none;
+    width: 15%;
+    height: 15%;
+}
+
+.box {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+}
