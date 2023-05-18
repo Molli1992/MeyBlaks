@@ -353,13 +353,118 @@ function Diseño() {
 
         console.log(imgSize);
 
-        if (selectSize.value === "400 x 300") {
+        if (selectSize.value === "50 x 50") {
+
+            imgSize.style.width = "50px";
+
+        } else if (selectSize.value === "100 x 100") {
+
+            imgSize.style.width = "100px";
+
+        } else if (selectSize.value === "150 x 150") {
+
+            imgSize.style.width = "150px";
+
+        } else if (selectSize.value === "200 x 200") {
+
+            imgSize.style.width = "200px";
+
+        } else if (selectSize.value === "250 x 250") {
+
+            imgSize.style.width = "250px";
+
+        } else if (selectSize.value === "300 x 300") {
 
             imgSize.style.width = "300px";
 
+        } else if (selectSize.value === "400 x 400") {
+
+            imgSize.style.width = "400px";
+
+        }
+
+    };
+
+    const redondearImg = () => {
+
+        const imgSize = document.getElementById("img-size");
+
+        imgSize.style.borderRadius = "100px"
+
+    };
+
+    const onChangeStyleText1 = () => {
+
+        const selectP1 = document.getElementById("select-family-p-1");
+        const parrafo1 = document.getElementById("family-p-1");
+
+        if (selectP1.value === "Georgia") {
+
+            parrafo1.style.fontFamily = "Georgia";
+
+        } else if (selectP1.value === "Gill Sans") {
+
+            parrafo1.style.fontFamily = "Gill Sans";
+
+        } else if (selectP1.value === "sans-serif") {
+
+            parrafo1.style.fontFamily = "sans-serif";
+
+        } else if (selectP1.value === "serif") {
+
+            parrafo1.style.fontFamily = "serif";
+
+        } else if (selectP1.value === "cursive") {
+
+            parrafo1.style.fontFamily = "cursive";
+
+        } else if (selectP1.value === "system-ui") {
+
+            parrafo1.style.fontFamily = "system-ui";
+
         } else {
 
-            imgSize.style.width = "50px";
+            parrafo1.style.fontFamily = "Georgia";
+
+        }
+
+
+    };
+
+    const onChangeStyleText2 = () => {
+
+        const selectP2 = document.getElementById("select-family-p-2");
+        const parrafo2 = document.getElementById("family-p-2");
+
+        parrafo2.style.fontFamily = "Georgia";
+
+        if (selectP2.value === "Georgia") {
+
+            parrafo2.style.fontFamily = "Georgia";
+
+        } else if (selectP2.value === "Gill Sans") {
+
+            parrafo2.style.fontFamily = "Gill Sans";
+
+        } else if (selectP2.value === "sans-serif") {
+
+            parrafo2.style.fontFamily = "sans-serif";
+
+        } else if (selectP2.value === "serif") {
+
+            parrafo2.style.fontFamily = "serif";
+
+        } else if (selectP2.value === "cursive") {
+
+            parrafo2.style.fontFamily = "cursive";
+
+        } else if (selectP2.value === "system-ui") {
+
+            parrafo2.style.fontFamily = "system-ui";
+
+        } else {
+
+            parrafo2.style.fontFamily = "Georgia";
 
         }
 
@@ -400,7 +505,7 @@ function Diseño() {
                             <div className="memeText1" id="texto-1" ref={constcontainerRef3}>
 
                                 <div className="box" ref={boxRef3}>
-                                    <p style={{ fontSize: text1FontSize, color: colorText1 }}>{text1}</p>
+                                    <p id="family-p-1" style={{ fontSize: text1FontSize, color: colorText1 }}>{text1}</p>
                                 </div>
 
                             </div>
@@ -408,7 +513,7 @@ function Diseño() {
                             <div className="memeText2" id="texto-2" ref={constcontainerRef2}>
 
                                 <div className="box" ref={boxRef2}>
-                                    <p style={{ fontSize: text2FontSize, color: colorText2 }} >{text2}</p>
+                                    <p id="family-p-2" style={{ fontSize: text2FontSize, color: colorText2 }} >{text2}</p>
                                 </div>
 
                             </div>
@@ -504,6 +609,10 @@ function Diseño() {
                                     <button className="btn btn-primary btn-sm mb-2" onClick={imgCheck2}>Borrar Imagen</button>
                                 </div>
 
+                                <div>
+                                    <button className="btn btn-primary btn-sm mb-2" onClick={redondearImg}>Redondear Imagen</button>
+                                </div>
+
                             </div>
 
                             <hr />
@@ -512,7 +621,12 @@ function Diseño() {
                             <select id="selcet-img-size" className="form-select form-control-sm mb-2" onChange={onChangeSizeImg}>
                                 <option>Select-Size</option>
                                 <option>50 x 50</option>
-                                <option>400 x 300</option>
+                                <option>100 x 100</option>
+                                <option>150 x 150</option>
+                                <option>200 x 200</option>
+                                <option>250 x 250</option>
+                                <option>300 x 300</option>
+                                <option>400 x 400</option>
                             </select>
 
                             <hr />
@@ -564,6 +678,29 @@ function Diseño() {
                             </select>
 
                             <hr />
+                            <h4>Text Style 1</h4>
+                            <select id="select-family-p-1" className="form-select form-control-sm mb-2" onChange={onChangeStyleText1}>
+                                <option>Select-Style</option>
+                                <option>Georgia</option>
+                                <option>Gill Sans</option>
+                                <option>sans-serif</option>
+                                <option>serif</option>
+                                <option>cursive</option>
+                                <option>system-ui</option>
+
+                            </select>
+                            <h4>Text Style 2</h4>
+                            <select id="select-family-p-2" className="form-select form-control-sm mb-2" onChange={onChangeStyleText2}>
+                                <option>Select-Style</option>
+                                <option>Georgia</option>
+                                <option>Gill Sans</option>
+                                <option>sans-serif</option>
+                                <option>serif</option>
+                                <option>cursive</option>
+                                <option>system-ui</option>
+                            </select>
+
+                            <hr />
 
                             <button className="btn btn-primary btn-sm mb-2">Save</button>
                         </div>
@@ -573,7 +710,7 @@ function Diseño() {
 
             </div >
 
-        </div>
+        </div >
 
     );
 
