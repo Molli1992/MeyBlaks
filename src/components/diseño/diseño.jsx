@@ -202,6 +202,169 @@ function Diseño() {
 
     //--------------------------------------------
 
+    const boxRef2 = useRef(null);
+    const constcontainerRef2 = useRef(null);
+    const isClicked2 = useRef(false);
+    const coords2 = useRef({
+        starX: 0,
+        starY: 0,
+        lastX: 0,
+        lastY: 0
+    });
+
+    useEffect(() => {
+        if (!boxRef2.current || !constcontainerRef2.current) return;
+
+        const box2 = boxRef2.current;
+        const container2 = constcontainerRef2.current;
+
+        const onMouseDown2 = (e = MouseEvent) => {
+            isClicked2.current = true;
+            coords2.current.starX = e.clientX;
+            coords2.current.starY = e.clientY;
+        };
+
+        const onMouseUp2 = (e = MouseEvent) => {
+            isClicked2.current = false;
+            coords2.current.lastX = box2.offsetLeft;
+            coords2.current.lastY = box2.offsetTop;
+        };
+
+        const onMouseMove2 = (e = MouseEvent) => {
+            if (!isClicked2.current) return;
+
+            const nextX2 = e.clientX - coords2.current.starX + coords2.current.lastX;
+            const nextY2 = e.clientY - coords2.current.starY + coords2.current.lastY;
+
+            box2.style.top = `${nextY2}px`;
+            box2.style.left = `${nextX2}px`;
+        };
+
+        box2.addEventListener("mousedown", onMouseDown2);
+        box2.addEventListener("mouseup", onMouseUp2);
+        container2.addEventListener("mousemove", onMouseMove2);
+        container2.addEventListener("mouseleave", onMouseUp2);
+
+        const cleanUp2 = () => {
+            box2.removeEventListener("mousedown", onMouseDown2);
+            box2.removeEventListener("mouseup", onMouseUp2);
+            container2.removeEventListener("mousemove", onMouseMove2);
+            container2.removeEventListener("mouseleave", onMouseUp2);
+        };
+
+        return cleanUp2;
+
+    }, []);
+
+    // ---------------------------------------------------------------------------
+
+    const boxRef3 = useRef(null);
+    const constcontainerRef3 = useRef(null);
+    const isClicked3 = useRef(false);
+    const coords3 = useRef({
+        starX: 0,
+        starY: 0,
+        lastX: 0,
+        lastY: 0
+    });
+
+    useEffect(() => {
+        if (!boxRef3.current || !constcontainerRef3.current) return;
+
+        const box3 = boxRef3.current;
+        const container3 = constcontainerRef3.current;
+
+        const onMouseDown3 = (e = MouseEvent) => {
+            isClicked3.current = true;
+            coords3.current.starX = e.clientX;
+            coords3.current.starY = e.clientY;
+        };
+
+        const onMouseUp3 = (e = MouseEvent) => {
+            isClicked3.current = false;
+            coords3.current.lastX = box3.offsetLeft;
+            coords3.current.lastY = box3.offsetTop;
+        };
+
+        const onMouseMove3 = (e = MouseEvent) => {
+            if (!isClicked3.current) return;
+
+            const nextX3 = e.clientX - coords3.current.starX + coords3.current.lastX;
+            const nextY3 = e.clientY - coords3.current.starY + coords3.current.lastY;
+
+            box3.style.top = `${nextY3}px`;
+            box3.style.left = `${nextX3}px`;
+        };
+
+        box3.addEventListener("mousedown", onMouseDown3);
+        box3.addEventListener("mouseup", onMouseUp3);
+        container3.addEventListener("mousemove", onMouseMove3);
+        container3.addEventListener("mouseleave", onMouseUp3);
+
+        const cleanUp3 = () => {
+            box3.removeEventListener("mousedown", onMouseDown3);
+            box3.removeEventListener("mouseup", onMouseUp3);
+            container3.removeEventListener("mousemove", onMouseMove3);
+            container3.removeEventListener("mouseleave", onMouseUp3);
+        };
+
+        return cleanUp3;
+
+    }, []);
+
+    // ------------------------------------------------------------------
+
+    const imgCheck = () => {
+
+        const imgDiv = document.getElementById("img-check");
+
+        imgDiv.style.display = "flex";
+
+    };
+
+    const imgCheck2 = () => {
+
+        const imgDiv = document.getElementById("img-check");
+
+        imgDiv.style.display = "none";
+
+    };
+
+    const texto1Agregar = () => {
+
+        const texto1 = document.getElementById("texto-1");
+
+        texto1.style.display = "flex";
+
+    };
+
+    const texto2Agregar = () => {
+
+        const texto2 = document.getElementById("texto-2");
+
+        texto2.style.display = "flex";
+
+    };
+
+    const onChangeSizeImg = () => {
+
+        const selectSize = document.getElementById("selcet-img-size");
+        const imgSize = document.getElementById("img-size");
+
+        console.log(imgSize);
+
+        if (selectSize.value === "400 x 300") {
+
+            imgSize.style.width = "300px";
+
+        } else {
+
+            imgSize.style.width = "50px";
+
+        }
+
+    };
+
     return (
 
         <div>
@@ -212,7 +375,7 @@ function Diseño() {
 
                     <div className="col-lg-8 display">
 
-                        <div className="card card-content">
+                        <div className="card card-content" ref={constcontainerRef2}>
 
                             <div className="imgTshirt text-center">
                                 <img
@@ -222,21 +385,30 @@ function Diseño() {
                                 />
                             </div>
 
-                            <div className="memeText text-center" ref={constcontainerRef}>
-
-                                <div>
-                                    <p style={{ fontSize: text1FontSize, color: colorText1 }}>{text1}</p>
-                                </div>
+                            <div className="memeText" id="img-check" ref={constcontainerRef}>
 
                                 <div className="box" ref={boxRef}>
                                     <img
+                                        id="img-size"
                                         src={image}
                                         alt="meme-text"
                                     />
                                 </div>
 
-                                <div>
-                                    <p style={{ fontSize: text2FontSize, color: colorText2 }}>{text2}</p>
+                            </div>
+
+                            <div className="memeText1" id="texto-1" ref={constcontainerRef3}>
+
+                                <div className="box" ref={boxRef3}>
+                                    <p style={{ fontSize: text1FontSize, color: colorText1 }}>{text1}</p>
+                                </div>
+
+                            </div>
+
+                            <div className="memeText2" id="texto-2" ref={constcontainerRef2}>
+
+                                <div className="box" ref={boxRef2}>
+                                    <p style={{ fontSize: text2FontSize, color: colorText2 }} >{text2}</p>
                                 </div>
 
                             </div>
@@ -278,8 +450,12 @@ function Diseño() {
                             <hr />
 
                             <h4>Write Text</h4>
+
                             <input type="text" className="form-control form-control-sm mb-2" placeholder="Text 1" onChange={onChangeText1} />
+                            <button className="btn btn-primary btn-sm mb-2" onClick={texto1Agregar}>Agregar Texto 1</button>
+
                             <input type="text" className="form-control form-control-sm" placeholder="Text 2" onChange={onChangeText2} />
+                            <button className="btn btn-primary btn-sm mb-2" onClick={texto2Agregar}>Agregar Texto 2</button>
 
                             <hr />
 
@@ -320,7 +496,24 @@ function Diseño() {
 
                                 </Form >
 
+                                <div>
+                                    <button className="btn btn-primary btn-sm mb-2" onClick={imgCheck}>Agregar Imagen</button>
+                                </div>
+
+                                <div>
+                                    <button className="btn btn-primary btn-sm mb-2" onClick={imgCheck2}>Borrar Imagen</button>
+                                </div>
+
                             </div>
+
+                            <hr />
+
+                            <h4>Img Size</h4>
+                            <select id="selcet-img-size" className="form-select form-control-sm mb-2" onChange={onChangeSizeImg}>
+                                <option>Select-Size</option>
+                                <option>50 x 50</option>
+                                <option>400 x 300</option>
+                            </select>
 
                             <hr />
 
