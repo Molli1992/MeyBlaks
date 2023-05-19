@@ -1,13 +1,10 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import "./contacto.css";
-import { Input } from 'antd';
 import Swal from 'sweetalert2';
 
 
 function Contacto() {
-
-    const { TextArea } = Input;
 
     const form = useRef();
 
@@ -41,71 +38,89 @@ function Contacto() {
             });
     };
 
+    const onClickWhatsapp = () => {
+        window.open("https://web.whatsapp.com/");
+    };
+
 
     return (
 
-        <div className='body-contacto'>
+        <section className='contact'>
 
-            <div className='titulo-contacto'>
-                <h1>¡Envianos tu Consulta!</h1>
-                <br></br>
-                <h4>Podés escribirnos a través de este formulario o al mail info@meye.com.ar</h4>
-                <br></br>
-                <h4>
-                    También podes enviarnos tu consulta por WhatsApp! Hacé click
-                    <a className='redes-contacto-button' href="https://web.whatsapp.com/" target="_blank" rel="noreferrer">.    Aquí....<ion-icon name="logo-whatsapp"></ion-icon></a>
-                </h4>
+            <div className='content'>
+                <h2>Contact Us</h2>
+                <p>
+                    Escribinos por Email a meyeblaks@gmail.com , a traves del formulario o por Whatsapp
+                    presionando...
+                    <button className='buttonWhatsapp' onClick={onClickWhatsapp}>
+                        Aqui...<ion-icon name="logo-whatsapp" size="large"></ion-icon>
+                    </button>
+                </p>
             </div>
 
-            <div className='body-form'>
+            <div className='container'>
 
-                <form ref={form} onSubmit={sendEmail} className='form-contacto'>
+                <div className='contactInfo'>
+                    <div className='box'>
 
-                    <div className='container-intputs'>
-
-                        <div className='container-intputs-1'>
-                            <label>Nombre</label>
-                            <Input placeholder="Nombre" name='nombre' />
-
-                            <label>Telefono</label>
-                            <Input placeholder="Whatsapp / Telefono" name='telefono' />
-
-                            <label>Mail</label>
-                            <Input placeholder="Mail" name='mail' />
-
-                            <label>Colegio</label>
-                            <Input placeholder="Colegio" name='colegio' />
-
-                            <label>Cantidad</label>
-                            <Input placeholder="Cantidad de Alumnos (minimo 12)" name='cantidad' />
+                        <div className='box2'>
+                            <div className='icon'><ion-icon name="navigate-circle-outline" size="large"></ion-icon></div>
+                            <div className='text'>
+                                <h2>Address</h2>
+                                <p>Intendente Aphalo 292 (planta baja H) - San Isidro</p>
+                            </div>
                         </div>
 
-                        <div className='container-intputs-2'>
-                            <label>Promo</label>
-                            <Input placeholder="Año de Egreso" name='promo' />
+                        <div className='box2'>
+                            <div className='icon'><ion-icon name="call-outline" size="large"></ion-icon></div>
+                            <div className='text'>
+                                <h2>Phone</h2>
+                                <p>+54 11 5127-4742</p>
+                            </div>
+                        </div>
 
-                            <label>Provincia</label>
-                            <Input placeholder="Provincia" name='provincia' />
-
-                            <label>Localidad</label>
-                            <Input placeholder="Localidad" name='localidad' />
-
-                            <label>Mensaje</label>
-                            <TextArea rows={4} placeholder="Mensaje" name='message' />
-
+                        <div className='box2'>
+                            <div className='icon'><ion-icon name="mail-outline" size="large"></ion-icon></div>
+                            <div className='text'>
+                                <h2>Email</h2>
+                                <p>meyeblaks@gmail.com</p>
+                            </div>
                         </div>
 
                     </div>
+                </div>
 
-                    <div className='boton-contacto'>
-                        <Input type="submit" value="Enviar" className='boton-contacto-2' />
-                    </div>
+                <div className='contactForm'>
 
-                </form>
+                    <form ref={form} onSubmit={sendEmail}>
+
+                        <h2>Send Message</h2>
+                        <div className='inputBox'>
+                            <input type='text' name='nombre' required="required" />
+                            <span>Full Name</span>
+                        </div>
+
+                        <div className='inputBox'>
+                            <input type='text' name='mail' required="required" />
+                            <span>Email</span>
+                        </div>
+
+                        <div className='inputBox'>
+                            <textarea name='message' required="required"></textarea>
+                            <span>Type your Message...</span>
+                        </div>
+
+                        <div className='inputBox'>
+                            <input type='submit' value="Send" />
+                        </div>
+
+                    </form>
+
+                </div>
 
             </div>
 
-        </div>
+        </section>
 
     );
 

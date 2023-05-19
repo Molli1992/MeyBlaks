@@ -21,7 +21,7 @@ function Diseño() {
     });
 
     const arrayFontSize = ["Select-Size", "16px", "18px", "20px", "22px", "24px", "26px", "28px", "30px",
-        "32px", "34px", "36px", "38px", "40px", "42x", "44px", "46px", "48px", "50px", "52px", "54px", "56px"];
+        "32px", "34px", "36px", "38px", "40px", "42px", "44px", "46px", "48px", "50px", "52px", "54px", "56px"];
     const arrayColorText = ["white", "black", "grey", "blue", "red"];
 
     const blackTshirt = "https://res.cloudinary.com/dkkgmzpqd/image/upload/v1545217305/T-shirt%20Images/black.png";
@@ -559,7 +559,7 @@ function Diseño() {
                             <input type="text" className="form-control form-control-sm mb-2" placeholder="Text 1" onChange={onChangeText1} />
                             <button className="btn btn-primary btn-sm mb-2" onClick={texto1Agregar}>Agregar Texto 1</button>
 
-                            <input type="text" className="form-control form-control-sm" placeholder="Text 2" onChange={onChangeText2} />
+                            <input type="text" className="form-control form-control-sm mb-2" placeholder="Text 2" onChange={onChangeText2} />
                             <button className="btn btn-primary btn-sm mb-2" onClick={texto2Agregar}>Agregar Texto 2</button>
 
                             <hr />

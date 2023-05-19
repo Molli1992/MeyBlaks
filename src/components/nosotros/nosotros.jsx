@@ -18,63 +18,35 @@ function Nosotros() {
 
             <div className="container-text-nosotros">
 
-                <div className="container-nosotros">
-                    <h1 className="h1-nosotros">17 AÑOS DE</h1>
+                <div className="container-nosotros-2">
+                    <h1 className="h1-nosotros">15 AÑOS DE</h1>
                     <h1 className="h1-nosotros">EXPERIENCIA</h1>
                 </div>
 
                 <div className="container-nosotros">
 
                     <Text className="text-nosotros">
-                        Somos una gran familia trabajando en equipo.
+                        MeyBlaks es una empresa familiar que se dedica desde hace 15 años
+                        al rubro de los egresados.
                     </Text>
 
-                    <br></br>
-
                     <Text className="text-nosotros">
-                        Tenemos la suerte de trabajar en lo que amamos: convertir el sueño de
-                    </Text>
-                    <Text className="text-nosotros">
-                        una camada, en un campera de egresados.
+                        Manejada por sus dueños Joaquin Ochoa y Maria Mercedes Blaksley ofrecemos
+                        un servicio personalizado para que en tu ultimo año de colegio tengas
+                        un buzo o campera en tiempo, forma y como te lo imaginaste.
                     </Text>
 
-                    <br></br>
-
                     <Text className="text-nosotros">
-                        Nacimos hace mas de 15 años, con la idea que se puede ofrecer la mejor calidad
-                    </Text>
-                    <Text className="text-nosotros">
-                        del mercado a un precio justo. Hoy lo hacemos realidad y damos garantía
-                    </Text>
-                    <Text className="text-nosotros">
-                        de eso.
+                        Es importante PARA NOSOTROS acompañar a quienes estan en su ultimo año de
+                        manera cooperativa. Entendemos que es un momento crucial e importante para
+                        los egresados. Es por esto que trabajos para cumplir con nuestros objetivos
+                        en tiempo y forma.
                     </Text>
 
-                    <br></br>
-
                     <Text className="text-nosotros">
-                        Nos apasiona lo nuevo y nos motiva lo que está por venir.
-                    </Text>
-                    <Text className="text-nosotros">
-                        Creemos en el respeto hacia el otro, como un estilo de vida que da
-                    </Text>
-                    <Text className="text-nosotros">
-                        carácter a lo que hacemos.
-                    </Text>
-
-                    <br></br>
-
-                    <Text className="text-nosotros">
-                        Escuchamos y aprendemos.Nos movemos, crecemos. Soñamos.
-                    </Text>
-                    <Text className="text-nosotros">
-                        Celebramos lo diferente y lo distinto. Con vos y con quien quiera subirse.
-                    </Text>
-
-                    <br></br>
-
-                    <Text className="text-nosotros">
-                        Si podes imaginarlo, podemos armarlo.
+                        Hacemos participes del proceso de produccion a aquellos que deseen visualizar
+                        las etapas del mismo. De este modo logramos mayor tranquilidad y un seguimiento
+                        detallado del mismo.
                     </Text>
 
                 </div>
