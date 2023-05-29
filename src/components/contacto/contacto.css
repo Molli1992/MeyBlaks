@@ -13,7 +13,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: url("https://www.shutterstock.com/image-photo/wood-block-symbol-telephone-mail-260nw-698841982.jpg");
+    background: url("");
     background-size: cover;
 }
 
@@ -39,10 +39,15 @@
     cursor: pointer;
     font-size: 22px;
     font-weight: bold;
+    color: black;
 }
 
 .buttonWhatsapp:hover {
     color: blue;
+}
+
+.buttonWhatsapp ion-icon {
+    color: rgb(135, 202, 35);
 }
 
 .container {
@@ -73,6 +78,10 @@
     justify-self: center;
     align-items: center;
     font-size: 22px;
+}
+
+.container .contactInfo .box .icon ion-icon {
+    color: black;
 }
 
 .container .contactInfo .box .text {
