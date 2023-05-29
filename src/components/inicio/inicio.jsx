@@ -5,6 +5,10 @@ import "./inicio.css";
 
 function Inicio() {
 
+    const diseño = () => {
+        window.location.href = "/diseño"
+    };
+
 
     return (
 
@@ -87,7 +91,7 @@ function Inicio() {
                         ¿Sabías que podés diseñarla en 4 simples y divertidos pasos?
                     </Text>
 
-                    <button className="button-inicio-prenda">Comenza!</button>
+                    <button className="button-inicio-prenda" onClick={diseño}>Comenza!</button>
 
                 </Stack>
 
@@ -102,23 +106,6 @@ function Inicio() {
 
 
                 </Stack>
-
-            </Card>
-
-            <br></br>
-
-            <Card
-                className="card-inicio-3"
-                overflow='hidden'
-                variant='outline'
-            >
-
-                <Stack className="stack-inicio-text-3">
-
-                    <Heading size='md'>¡Escribanos por Whatsapp haz click <a className='redes-contacto-button' href="https://web.whatsapp.com/" target="_blank" rel="noreferrer">.    Aquí....<ion-icon name="logo-whatsapp"></ion-icon></a></Heading>
-
-                </Stack>
-
 
             </Card>
 

@@ -24,13 +24,13 @@
 }
 
 .card-inicio {
-    padding: 15px;
+    padding: 0px 15px;
     height: 350px;
     text-align: center;
 }
 
 .stack-inicio-img {
-    padding: 10px;
+    padding: 0px 10px;
     width: 50%;
 }
 
@@ -43,7 +43,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 10px;
+    padding: 0px 10px;
     width: 50%;
 }
 
@@ -79,5 +79,5 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 10px;
+    padding: 0px 10px;
 }
