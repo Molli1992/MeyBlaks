@@ -591,3 +591,39 @@ color-grey-ligth-1 = #f7f7f7
 .info h1 {
     font-size: 22px;
 }
+
+/* --------------------------------- @media tours------------------------------------------------------*/
+
+@media(max-width: 950px) {
+
+    .row-diseños {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .col-1-of-3-diseños {
+        height: 450px;
+        width: 100%;
+        padding: 0px 10px;
+        padding-bottom: 80px;
+    }
+
+}
+
+@media(max-width: 600px) {
+
+    .row-diseños {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+
+    .col-1-of-3-diseños {
+        height: 450px;
+        width: 100%;
+        padding: 0px 10px;
+        padding-bottom: 80px;
+    }
+
+}
