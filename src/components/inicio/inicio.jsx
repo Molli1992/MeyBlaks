@@ -1,115 +1,63 @@
 import React from "react";
-import Slider from "../slider/slider";
-import { Card, Stack, Image, Heading, Text } from '@chakra-ui/react';
 import "./inicio.css";
+import Logo from "../../img/Imgen-Adidasjpg-removebg-preview.png";
 
 function Inicio() {
-
-    const diseño = () => {
-        window.location.href = "/diseño"
-    };
 
 
     return (
 
-        <div className="body-inicio">
+        <body>
 
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
+            <header className="header">
 
-            <div className="titulo-inicio">
-                <ion-icon name="brush-outline" size="large"></ion-icon>
-                <h1>Hola! Es el momento para diseñar tu campera</h1>
-                <ion-icon name="heart-outline" size="large"></ion-icon>
-            </div>
-            <br></br>
-            <div className="sub-titulo-inicio">
+                <div className="logo-box">
+                    <img src={Logo} alt="Logo" className="logo" />
+                </div>
 
-                <a href="https://www.facebook.com/" target="_blank" rel="noreferrer"><ion-icon name="logo-facebook"></ion-icon></a>
-                <a href="https://web.whatsapp.com/" target="_blank" rel="noreferrer"><ion-icon name="logo-whatsapp"></ion-icon></a>
-                <a href="https://www.instagram.com/" target="_blank" rel="noreferrer"><ion-icon name="logo-instagram"></ion-icon></a>
-                <h5>Seguinos en Redes Sociales</h5>
+                <div className="text-box">
 
-            </div>
+                    <h1 className="heading-primary">
+                        <span className="heading-primary-main">Meye Blaks</span>
+                        <span className="heading-primary-sub">Te acompañamos con tu Diseño</span>
+                    </h1>
 
-            <br></br>
+                    <a href="/diseño" className="btn">Diseño</a>
 
-            <Slider />
+                </div>
 
-            <br></br>
+            </header>
 
-            <Card
-                className="card-inicio"
-                direction={{ base: 'column', sm: 'row' }}
-                overflow='hidden'
-                variant='outline'
-            >
+            <main>
 
-                <Stack className="stack-inicio-img">
+                <section className="section-about">
 
-                    <Image
-                        objectFit='cover'
-                        className="stack-img"
-                        src='https://www.mercado.genganar.com/img/cms/2022/P%C3%A1ginas%20externas/Ilustraci%C3%B3n.png'
-                        alt='Envios a todo el pais'
-                    />
+                    <div className="u-center-text u-margin-bottom-80">
 
+                        <h2 className="heading-secondary">
+                            Mas de 15 años junto a los egresados
+                        </h2>
 
-                </Stack>
+                    </div>
 
-                <Stack className="stack-inicio-text">
+                    <div className="row">
 
-                    <Heading size='md'>¡Reuniones a domicilio en CABA y Gran Bs. As.!</Heading>
+                        <div className="col-1-of-2">
+                            <h3 className="heading-tertiary">
+                            </h3>
+                        </div>
 
-                    <Text py='2'>
-                        ¡Consultanos por las reuniones a domicilio, sin cargo!
-                    </Text>
+                        <div className="col-2-of-2">
+                            Imagenes
+                        </div>
 
-                    <Text py='2' >
-                        ¡Tambien contamos con envios a todo el Pais!
-                    </Text>
+                    </div>
 
-                </Stack>
+                </section>
 
-            </Card>
+            </main>
 
-            <Card
-                className="card-inicio"
-                direction={{ base: 'column', sm: 'row' }}
-                overflow='hidden'
-                variant='outline'
-            >
-
-                <Stack className="stack-inicio-text">
-
-                    <Heading size='md'>¡ Diseña tu Prenda !</Heading>
-
-                    <Text py='2'>
-                        ¿Sabías que podés diseñarla en 4 simples y divertidos pasos?
-                    </Text>
-
-                    <button className="button-inicio-prenda" onClick={diseño}>Comenza!</button>
-
-                </Stack>
-
-                <Stack className="stack-inicio-img-2">
-
-                    <Image
-                        objectFit='cover'
-                        className="stack-img-2"
-                        src='https://v3core.blue/uploads/charly/masters/63/campera-velez-miniatura.png'
-                        alt='Diseña tu prenda'
-                    />
-
-
-                </Stack>
-
-            </Card>
-
-        </div>
+        </body>
 
     );
 

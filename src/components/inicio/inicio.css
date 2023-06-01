@@ -1,83 +1,269 @@
-.body-inicio {
-    background-image: url("");
-    background-repeat: no-repeat;
+/*
+Ligth green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+animation-delay: 3s;
+animation-iteration-count: 3;
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: cursive;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    padding: 15px;
+}
+
+
+/* ------------------------------------ Header-----------------------------------------------------------*/
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)), url("https://www.argiesment.com/images/arti/festejar-fiesta-de-egresados-buenos-aires_1.webp");
     background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
+}
+
+.logo-box {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.logo {
+    height: 75px;
+    animation: moveInRight 1s ease-out;
+}
+
+.text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 25px;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 20px;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 10px;
+    animation: moveInRight 1s ease-out;
+}
+
+.btn:link,
+.btn:visited {
+    background-color: #fff;
+    color: #777;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+}
+
+.btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+/* --------------------------------- Animation ------------------------------------------------------*/
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    60% {
+        transform: rotate(5deg);
+    }
+
+    80% {
+        transform: translateX(10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    80% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* --------------------------------- @media------------------------------------------------------*/
+
+@media(max-width: 1200px) {
+    .heading-primary-main {
+        display: block;
+        font-size: 30px;
+        font-weight: bold;
+        letter-spacing: 20px;
+    }
+
+    .heading-primary-sub {
+        display: block;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 10px;
+    }
+}
+
+@media(max-width: 900px) {
+    .heading-primary-main {
+        display: block;
+        font-size: 30px;
+        font-weight: bold;
+        letter-spacing: 10px;
+    }
+
+    .heading-primary-sub {
+        display: block;
+        font-size: 15px;
+        font-weight: bold;
+        letter-spacing: 5px;
+    }
+}
+
+@media(max-width: 680px) {
+    .heading-primary-main {
+        display: block;
+        font-size: 30px;
+        font-weight: bold;
+        letter-spacing: 5px;
+    }
+
+    .heading-primary-sub {
+        display: block;
+        font-size: 15px;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
 
 }
 
-.titulo-inicio {
-    display: flex;
-    justify-content: center;
+@media(max-width: 575px) {
+    .heading-primary-main {
+        display: block;
+        font-size: 22px;
+        font-weight: bold;
+    }
+
+    .heading-primary-sub {
+        display: block;
+        font-size: 13px;
+        font-weight: bold;
+    }
+}
+
+@media(max-width: 470px) {
+    .heading-primary-main {
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .heading-primary-sub {
+        display: block;
+        font-size: 12px;
+        font-weight: bold;
+    }
+}
+
+
+/* ------------------------------------ Section About -----------------------------------------------------------*/
+
+/*
+color-grey-ligth-1 = #f7f7f7
+*/
+
+.section-about {
+    background-color: #f7f7f7;
+    padding: 250px 0px;
+    margin-top: -20vh;
+}
+
+.u-center-text {
+    text-align: center;
+}
+
+.u-margin-bottom-80 {
+    margin-bottom: 80px;
+}
+
+.heading-secondary {
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    color: #28b485;
+    transition: all .2s;
+    letter-spacing: 2px;
+}
+
+.heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 5px 10px 20px rgba(0, 0, 0, .2);
+}
+
+.row {
     align-items: center;
-    text-align: center;
+    padding-left: 130px;
 }
 
-.titulo-inicio ion-icon {
-    color: yellowgreen;
+.col-1-of-2 {
+    float: left;
+    width: 45%;
 }
 
-.sub-titulo-inicio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.card-inicio {
-    padding: 0px 15px;
-    height: 350px;
-    text-align: center;
-}
-
-.stack-inicio-img {
-    padding: 0px 10px;
-    width: 50%;
-}
-
-.stack-img {
-    width: 100%;
-    height: 100%;
-}
-
-.stack-inicio-text {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0px 10px;
-    width: 50%;
-}
-
-.stack-inicio-img-2 {
-    width: 50%;
-    height: 100%;
-}
-
-.stack-img-2 {
-    width: 100%;
-    height: 100%;
-}
-
-.button-inicio-prenda {
-    background-color: blueviolet;
-    height: 30px;
-    width: 130px;
-    border-radius: 20px;
-    border: none;
-    font-size: 22px;
-    color: white;
-    cursor: pointer;
-}
-
-.button-inicio-prenda:hover {
-    color: lightcoral;
-    background-color: blue;
-    height: 35px;
-    width: 140px;
-}
-
-.stack-inicio-text-3 {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 0px 10px;
+.col-2-of-2 {
+    float: right;
+    width: 45%;
 }
