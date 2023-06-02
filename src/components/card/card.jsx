@@ -14,7 +14,7 @@ function Cards() {
             <div className="u-center-text u-margin-bottom-80">
 
                 <h2 className="heading-secondary">
-                    Nuestros mejores buzos
+                    Algunos de nuestros trabajos
                 </h2>
 
             </div>

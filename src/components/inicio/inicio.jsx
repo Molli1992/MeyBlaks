@@ -5,6 +5,7 @@ import About from "../about/about";
 import Features from "../features/features";
 import Cards from "../card/card";
 import Reviews from "../reviews/reviews";
+import Footer from "../footer/footer";
 
 
 
@@ -28,6 +29,8 @@ function Inicio() {
                 <Reviews />
 
             </main>
+
+            <Footer />
 
         </body>
 
