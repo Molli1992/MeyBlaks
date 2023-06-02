@@ -3,7 +3,7 @@ import "./inicio.css";
 import Header from "../header/header";
 import About from "../about/about";
 import Features from "../features/features";
-import Card from "../card/card";
+import Cards from "../card/card";
 import Reviews from "../reviews/reviews";
 
 
@@ -23,7 +23,7 @@ function Inicio() {
 
                 <Features />
 
-                <Card />
+                <Cards />
 
                 <Reviews />
 
