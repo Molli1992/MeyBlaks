@@ -21,7 +21,7 @@ function Cards() {
 
             <div className='card-container'>
 
-                <div className="card">
+                <div className="card-Card">
 
                     <div className="card-side front">
 
@@ -53,7 +53,7 @@ function Cards() {
 
                 </div>
 
-                <div className="card">
+                <div className="card-Card">
 
                     <div className="card-side front">
 
@@ -85,7 +85,7 @@ function Cards() {
 
                 </div>
 
-                <div className="card">
+                <div className="card-Card">
 
                     <div className="card-side front">
 
