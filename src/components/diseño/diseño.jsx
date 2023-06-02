@@ -476,7 +476,7 @@ function Diseño() {
 
             <div className="container py-5">
 
-                <div className="row">
+                <div className="row-diseño">
 
                     <div className="col-lg-8 display">
 

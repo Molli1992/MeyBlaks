@@ -1,3 +1,7 @@
+.row-diseño {
+    display: flex;
+}
+
 .imgTshirt {
     position: relative;
 }

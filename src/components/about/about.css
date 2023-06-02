@@ -1,0 +1,194 @@
+/* ------------------------------------ Section About -----------------------------------------------------------*/
+
+/*
+color-grey-ligth-1 = #f7f7f7
+*/
+
+.section-about {
+    background-color: #f7f7f7;
+    padding: 250px 0px;
+    margin-top: -20vh;
+}
+
+.u-center-text {
+    text-align: center;
+}
+
+.u-margin-bottom-80 {
+    margin-bottom: 80px;
+}
+
+.heading-secondary {
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    color: #7ed56f;
+    transition: all .2s;
+    letter-spacing: 2px;
+}
+
+.heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 5px 10px 20px rgba(0, 0, 0, .2);
+}
+
+.row {
+    align-items: center;
+    padding-left: 130px;
+}
+
+.col-1-of-2 {
+    float: left;
+    width: 45%;
+}
+
+.col-2-of-2 {
+    float: right;
+    width: 45%;
+}
+
+.heading-tertiary {
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.paragraph {
+    font-size: 14px;
+
+    &:not(:last-child) {
+        margin-bottom: 25px;
+    }
+
+}
+
+.btn-text {
+    color: #7ed56f;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid #7ed56f;
+    font-size: 18px;
+    padding: 3px;
+    transition: all .2s;
+}
+
+.btn-text:hover {
+    background-color: #7ed56f;
+    color: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .15);
+    transform: translateY(-3px);
+}
+
+.btn-text:active {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .15);
+    transform: translateY(3px);
+}
+
+.composition {
+    position: relative;
+}
+
+.composition_photo {
+    width: 55%;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all .2s;
+    outline-offset: 10px;
+}
+
+.composition_photo--p1 {
+    left: 0;
+    bottom: -120px;
+}
+
+.composition_photo--p2 {
+    right: 0;
+    bottom: -60px;
+}
+
+.composition_photo--p3 {
+    left: 20%;
+    bottom: -260px;
+}
+
+.composition_photo--p1:hover {
+    outline: 15px solid #7ed56f;
+    transform: scale(1.05);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, .6);
+    z-index: 20;
+}
+
+.composition_photo--p2:hover {
+    outline: 15px solid #7ed56f;
+    transform: scale(1.05);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, .6);
+    z-index: 20;
+}
+
+.composition_photo--p3:hover {
+    outline: 15px solid #7ed56f;
+    transform: scale(1.05);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, .6);
+    z-index: 20;
+}
+
+/* --------------------------------- @media Section About------------------------------------------------------*/
+
+@media(max-width: 1200px) {
+    .composition_photo {
+        width: 55%;
+    }
+
+    .composition_photo--p1 {
+        left: 0;
+        bottom: -40px;
+    }
+
+    .composition_photo--p2 {
+        right: 0;
+        bottom: -10px;
+    }
+
+    .composition_photo--p3 {
+        left: 20%;
+        bottom: -110px;
+    }
+}
+
+@media(max-width: 850px) {
+
+    .row {
+        align-items: center;
+        padding-left: 50px;
+    }
+
+    .col-1-of-2 {
+        width: 90%;
+    }
+
+    .col-2-of-2 {
+        display: none;
+    }
+
+
+}
+
+@media(max-width: 500px) {
+
+    .row {
+        align-items: center;
+        padding-left: 20px;
+    }
+
+    .col-2-of-2 {
+        display: none;
+    }
+
+    .col-1-of-2 {
+        width: 90%;
+    }
+
+}
