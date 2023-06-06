@@ -73,8 +73,6 @@ function AllReviews() {
                                     iure eligendi cum porro nulla similique perferendis aliquam, repellat
                                     doloribus deleniti a vero aspernatur, necessitatibus placeat!
                                     Veniam praesentium ipsum ut.
-                                    iure eligendi cum porro nulla similique perferendis aliquam, repellat
-                                    iure eligendi cum porro nulla similique perferendis aliquam, repellat
                                 </p>
 
                             </div>
@@ -99,8 +97,6 @@ function AllReviews() {
                                     iure eligendi cum porro nulla similique perferendis aliquam, repellat
                                     doloribus deleniti a vero aspernatur, necessitatibus placeat!
                                     Veniam praesentium ipsum ut.
-                                    iure eligendi cum porro nulla similique perferendis aliquam, repellat
-                                    iure eligendi cum porro nulla similique perferendis aliquam, repellat
                                 </p>
 
                             </div>
@@ -125,8 +121,6 @@ function AllReviews() {
                                     iure eligendi cum porro nulla similique perferendis aliquam, repellat
                                     doloribus deleniti a vero aspernatur, necessitatibus placeat!
                                     Veniam praesentium ipsum ut.
-                                    iure eligendi cum porro nulla similique perferendis aliquam, repellat
-                                    iure eligendi cum porro nulla similique perferendis aliquam, repellat
                                 </p>
 
                             </div>

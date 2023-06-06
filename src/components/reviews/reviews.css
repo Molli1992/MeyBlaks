@@ -32,14 +32,13 @@
 
 .storie_shape {
     position: relative;
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     float: left;
     shape-outside: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
     transform: translateX(-15px);
     transform: skewX(12deg);
-    margin: 5px;
 }
 
 .storie-img {
