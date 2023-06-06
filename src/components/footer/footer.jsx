@@ -22,19 +22,19 @@ function Footer() {
                     <div className='footer-navigation'>
                         <ul className='footer-list'>
                             <li className='footer-item'>
-                                <Link to='/contact' className='footer-link'>Company</Link>
+                                <Link to='/about' className='footer-link'>Company</Link>
                             </li>
                             <li className='footer-item'>
                                 <Link to='/contact' className='footer-link'>Contact us</Link>
                             </li>
                             <li className='footer-item'>
-                                <Link to='/contact' className='footer-link'>Carrers</Link>
+                                <a href="https://api.whatsapp.com/send?phone=1128458809" target="_blank" rel="noreferrer" className='footer-link'>WhatsApp</a>
                             </li>
                             <li className='footer-item'>
-                                <Link to='/contact' className='footer-link'>Privacy policy</Link>
+                                <a href="https://www.instagram.com/meyblaks/" target="_blank" rel="noreferrer" className='footer-link'>Instagram</a>
                             </li>
                             <li className='footer-item'>
-                                <Link to='/contact' className='footer-link'>Terms</Link>
+                                <Link to='/' className='footer-link'>Inicio</Link>
                             </li>
                         </ul>
                     </div>

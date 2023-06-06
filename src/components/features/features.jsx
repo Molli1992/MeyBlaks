@@ -61,7 +61,7 @@ function Features() {
 
                 <div className="col-1-of-4">
 
-                    <a href="https://web.whatsapp.com/" target="_blank" rel="noreferrer" className="a-features-whatsapp">
+                    <a href="https://api.whatsapp.com/send?phone=1128458809" target="_blank" rel="noreferrer" className="a-features-whatsapp">
 
                         <div className="feature-box">
 
