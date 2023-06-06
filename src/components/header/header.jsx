@@ -1,6 +1,7 @@
 import React from "react";
 import "./header.css";
 import Logo from "../../img/Imgen-Adidasjpg-removebg-preview.png";
+import { Link } from "react-router-dom";
 
 
 function Header() {
@@ -22,7 +23,7 @@ function Header() {
                     <span className="heading-primary-sub">Te acompañamos con tu Diseño</span>
                 </h1>
 
-                <a href="/diseño" className="btn">Diseña</a>
+                <Link to="/diseño" className="btn">Diseña</Link>
 
             </div>
 

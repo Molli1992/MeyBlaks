@@ -4,6 +4,7 @@ import Footer from "../footer/footer";
 import Logo from "../../img/Imgen-Adidasjpg-removebg-preview.png";
 import "./sobreNosotros.css";
 import Navigation from "../navigation/navigation";
+import { Link } from "react-router-dom";
 
 
 
@@ -30,7 +31,7 @@ function SobreNosotros() {
                         <span className="heading-primary-sub">Te invitamos a conocernos</span>
                     </h1>
 
-                    <a href="/" className="btn">Inicio</a>
+                    <Link to="/" className="btn">Inicio</Link>
 
                 </div>
 

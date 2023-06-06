@@ -47,7 +47,7 @@ function Cards() {
 
                     <div className="card-side back back-1">
                         <div className='card_cta'>
-                            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" className='btn-card-back'>Ver</a>
+                            <a href="https://www.instagram.com/meyblaks/" target="_blank" rel="noreferrer" className='btn-card-back'>Ver</a>
                         </div>
                     </div>
 
@@ -79,7 +79,7 @@ function Cards() {
 
                     <div className="card-side back back-2">
                         <div className='card_cta'>
-                            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" className='btn-card-back'>Ver</a>
+                            <a href="https://www.instagram.com/meyblaks/" target="_blank" rel="noreferrer" className='btn-card-back'>Ver</a>
                         </div>
                     </div>
 
@@ -111,7 +111,7 @@ function Cards() {
 
                     <div className="card-side back back-3">
                         <div className='card_cta'>
-                            <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" className='btn-card-back'>Ver</a>
+                            <a href="https://www.instagram.com/meyblaks/" target="_blank" rel="noreferrer" className='btn-card-back'>Ver</a>
                         </div>
                     </div>
 

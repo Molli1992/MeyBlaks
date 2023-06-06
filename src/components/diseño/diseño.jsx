@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import Logo from "../../img/Imgen-Adidasjpg-removebg-preview.png";
 import Footer from "../footer/footer";
 import Navigation from "../navigation/navigation";
+import { Link } from "react-router-dom";
 
 
 
@@ -493,7 +494,7 @@ function Diseño() {
                         <span className="heading-primary-sub">Es momento de Crear</span>
                     </h1>
 
-                    <a href="/" className="btn">Inicio</a>
+                    <Link to="/" className="btn">Inicio</Link>
 
                 </div>
 

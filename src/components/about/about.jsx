@@ -1,5 +1,6 @@
 import React from "react";
 import "./about.css";
+import { Link } from "react-router-dom";
 
 
 
@@ -44,7 +45,7 @@ function About() {
                         o campera en tiempo, forma y como te lo imaginaste.
                     </p>
 
-                    <a href="/contact" className="btn-text">Contactanos &rarr;</a>
+                    <Link to="/contact" className="btn-text">Contactanos &rarr;</Link>
 
                 </div>
 

@@ -1,5 +1,6 @@
 import React from "react";
 import "./features.css";
+import { Link } from "react-router-dom";
 
 
 
@@ -38,7 +39,7 @@ function Features() {
 
                 <div className="col-1-of-4">
 
-                    <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" className="a-features-instagram">
+                    <a href="https://www.instagram.com/meyblaks/" target="_blank" rel="noreferrer" className="a-features-instagram">
 
                         <div className="feature-box">
 

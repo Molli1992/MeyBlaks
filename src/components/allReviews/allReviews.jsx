@@ -3,6 +3,8 @@ import Footer from "../footer/footer";
 import Navigation from "../navigation/navigation";
 import "./allReviews.css";
 import Logo from "../../img/Imgen-Adidasjpg-removebg-preview.png";
+import { Link } from "react-router-dom";
+
 
 
 
@@ -28,7 +30,7 @@ function AllReviews() {
                         <span className="heading-primary-sub">Nuestras Experiencias</span>
                     </h1>
 
-                    <a href="/diseño" className="btn">Inicio</a>
+                    <Link to="/" className="btn">Inicio</Link>
 
                 </div>
 
