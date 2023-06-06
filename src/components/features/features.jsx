@@ -1,5 +1,6 @@
 import React from "react";
 import "./features.css";
+import { Link } from "react-router-dom";
 
 
 
@@ -16,7 +17,7 @@ function Features() {
 
                 <div className="col-1-of-4">
 
-                    <a href="https://nimble-rugelach-e7258d.netlify.app/diseño" className="a-features-pincel">
+                    <Link to="/diseño" className="a-features-pincel">
 
                         <div className="feature-box">
 
@@ -32,7 +33,7 @@ function Features() {
 
                         </div>
 
-                    </a>
+                    </Link>
 
                 </div>
 
@@ -81,7 +82,7 @@ function Features() {
 
                 <div className="col-1-of-4">
 
-                    <a href="https://nimble-rugelach-e7258d.netlify.app/contact" className="a-features-contactanos">
+                    <Link to="/contact" className="a-features-contactanos">
 
                         <div className="feature-box">
 
@@ -97,7 +98,7 @@ function Features() {
 
                         </div>
 
-                    </a>
+                    </Link>
 
                 </div>
 
