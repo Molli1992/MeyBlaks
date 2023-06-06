@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import "./inicio.css";
 import Header from "../header/header";
 import About from "../about/about";
@@ -11,6 +12,12 @@ import Navigation from "../navigation/navigation";
 
 
 function Inicio() {
+
+    const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
 
 
     return (

@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import "./contacto.css";
 import Footer from "../footer/footer";
 import Logo from "../../img/Imgen-Adidasjpg-removebg-preview.png";
-import { Link } from "react-router-dom";
 import Navigation from "../navigation/navigation";
 
 
 
 function Contacto() {
 
+    const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
 
     return (
 

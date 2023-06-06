@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import Footer from "../footer/footer";
 import Navigation from "../navigation/navigation";
 import "./allReviews.css";
 import Logo from "../../img/Imgen-Adidasjpg-removebg-preview.png";
-import { Link } from "react-router-dom";
 
 
 
 
 function AllReviews() {
 
+    const location = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [location]);
 
     return (
 
