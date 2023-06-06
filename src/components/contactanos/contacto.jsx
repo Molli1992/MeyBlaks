@@ -4,6 +4,7 @@ import "./contacto.css";
 import Footer from "../footer/footer";
 import Logo from "../../img/Imgen-Adidasjpg-removebg-preview.png";
 import Navigation from "../navigation/navigation";
+import Features from "../features/features";
 
 
 
@@ -116,6 +117,12 @@ function Contacto() {
                 </div>
 
             </section>
+
+            <div className='body-contact-features'>
+
+                <Features />
+
+            </div>
 
             <Footer />
 

@@ -148,6 +148,11 @@
     font-size: 18px;
 }
 
+.body-contact-features {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
 @media (max-width: 991px) {
     .contact {
         padding: 50px;
