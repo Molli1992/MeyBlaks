@@ -16,9 +16,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: url("https://images.unsplash.com/photo-1571951103752-53c15cad28e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNpdHklMjBsaWdodHN8ZW58MHx8MHx8fDA%3D&w=1000&q=80");
-    background-size: cover;
-    margin-bottom: 30px;
+    background-color: #f7f7f7;
 }
 
 .contact-content {
@@ -29,12 +27,12 @@
 .contact-h2 {
     font-size: 36px;
     font-weight: 500;
-    color: #fff;
+    color: black;
 }
 
 .contact-p {
     font-weight: 300;
-    color: #fff;
+    color: black;
 }
 
 .contact-container {
@@ -63,14 +61,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #fff;
+    color: black;
 }
 
 .contact-text {
     display: flex;
     margin-left: 20px;
     font-size: 16px;
-    color: #fff;
+    color: black;
     flex-direction: column;
     font-weight: 300;
 }
