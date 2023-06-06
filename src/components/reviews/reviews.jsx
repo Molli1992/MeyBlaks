@@ -1,6 +1,5 @@
 import React from "react";
 import "./reviews.css";
-//import { Link } from "react-router-dom";
 
 
 function Reviews() {
@@ -103,7 +102,7 @@ function Reviews() {
 
                 </div>
 
-                <a href="/reviews" className="btn-text-stories">Mira las Reviews &rarr;</a>
+                <a href="https://nimble-rugelach-e7258d.netlify.app/reviews" className="btn-text-stories">Mira las Reviews &rarr;</a>
 
             </body>
 
