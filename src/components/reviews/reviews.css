@@ -115,7 +115,7 @@
 @media(max-width: 950px) {
 
     .story {
-        width: 100%;
+        width: 90%;
     }
 
 }
@@ -123,18 +123,17 @@
 @media(max-width: 650px) {
 
     .story {
-        width: 120%;
-        transform: skewX(12deg);
+        width: 90%;
+        transform: skewX(0deg);
 
     }
 
     .storie_shape {
-        transform: skewX(-12deg);
+        transform: skewX(0deg);
     }
 
     .storie_text {
-        transform: skewX(-12deg);
-        margin-right: 80px;
+        transform: skewX(0deg);
     }
 
 }

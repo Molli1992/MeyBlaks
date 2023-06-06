@@ -68,10 +68,18 @@
 }
 
 
-@media(max-width: 500px) {
+@media(max-width: 550px) {
 
     .footer {
         font-size: 12px;
+    }
+
+    .footer-list {
+        display: block;
+    }
+
+    .footer-item {
+        display: block;
     }
 
 }
@@ -79,7 +87,7 @@
 @media(max-width: 400px) {
 
     .footer {
-        font-size: 11px;
+        font-size: 12 px;
     }
 
 }
