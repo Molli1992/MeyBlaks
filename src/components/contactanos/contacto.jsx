@@ -26,7 +26,7 @@ function Contacto() {
 
                     <h1 className="heading-primary">
                         <span className="heading-primary-main">MeyBlaks</span>
-                        <span className="heading-primary-sub">Te acompañamos con tu Diseño</span>
+                        <span className="heading-primary-sub">Contacta con nosotros</span>
                     </h1>
 
                     <Link to="/diseño" className="btn">Diseña</Link>
