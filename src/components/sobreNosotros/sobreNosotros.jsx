@@ -27,7 +27,7 @@ function SobreNosotros() {
                 <div className="text-box">
 
                     <h1 className="heading-primary">
-                        <span className="heading-primary-main">Meye Blaks</span>
+                        <span className="heading-primary-main">MeyBlaks</span>
                         <span className="heading-primary-sub">Te invitamos a conocernos</span>
                     </h1>
 
