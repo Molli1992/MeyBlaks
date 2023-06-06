@@ -81,7 +81,7 @@ function Features() {
 
                 <div className="col-1-of-4">
 
-                    <a href="/contacto" className="a-features-contactanos">
+                    <a href="/contact" className="a-features-contactanos">
 
                         <div className="feature-box">
 

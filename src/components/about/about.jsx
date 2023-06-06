@@ -44,7 +44,7 @@ function About() {
                         o campera en tiempo, forma y como te lo imaginaste.
                     </p>
 
-                    <a href="#" className="btn-text">Contactanos &rarr;</a>
+                    <a href="/contact" className="btn-text">Contactanos &rarr;</a>
 
                 </div>
 

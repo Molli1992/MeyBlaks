@@ -32,7 +32,7 @@ function Navigation() {
                         <a href="/about" className="navigation-link"><span>02</span>Sobre Nosotros</a>
                     </li>
                     <li className="navigation-item">
-                        <a href="#" className="navigation-link"><span>03</span>Contactanos</a>
+                        <a href="/contact#" className="navigation-link"><span>03</span>Contactanos</a>
                     </li>
                     <li className="navigation-item">
                         <a href="/diseño" className="navigation-link"><span>04</span>Crea tu Diseño</a>
