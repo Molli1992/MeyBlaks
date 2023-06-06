@@ -34,7 +34,7 @@ function Contacto() {
                         <span className="heading-primary-sub">Contacta con nosotros</span>
                     </h1>
 
-                    <Link to="/diseño" className="btn">Inicio</Link>
+                    <Link to="/" className="btn">Inicio</Link>
 
                 </div>
 
