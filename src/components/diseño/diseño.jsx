@@ -3,6 +3,10 @@ import "./display.css";
 import { Form, Upload } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import Swal from 'sweetalert2';
+import Logo from "../../img/Imgen-Adidasjpg-removebg-preview.png";
+import Footer from "../footer/footer";
+import Navigation from "../navigation/navigation";
+
 
 
 function Diseño() {
@@ -474,6 +478,27 @@ function Diseño() {
 
         <div>
 
+            <Navigation />
+
+            <header className="header-diseño">
+
+                <div className="logo-box">
+                    <img src={Logo} alt="Logo" className="logo" />
+                </div>
+
+                <div className="text-box">
+
+                    <h1 className="heading-primary">
+                        <span className="heading-primary-main">Meye Blaks</span>
+                        <span className="heading-primary-sub">Es momento de Crear</span>
+                    </h1>
+
+                    <a href="/" className="btn">Inicio</a>
+
+                </div>
+
+            </header>
+
             <div className="container py-5">
 
                 <div className="row-diseño">
@@ -710,6 +735,8 @@ function Diseño() {
 
             </div >
 
+            <Footer />
+
         </div >
 
     );
@@ -717,6 +744,3 @@ function Diseño() {
 };
 
 export default Diseño;
-
-/*
-        */

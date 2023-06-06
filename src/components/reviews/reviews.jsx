@@ -102,7 +102,7 @@ function Reviews() {
 
                 </div>
 
-                <a href="#" className="btn-text-stories">Mira las Reviews &rarr;</a>
+                <a href="/reviews" className="btn-text-stories">Mira las Reviews &rarr;</a>
 
             </body>
 

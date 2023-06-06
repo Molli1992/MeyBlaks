@@ -6,6 +6,7 @@ import Features from "../features/features";
 import Cards from "../card/card";
 import Reviews from "../reviews/reviews";
 import Footer from "../footer/footer";
+import Navigation from "../navigation/navigation";
 
 
 
@@ -15,6 +16,8 @@ function Inicio() {
     return (
 
         <body>
+
+            <Navigation />
 
             <Header />
 
