@@ -5,7 +5,6 @@ import Header from "../header/header";
 import About from "../about/about";
 import Features from "../features/features";
 import Cards from "../card/card";
-import Reviews from "../reviews/reviews";
 import Footer from "../footer/footer";
 import Navigation from "../navigation/navigation";
 
@@ -35,8 +34,6 @@ function Inicio() {
                 <Features />
 
                 <Cards />
-
-                <Reviews />
 
             </main>
 

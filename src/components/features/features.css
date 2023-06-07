@@ -1,4 +1,8 @@
 /* ------------------------------------ Features -----------------------------------------------------------*/
+.body-reviews {
+    margin-top: -145px;
+    padding-top: 150px;
+}
 
 .section-features {
     min-height: 95vh;
@@ -7,6 +11,7 @@
     background-size: cover;
     transform: skewY(-7deg);
     margin-top: -85px;
+    min-height: 98vh;
 }
 
 .row-feature {

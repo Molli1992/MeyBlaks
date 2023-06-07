@@ -1,6 +1,6 @@
 import React from "react";
 import "./header.css";
-import Logo from "../../img/Imgen-Adidasjpg-removebg-preview.png";
+import Logo from "../../logo/logo meyblaks-01.png";
 import { Link } from "react-router-dom";
 
 

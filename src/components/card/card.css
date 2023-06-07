@@ -14,6 +14,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 30px;
 }
 
 .card-Card {
@@ -54,58 +55,22 @@
 }
 
 .card-picture {
-    height: 230px;
+    height: 360px;
     background-size: cover;
     background-blend-mode: screen;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
 }
 
 .card-picture-1 {
-    background-image: linear-gradient(to right bottom, #ced114, #926420),
-        url("https://v3core.blue/uploads/web/products/455/buzos-egresados-frente.jpg");
+    background-image: url("../../img//Buzo-Holy-Cros.jpeg");
 }
 
 .card-picture-2 {
-    background-image: linear-gradient(to right bottom, #249c9c, #085f58),
-        url("https://v3core.blue/uploads/web/products/425/buzos-egresados-frente.jpg");
+    background-image: url("../../img/Michael-Ham-Buzo.jpeg");
 }
 
 .card-picture-3 {
-    background-image: linear-gradient(to right bottom, #1672eb, #132557),
-        url("https://v3core.blue/uploads/web/products/344/camperas-egresados-frente.jpg");
-}
-
-.card-heading {
-    font-size: 28px;
-    font-weight: 300;
-    text-transform: uppercase;
-    color: #fff;
-    position: absolute;
-    text-align: right;
-    top: 120px;
-    right: 5px;
-    width: 75%;
-}
-
-.card-heading-span {
-    padding: 0px;
-    box-decoration-break: clone;
-}
-
-.card-heading-span-1 {
-    background-image: linear-gradient(to right bottom, #ced114, #926420);
-}
-
-.card-heading-span-2 {
-    background-image: linear-gradient(to right bottom, #249c9c, #085f58);
-}
-
-.card-heading-span-3 {
-    background-image: linear-gradient(to right bottom, #1672eb, #132557);
-}
-
-.card-detail {
-    padding: 30px;
+    background-image: url("../../img/Buzo-Colegio-BDMS.jpeg");
 }
 
 .card-detail ul {
@@ -120,20 +85,8 @@
     padding: 10px;
 
     &:not(:last-child) {
-        border-bottom: 1px solid #eee;
+        border-bottom: 1px solid #d4c4c4;
     }
-}
-
-.back-1 {
-    background-image: linear-gradient(to right bottom, #ced114, #926420);
-}
-
-.back-2 {
-    background-image: linear-gradient(to right bottom, #249c9c, #085f58);
-}
-
-.back-3 {
-    background-image: linear-gradient(to right bottom, #1672eb, #132557);
 }
 
 .card_cta {
@@ -141,6 +94,11 @@
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+}
+
+.img-back {
+    width: 100%;
+    height: 100%;
 }
 
 .btn-card-back:link,
@@ -163,6 +121,27 @@
 .btn-card-back:active {
     transform: translateY(2px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-card {
+    list-style: none;
+    border: none;
+    background-color: black;
+    color: #fff;
+    width: 75px;
+    height: 35px;
+    margin: 0px 15px;
+    border-radius: 50%;
+}
+
+.button-card:hover {
+    transform: scale(1.3);
 }
 
 @media(max-width: 1050px) {

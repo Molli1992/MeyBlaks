@@ -1,123 +1,119 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./card.css";
+import IMG1MH from "../../img/michael-ham-back.jpeg";
+import IMG2HC from "../../img/buzo-holy-cross-back.jpg";
+import IMG3 from "../../img/buzo-inventado-back.jpg";
 
 
 
 function Cards() {
 
+    const [state, setState] = useState("1");
 
 
     return (
 
-        <div className="body-card">
+        <div>
 
-            <div className="u-center-text u-margin-bottom-80">
+            {state === "1" ?
 
-                <h2 className="heading-secondary">
-                    Algunos de nuestros trabajos
-                </h2>
+                <div className="body-card">
 
-            </div>
+                    <div className="u-center-text u-margin-bottom-80">
 
-            <div className='card-container'>
+                        <h2 className="heading-secondary">
+                            Algunos de nuestros trabajos
+                        </h2>
 
-                <div className="card-Card">
+                    </div>
 
-                    <div className="card-side front">
+                    <div className='card-container'>
 
-                        <div className='card-picture card-picture-1'>
-                            &nbsp;
+                        <div className="card-Card">
+
+                            <div className="card-side front">
+
+                                <div className='card-picture card-picture-1'>
+                                    &nbsp;
+                                </div>
+
+                                <div className='card-detail'>
+                                    <ul>
+                                        <li>Holy Cross</li>
+                                        <li>Año 2023</li>
+                                        <li>Friza invisble</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                            <div className="card-side back">
+                                <img src={IMG2HC} alt='Buzos' className='img-back' />
+                            </div>
+
                         </div>
 
-                        <h4 className='card-heading'>
-                            <span className='card-heading-span card-heading-span-1'>Bola de Nieve</span>
-                        </h4>
+                        <div className="card-Card">
 
-                        <div className='card-detail'>
-                            <ul>
-                                <li>Colegio Labarden</li>
-                                <li>Año 2017</li>
-                                <li>100% algodon</li>
-                                <li>Unisex</li>
-                                <li>Capucha</li>
-                            </ul>
+                            <div className="card-side front">
+
+                                <div className='card-picture card-picture-2'>
+                                    &nbsp;
+                                </div>
+
+                                <div className='card-detail'>
+                                    <ul>
+                                        <li>Michael Ham</li>
+                                        <li>Año 2023</li>
+                                        <li>Friza invisble</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                            <div className="card-side back">
+                                <img src={IMG1MH} alt='Buzos' className='img-back' />
+                            </div>
+
+                        </div>
+
+                        <div className="card-Card">
+
+                            <div className="card-side front">
+
+                                <div className='card-picture card-picture-3'>
+                                    &nbsp;
+                                </div>
+
+                                <div className='card-detail'>
+                                    <ul>
+                                        <li>BDMS</li>
+                                        <li>Año 2023</li>
+                                        <li>Friza invisble</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+
+                            <div className="card-side back">
+                                <img src={IMG3} alt='Buzos' className='img-back' />
+                            </div>
+
                         </div>
 
                     </div>
 
-                    <div className="card-side back back-1">
-                        <div className='card_cta'>
-                            <a href="https://www.instagram.com/meyblaks/" target="_blank" rel="noreferrer" className='btn-card-back'>Ver</a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div className="card-Card">
-
-                    <div className="card-side front">
-
-                        <div className='card-picture card-picture-2'>
-                            &nbsp;
-                        </div>
-
-                        <h4 className='card-heading'>
-                            <span className='card-heading-span card-heading-span-2'>Aslan</span>
-                        </h4>
-
-                        <div className='card-detail'>
-                            <ul>
-                                <li>Colegio San Juan</li>
-                                <li>Año 2020</li>
-                                <li>Algodon</li>
-                                <li>Solo Chicos</li>
-                                <li>Capucha</li>
-                            </ul>
-                        </div>
-
-                    </div>
-
-                    <div className="card-side back back-2">
-                        <div className='card_cta'>
-                            <a href="https://www.instagram.com/meyblaks/" target="_blank" rel="noreferrer" className='btn-card-back'>Ver</a>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div className="card-Card">
-
-                    <div className="card-side front">
-
-                        <div className='card-picture card-picture-3'>
-                            &nbsp;
-                        </div>
-
-                        <h4 className='card-heading'>
-                            <span className='card-heading-span card-heading-span-3'>Corazones</span>
-                        </h4>
-
-                        <div className='card-detail'>
-                            <ul>
-                                <li>Colegio la Unidad</li>
-                                <li>2014</li>
-                                <li>La Unidad</li>
-                                <li>Solo Chicas</li>
-                                <li>Capucha</li>
-                            </ul>
-                        </div>
-
-                    </div>
-
-                    <div className="card-side back back-3">
-                        <div className='card_cta'>
-                            <a href="https://www.instagram.com/meyblaks/" target="_blank" rel="noreferrer" className='btn-card-back'>Ver</a>
-                        </div>
+                    <div className='button-container'>
+                        <button to="/contact" className="button-card"> &larr; Prev</button>
+                        <button to="/contact" className="button-card">Next &rarr;</button>
                     </div>
 
                 </div>
 
-            </div>
+                :
+
+                null
+            }
 
         </div>
 

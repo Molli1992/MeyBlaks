@@ -3,7 +3,7 @@
 }
 
 .navigation-button {
-    background-color: #fff;
+    background-color: black;
     height: 60px;
     width: 60px;
     position: fixed;
@@ -15,6 +15,7 @@
 }
 
 .navigation-button ion-icon {
+    color: #fff;
     position: relative;
     height: 45px;
     width: 45px;
@@ -25,7 +26,7 @@
 
 .navigation-button-X {
     display: none;
-    background-color: #fff;
+    background-color: black;
     height: 60px;
     width: 60px;
     position: fixed;
@@ -37,6 +38,7 @@
 }
 
 .navigation-button-X ion-icon {
+    color: #fff;
     position: relative;
     height: 45px;
     width: 45px;
@@ -52,7 +54,7 @@
     position: fixed;
     top: 65px;
     right: 65px;
-    background-image: radial-gradient(#7ed56f, #28b485);
+    background-image: radial-gradient(#171816, #070707);
     z-index: 1000;
     transition: transform .8s;
 }
@@ -97,7 +99,7 @@
 
 .navigation-link:hover {
     background-position: 100%;
-    color: #55c57a;
+    color: black;
     transform: translateX(10px);
 }
 

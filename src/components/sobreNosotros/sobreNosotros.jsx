@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import About from "../about/about";
 import Footer from "../footer/footer";
-import Logo from "../../img/Imgen-Adidasjpg-removebg-preview.png";
+import Logo from "../../logo/logo meyblaks-01.png";
 import "./sobreNosotros.css";
 import Navigation from "../navigation/navigation";
 

@@ -2,7 +2,7 @@
 
 .header {
     height: 95vh;
-    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)), url("https://www.argiesment.com/images/arti/festejar-fiesta-de-egresados-buenos-aires_1.webp");
+    background-image: linear-gradient(to right bottom, rgb(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url("../../img/imagen-inicio.jpeg");
     background-size: cover;
     background-position: top;
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
@@ -22,14 +22,14 @@
 
 .text-box {
     position: absolute;
-    top: 40%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
 }
 
 .heading-primary {
-    color: #fff;
+    color: black;
     text-transform: uppercase;
     backface-visibility: hidden;
     margin-bottom: 25px;
@@ -55,8 +55,8 @@
 
 .btn:link,
 .btn:visited {
-    background-color: #fff;
-    color: #777;
+    background-color: black;
+    color: #fff;
     text-transform: uppercase;
     text-decoration: none;
     padding: 15px 40px;

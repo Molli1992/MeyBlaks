@@ -8,6 +8,43 @@
     background-color: #f7f7f7;
 }
 
+.heading-primary-contact {
+    color: black;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 25px;
+}
+
+.btn-contact:link,
+.btn-contact:visited {
+    background-color: black;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+}
+
+.btn-contact:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+}
+
+.btn-contact:active {
+    transform: translateY(2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.body-contact {
+    margin-top: -150px;
+    margin-bottom: -180px;
+    padding-top: 200px;
+    padding-bottom: 140px;
+    background-color: #f7f7f7;
+}
+
 .contact {
     position: relative;
     min-height: 100vh;
@@ -74,8 +111,8 @@
 }
 
 .contact-h3 {
-    font-weight: 500;
-    color: #00bcd4;
+    font-weight: bold;
+    color: rgb(116, 4, 4);
 }
 
 .contact-form {
@@ -140,7 +177,7 @@
 
 .btn-contacto {
     width: 100%;
-    background: #00bcd4;
+    background: black;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -151,6 +188,12 @@
 .body-contact-features {
     margin-top: 100px;
     margin-bottom: 100px;
+}
+
+.features-contact {
+    margin-bottom: -185px;
+    padding-bottom: 170px;
+    background-color: #f7f7f7;
 }
 
 @media (max-width: 991px) {

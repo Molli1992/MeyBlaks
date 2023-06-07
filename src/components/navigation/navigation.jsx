@@ -38,9 +38,6 @@ function Navigation() {
                     <li className="navigation-item">
                         <Link to="/diseño" className="navigation-link"><span>04</span>Crea tu Diseño</Link>
                     </li >
-                    <li className="navigation-item">
-                        <Link to="/reviews" className="navigation-link"><span>05</span>Reviews</Link>
-                    </li >
                 </ul >
 
             </nav >

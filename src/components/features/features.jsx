@@ -70,7 +70,7 @@ function Features() {
                             </div>
                             <h3 className="heading-tertiary">WhatsApp</h3>
                             <p className="feature-box_text">
-                                Si apretas Tambien podes escribirnos por WhatsApp
+                                Si aprietas aqui podras escribirnos por WhatsApp
                                 De manera facil y rapida
                             </p>
 

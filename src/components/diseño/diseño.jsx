@@ -4,7 +4,7 @@ import "./display.css";
 import { Form, Upload } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import Swal from 'sweetalert2';
-import Logo from "../../img/Imgen-Adidasjpg-removebg-preview.png";
+import Logo from "../../logo/logo meyblaks-01.png";
 import Footer from "../footer/footer";
 import Navigation from "../navigation/navigation";
 
@@ -495,12 +495,12 @@ function Diseño() {
 
                 <div className="text-box">
 
-                    <h1 className="heading-primary">
+                    <h1 className="heading-primary-diseño">
                         <span className="heading-primary-main">MeyBlaks</span>
                         <span className="heading-primary-sub">Es momento de Crear</span>
                     </h1>
 
-                    <Link to="/" className="btn">Inicio</Link>
+                    <Link to="/" className="btn-diseño">Inicio</Link>
 
                 </div>
 
