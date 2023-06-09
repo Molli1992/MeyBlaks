@@ -81,7 +81,8 @@ function HomeDiseño() {
 
                             <div className='card-text-diseño'>
 
-                                <button className='button-card-diseño'>Diseñar</button>
+                                <button className='button-card-diseño'
+                                    onClick={onChangeState2}>Diseñar</button>
 
                             </div>
 
@@ -95,7 +96,8 @@ function HomeDiseño() {
 
                             <div className='card-text-diseño'>
 
-                                <button className='button-card-diseño'>Diseñar</button>
+                                <button className='button-card-diseño'
+                                    onClick={onChangeState2}>Diseñar</button>
 
                             </div>
 
@@ -109,7 +111,8 @@ function HomeDiseño() {
 
                             <div className='card-text-diseño'>
 
-                                <button className='button-card-diseño'>Diseñar</button>
+                                <button className='button-card-diseño'
+                                    onClick={onChangeState2}>Diseñar</button>
 
                             </div>
 
@@ -127,7 +130,8 @@ function HomeDiseño() {
 
                             <div className='card-text-diseño'>
 
-                                <button className='button-card-diseño'>Diseñar</button>
+                                <button className='button-card-diseño'
+                                    onClick={onChangeState2}>Diseñar</button>
 
                             </div>
 
@@ -141,7 +145,8 @@ function HomeDiseño() {
 
                             <div className='card-text-diseño'>
 
-                                <button className='button-card-diseño'>Diseñar</button>
+                                <button className='button-card-diseño'
+                                    onClick={onChangeState2}>Diseñar</button>
 
                             </div>
 
@@ -155,7 +160,8 @@ function HomeDiseño() {
 
                             <div className='card-text-diseño'>
 
-                                <button className='button-card-diseño'>Diseñar</button>
+                                <button className='button-card-diseño'
+                                    onClick={onChangeState2}>Diseñar</button>
 
                             </div>
 
@@ -169,7 +175,8 @@ function HomeDiseño() {
 
                             <div className='card-text-diseño'>
 
-                                <button className='button-card-diseño'>Diseñar</button>
+                                <button className='button-card-diseño'
+                                    onClick={onChangeState2}>Diseñar</button>
 
                             </div>
 
