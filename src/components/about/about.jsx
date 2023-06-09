@@ -1,6 +1,9 @@
 import React from "react";
 import "./about.css";
 import { Link } from "react-router-dom";
+import IMGabout1 from "../../img/imagen-about-1.jpeg";
+import IMGabout2 from "../../img/imagen-about-2.jpeg";
+import IMGabout3 from "../../img/imagen-about-3.jpeg";
 
 
 
@@ -53,13 +56,13 @@ function About() {
 
                     <div className="composition">
 
-                        <img src="https://i.pinimg.com/564x/cd/56/b5/cd56b534cb8ae56a14bbdcfb1261376a.jpg"
+                        <img src={IMGabout1}
                             alt="Diseño" className="composition_photo composition_photo--p1" />
 
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_83lrw4ho0r-74KUlfNGAyjE-pSY2c5VgzbD7M9LG5_o5pv3eNH1J6QTejwCtX7lUOVs&usqp=CAU"
+                        <img src={IMGabout2}
                             alt="Diseño" className="composition_photo composition_photo--p2" />
 
-                        <img src=" https://static.wixstatic.com/media/f45411_6f105ce2f92141639cce5fd3dd9d3fea~mv2.jpg/v1/fill/w_640,h_562,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/f45411_6f105ce2f92141639cce5fd3dd9d3fea~mv2.jpg"
+                        <img src={IMGabout3}
                             alt="Diseño" className="composition_photo composition_photo--p3" />
 
                     </div>
