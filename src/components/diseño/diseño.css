@@ -1,39 +1,8 @@
-.header-diseño {
-    height: 95vh;
-    background-image: linear-gradient(to right bottom, rgb(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url("../../img/imagen-diseño.jpeg");
-    background-size: cover;
-    background-position: top;
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-    position: relative;
-}
-
-.heading-primary-diseño {
-    color: black;
-    text-transform: uppercase;
-    backface-visibility: hidden;
-    margin-bottom: 25px;
-}
-
-.btn-diseño:link,
-.btn-diseño:visited {
-    background-color: black;
-    color: #fff;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 15px 40px;
-    display: inline-block;
-    border-radius: 100px;
-    transition: all .2s;
-}
-
-.btn-diseño:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
-}
-
-.btn-diseño:active {
-    transform: translateY(2px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+.body-diseños {
+    margin-top: -125px;
+    padding-top: 200px;
+    text-align: center;
+    background-color: #f7f7f7;
 }
 
 .row-diseño {

@@ -13,7 +13,7 @@ function Cards() {
     const onChangeStateSuma = () => {
 
         if (state === 5) {
-            return
+            setState(1);
         } else {
 
             let number = state + 1;
@@ -26,7 +26,7 @@ function Cards() {
     const onChangeStateResta = () => {
 
         if (state === 1) {
-            return
+            setState(5);
         } else {
 
             let number = state - 1;

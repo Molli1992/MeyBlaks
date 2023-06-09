@@ -1,22 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from 'react-router-dom';
-import "./display.css";
+import "./diseño.css";
 import { Form, Upload } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import Swal from 'sweetalert2';
-import Logo from "../../logo/logo meyblaks-01.png";
-import Footer from "../footer/footer";
-import Navigation from "../navigation/navigation";
 
 
 
 function Diseño() {
-
-    const location = useLocation();
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [location]);
 
     const [colorTshirt, setColorTshirt] = useState("https://res.cloudinary.com/dkkgmzpqd/image/upload/v1545217305/T-shirt%20Images/black.png");
     const [text1, setText1] = useState("Text 1");
@@ -481,30 +471,16 @@ function Diseño() {
 
     };
 
+    const goBack = () => {
+
+        window.location.reload();
+    };
+
     return (
 
-        <div>
+        <div className="body-diseños">
 
-            <Navigation />
-
-            <header className="header-diseño">
-
-                <div className="logo-box">
-                    <img src={Logo} alt="Logo" className="logo" />
-                </div>
-
-                <div className="text-box">
-
-                    <h1 className="heading-primary-diseño">
-                        <span className="heading-primary-main">MeyBlaks</span>
-                        <span className="heading-primary-sub">Es momento de Crear</span>
-                    </h1>
-
-                    <Link to="/" className="btn-diseño">Inicio</Link>
-
-                </div>
-
-            </header>
+            <button className="btn btn-primary btn-sm mb-2" onClick={goBack}> &larr; Atras</button>
 
             <div className="container py-5">
 
@@ -741,8 +717,6 @@ function Diseño() {
                 </div>
 
             </div >
-
-            <Footer />
 
         </div >
 

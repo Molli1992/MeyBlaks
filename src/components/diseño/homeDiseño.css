@@ -1,0 +1,79 @@
+.header-diseño {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, rgb(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url("../../img/imagen-diseño.jpeg");
+    background-size: cover;
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    position: relative;
+}
+
+.heading-primary-diseño {
+    color: black;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 25px;
+}
+
+.btn-diseño:link,
+.btn-diseño:visited {
+    background-color: black;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s;
+}
+
+.btn-diseño:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+}
+
+.btn-diseño:active {
+    transform: translateY(2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.body-card-diseño {
+    margin-top: -125px;
+    padding-top: 175px;
+    min-height: 100vh;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.card-container-diseño {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-diseño {
+    width: 20%;
+    border: 1px solid black;
+    margin: 20px;
+}
+
+.img-card-diseño {
+    width: 100%;
+}
+
+.button-card-diseño {
+    width: 100px;
+    border: none;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 50%;
+    margin: 5px;
+    color: #fff;
+    background-color: black;
+}
+
+.button-card-diseño:hover {
+    transform: scale(1.1);
+    background-color: #fff;
+    color: black;
+}
