@@ -480,8 +480,6 @@ function Diseño() {
 
         <div className="body-diseños">
 
-            <button className="btn btn-primary btn-sm mb-2" onClick={goBack}> &larr; Atras</button>
-
             <div className="container py-5">
 
                 <div className="row-diseño">
@@ -711,6 +709,7 @@ function Diseño() {
                             <hr />
 
                             <button className="btn btn-primary btn-sm mb-2">Save</button>
+                            <button className="btn btn-primary btn-sm mb-2" onClick={goBack}> &larr; Atras</button>
                         </div>
                     </div>
 
