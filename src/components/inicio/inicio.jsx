@@ -7,6 +7,7 @@ import Features from "../features/features";
 import Cards from "../card/card";
 import Footer from "../footer/footer";
 import Navigation from "../navigation/navigation";
+import Reviews from '../reviews/reviews';
 
 
 
@@ -34,6 +35,8 @@ function Inicio() {
                 <Features />
 
                 <Cards />
+
+                <Reviews />
 
             </main>
 

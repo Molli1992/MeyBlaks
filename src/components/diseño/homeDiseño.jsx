@@ -119,10 +119,6 @@ function HomeDiseño() {
 
                         </div>
 
-                    </div>
-
-                    <div className='card-container-diseño'>
-
                         <div className='card-diseño'>
 
                             <img src='https://www.tresovejas.com.ar/uploads/buzo1.svg' alt='Diseño'
