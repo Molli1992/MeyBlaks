@@ -88,7 +88,7 @@ function Cards() {
                             </div>
 
                             <div className="card-side back">
-                                <img src={IMG1Back} alt='Buzos' className='img-back' />
+                                <img src={IMG2Back} alt='Buzos' className='img-back' />
                             </div>
 
                         </div>
@@ -112,7 +112,7 @@ function Cards() {
                             </div>
 
                             <div className="card-side back">
-                                <img src={IMG2Back} alt='Buzos' className='img-back' />
+                                <img src={IMG1Back} alt='Buzos' className='img-back' />
                             </div>
 
                         </div>
