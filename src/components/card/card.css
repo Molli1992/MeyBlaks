@@ -70,7 +70,55 @@
 }
 
 .card-picture-3 {
-    background-image: url("../../img/Buzo-Colegio-BDMS.jpeg");
+    background-image: url("../../img/imagen-front-3.jpeg");
+}
+
+.card-picture-4 {
+    background-image: url("../../img/imagen-front-4.jpeg");
+}
+
+.card-picture-5 {
+    background-image: url("../../img/imagen-front-5.jpeg");
+}
+
+.card-picture-6 {
+    background-image: url("../../img/imagen-front-6.jpeg");
+}
+
+.card-picture-7 {
+    background-image: url("../../img/imagen-front-7.jpeg");
+}
+
+.card-picture-8 {
+    background-image: url("../../img/imagen-front-8.jpeg");
+}
+
+.card-picture-9 {
+    background-image: url("../../img/imagen-front-9.jpeg");
+}
+
+.card-picture-10 {
+    background-image: url("../../img/imagen-front-10.jpeg");
+}
+
+.card-picture-11 {
+    background-image: url("../../img/imagen-front-11.jpeg");
+}
+
+.card-picture-12 {
+    background-image: url("../../img/imagen-front-12.jpeg");
+}
+
+.card-picture-13 {
+    background-image: url("../../img/imagen-front-13.jpeg");
+}
+
+.card-picture-14 {
+    background-image: url("../../img/imagen-front-14.jpeg");
+}
+
+.card-picture-15 {
+    background-image: url("../../img/imagen-front-15.jpeg");
 }
 
 .card-detail ul {
