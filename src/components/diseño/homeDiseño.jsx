@@ -5,6 +5,12 @@ import Footer from "../footer/footer";
 import Navigation from "../navigation/navigation";
 import { Link, useLocation } from 'react-router-dom';
 import Diseño1 from "./diseño1";
+import Remera1Adelante from "../../img/remera1Adelante.png";
+import Remera2Adelante from "../../img/remera2Adelante.png";
+import Remera3Adelante from "../../img/remera3adelante.png";
+import Remera3Atras from "../../img/remera3Atras.png";
+import Buzo1Adelante from "../../img/buzo1Adelante.png";
+import Buzo1Atras from "../../img/buzo1Atras.png";
 
 
 
@@ -61,7 +67,7 @@ function HomeDiseño() {
 
                         <div className='card-diseño'>
 
-                            <img src='https://www.tresovejas.com.ar/uploads/buzo1.svg' alt='Diseño'
+                            <img src={Remera1Adelante} alt='Diseño'
                                 className='img-card-diseño' />
 
                             <div className='card-text-diseño'>
@@ -76,7 +82,7 @@ function HomeDiseño() {
 
                         <div className='card-diseño'>
 
-                            <img src='https://www.tresovejas.com.ar/uploads/buzo1.svg' alt='Diseño'
+                            <img src={Remera2Adelante} alt='Diseño'
                                 className='img-card-diseño' />
 
                             <div className='card-text-diseño'>
@@ -91,7 +97,7 @@ function HomeDiseño() {
 
                         <div className='card-diseño'>
 
-                            <img src='https://www.tresovejas.com.ar/uploads/buzo1.svg' alt='Diseño'
+                            <img src={Remera3Adelante} alt='Diseño'
                                 className='img-card-diseño' />
 
                             <div className='card-text-diseño'>
@@ -106,7 +112,7 @@ function HomeDiseño() {
 
                         <div className='card-diseño'>
 
-                            <img src='https://www.tresovejas.com.ar/uploads/buzo1.svg' alt='Diseño'
+                            <img src={Remera3Atras} alt='Diseño'
                                 className='img-card-diseño' />
 
                             <div className='card-text-diseño'>
@@ -121,7 +127,7 @@ function HomeDiseño() {
 
                         <div className='card-diseño'>
 
-                            <img src='https://www.tresovejas.com.ar/uploads/buzo1.svg' alt='Diseño'
+                            <img src={Buzo1Adelante} alt='Diseño'
                                 className='img-card-diseño' />
 
                             <div className='card-text-diseño'>
@@ -136,7 +142,7 @@ function HomeDiseño() {
 
                         <div className='card-diseño'>
 
-                            <img src='https://www.tresovejas.com.ar/uploads/buzo1.svg' alt='Diseño'
+                            <img src={Buzo1Atras} alt='Diseño'
                                 className='img-card-diseño' />
 
                             <div className='card-text-diseño'>

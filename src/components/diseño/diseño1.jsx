@@ -3,18 +3,20 @@ import "./diseño.css";
 import { Form, Upload } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import Swal from 'sweetalert2';
+import Buzo1Adelante from "../../img/buzo1Adelante.png";
 
 
 
 function Diseño() {
 
-    const [colorTshirt, setColorTshirt] = useState("https://res.cloudinary.com/dkkgmzpqd/image/upload/v1545217305/T-shirt%20Images/black.png");
     const [text1, setText1] = useState("Text 1");
     const [text2, setText2] = useState("Text 2");
     const [text1FontSize, setText1FontSixe] = useState("18px");
     const [text2FontSize, setText2FontSixe] = useState("18px");
     const [colorText1, setColorText1] = useState("grey");
     const [colorText2, setColorText2] = useState("grey");
+    const [positionText1 , setPositionText1] = useState("horizontal");
+    const [positionText2 , setPositionText2] = useState("horizontal");
     const [image, setImage] = useState("http://via.placeholder.com/400x300");
     const [fileList, setFileList] = useState([]);
     const [input, setInput] = useState({
@@ -25,30 +27,64 @@ function Diseño() {
         "32px", "34px", "36px", "38px", "40px", "42px", "44px", "46px", "48px", "50px", "52px", "54px", "56px"];
     const arrayColorText = ["white", "black", "grey", "blue", "red"];
 
-    const blackTshirt = "https://res.cloudinary.com/dkkgmzpqd/image/upload/v1545217305/T-shirt%20Images/black.png";
-    const whiteTshirt = "https://res.cloudinary.com/dkkgmzpqd/image/upload/v1545217305/T-shirt%20Images/white.png";
-    const greyTshirt = "https://res.cloudinary.com/dkkgmzpqd/image/upload/v1545217305/T-shirt%20Images/grey.png";
-    const redTshirt = "https://res.cloudinary.com/dkkgmzpqd/image/upload/v1545217305/T-shirt%20Images/red.png";
-    const blueTshirt = "https://res.cloudinary.com/dkkgmzpqd/image/upload/v1545217305/T-shirt%20Images/blue.png";
+    const texto1Agregar = () => {
 
-    const onClickBlackTshirt = () => {
-        setColorTshirt(blackTshirt)
+        const texto1 = document.getElementById("texto-1");
+
+        texto1.style.display = "flex";
+
     };
 
-    const onClickWhiteTshirt = () => {
-        setColorTshirt(whiteTshirt)
+    const texto2Agregar = () => {
+
+        const texto2 = document.getElementById("texto-2");
+
+        texto2.style.display = "flex";
+
     };
 
-    const onClickGreyTshirt = () => {
-        setColorTshirt(greyTshirt)
+    const texto1Girar = () => {
+
+        const text1 = document.getElementById("texto-1");
+
+        if(positionText1 === "vertical") {
+
+            text1.style.writingMode = "horizontal-tb";
+
+            setPositionText1("horizontal")
+
+        } else {
+
+            text1.style.writingMode = "vertical-rl";
+            text1.style.textOrientation = "mixed";
+            text1.style.whiteSpace = "nowrap";
+
+            setPositionText1("vertical")
+
+        }
+
     };
 
-    const onClickRedTshirt = () => {
-        setColorTshirt(redTshirt)
-    };
+    const texto2Girar = () => {
 
-    const onClickBlueTshirt = () => {
-        setColorTshirt(blueTshirt)
+        const text2 = document.getElementById("texto-2");
+
+        if(positionText2 === "vertical") {
+
+            text2.style.writingMode = "horizontal-tb";
+
+            setPositionText2("horizontal")
+
+        } else {
+
+            text2.style.writingMode = "vertical-rl";
+            text2.style.textOrientation = "mixed";
+            text2.style.whiteSpace = "nowrap";
+
+            setPositionText2("vertical")
+
+        }
+
     };
 
     const onChangeText1 = (e) => {
@@ -77,73 +113,82 @@ function Diseño() {
         setColorText2(e.target.value)
     };
 
-    const onChangeInputImage = (e) => {
-        setFileList(e.fileList);
-    };
+    const onChangeStyleText1 = () => {
 
-    const handleFileListChange = ({ fileList }) => {
-        setFileList(fileList);
-        setInput(
-            {
-                ...input,
-                img: [...fileList]
-            }
-        );
-    };
+        const selectP1 = document.getElementById("select-family-p-1");
+        const parrafo1 = document.getElementById("family-p-1");
 
-    const handleSubmitImage = (e) => {
+        if (selectP1.value === "Georgia") {
 
-        if (input.img.length === 0) {
+            parrafo1.style.fontFamily = "Georgia";
 
-            Swal.fire({
-                title: "Error!",
-                text: 'Debes cargar la imagen',
-                icon: "error",
-                confirmButtonText: 'Ok',
-                customClass: {
-                    confirmButton: "swalButton"
-                }
-            })
+        } else if (selectP1.value === "Gill Sans") {
 
-        } else if (!input.img[0].thumbUrl) {
+            parrafo1.style.fontFamily = "Gill Sans";
 
-            Swal.fire({
-                title: "Error!",
-                text: 'La imagen ya existe, cargar otra',
-                icon: "error",
-                confirmButtonText: 'Ok',
-                customClass: {
-                    confirmButton: "swalButton"
-                }
-            })
+        } else if (selectP1.value === "sans-serif") {
 
-        } else if (input.img.length > 1) {
+            parrafo1.style.fontFamily = "sans-serif";
 
-            const length = input.img.length - 1;
+        } else if (selectP1.value === "serif") {
 
-            setInput(
-                {
-                    ...input,
-                    img: [input.img[length].thumbUrl]
-                }
-            );
-            setImage(input.img[length].thumbUrl)
+            parrafo1.style.fontFamily = "serif";
+
+        } else if (selectP1.value === "cursive") {
+
+            parrafo1.style.fontFamily = "cursive";
+
+        } else if (selectP1.value === "system-ui") {
+
+            parrafo1.style.fontFamily = "system-ui";
 
         } else {
 
-            setInput(
-                {
-                    ...input,
-                    img: [input.img[0].thumbUrl]
-                }
-            );
-            setImage(input.img[0].thumbUrl)
+            parrafo1.style.fontFamily = "Georgia";
+
+        }
+
+
+    };
+
+    const onChangeStyleText2 = () => {
+
+        const selectP2 = document.getElementById("select-family-p-2");
+        const parrafo2 = document.getElementById("family-p-2");
+
+        parrafo2.style.fontFamily = "Georgia";
+
+        if (selectP2.value === "Georgia") {
+
+            parrafo2.style.fontFamily = "Georgia";
+
+        } else if (selectP2.value === "Gill Sans") {
+
+            parrafo2.style.fontFamily = "Gill Sans";
+
+        } else if (selectP2.value === "sans-serif") {
+
+            parrafo2.style.fontFamily = "sans-serif";
+
+        } else if (selectP2.value === "serif") {
+
+            parrafo2.style.fontFamily = "serif";
+
+        } else if (selectP2.value === "cursive") {
+
+            parrafo2.style.fontFamily = "cursive";
+
+        } else if (selectP2.value === "system-ui") {
+
+            parrafo2.style.fontFamily = "system-ui";
+
+        } else {
+
+            parrafo2.style.fontFamily = "Georgia";
 
         }
 
     };
-
-    console.log(input);
 
     //-------------------------------------------------------------
 
@@ -315,6 +360,72 @@ function Diseño() {
 
     // ------------------------------------------------------------------
 
+    const onChangeInputImage = (e) => {
+        setFileList(e.fileList);
+    };
+
+    const handleFileListChange = ({ fileList }) => {
+        setFileList(fileList);
+        setInput(
+            {
+                ...input,
+                img: [...fileList]
+            }
+        );
+    };
+
+    const handleSubmitImage = (e) => {
+
+        if (input.img.length === 0) {
+
+            Swal.fire({
+                title: "Error!",
+                text: 'Debes cargar la imagen',
+                icon: "error",
+                confirmButtonText: 'Ok',
+                customClass: {
+                    confirmButton: "swalButton"
+                }
+            })
+
+        } else if (!input.img[0].thumbUrl) {
+
+            Swal.fire({
+                title: "Error!",
+                text: 'La imagen ya existe, cargar otra',
+                icon: "error",
+                confirmButtonText: 'Ok',
+                customClass: {
+                    confirmButton: "swalButton"
+                }
+            })
+
+        } else if (input.img.length > 1) {
+
+            const length = input.img.length - 1;
+
+            setInput(
+                {
+                    ...input,
+                    img: [input.img[length].thumbUrl]
+                }
+            );
+            setImage(input.img[length].thumbUrl)
+
+        } else {
+
+            setInput(
+                {
+                    ...input,
+                    img: [input.img[0].thumbUrl]
+                }
+            );
+            setImage(input.img[0].thumbUrl)
+
+        }
+
+    };
+
     const imgCheck = () => {
 
         const imgDiv = document.getElementById("img-check");
@@ -328,22 +439,6 @@ function Diseño() {
         const imgDiv = document.getElementById("img-check");
 
         imgDiv.style.display = "none";
-
-    };
-
-    const texto1Agregar = () => {
-
-        const texto1 = document.getElementById("texto-1");
-
-        texto1.style.display = "flex";
-
-    };
-
-    const texto2Agregar = () => {
-
-        const texto2 = document.getElementById("texto-2");
-
-        texto2.style.display = "flex";
 
     };
 
@@ -394,83 +489,6 @@ function Diseño() {
 
     };
 
-    const onChangeStyleText1 = () => {
-
-        const selectP1 = document.getElementById("select-family-p-1");
-        const parrafo1 = document.getElementById("family-p-1");
-
-        if (selectP1.value === "Georgia") {
-
-            parrafo1.style.fontFamily = "Georgia";
-
-        } else if (selectP1.value === "Gill Sans") {
-
-            parrafo1.style.fontFamily = "Gill Sans";
-
-        } else if (selectP1.value === "sans-serif") {
-
-            parrafo1.style.fontFamily = "sans-serif";
-
-        } else if (selectP1.value === "serif") {
-
-            parrafo1.style.fontFamily = "serif";
-
-        } else if (selectP1.value === "cursive") {
-
-            parrafo1.style.fontFamily = "cursive";
-
-        } else if (selectP1.value === "system-ui") {
-
-            parrafo1.style.fontFamily = "system-ui";
-
-        } else {
-
-            parrafo1.style.fontFamily = "Georgia";
-
-        }
-
-
-    };
-
-    const onChangeStyleText2 = () => {
-
-        const selectP2 = document.getElementById("select-family-p-2");
-        const parrafo2 = document.getElementById("family-p-2");
-
-        parrafo2.style.fontFamily = "Georgia";
-
-        if (selectP2.value === "Georgia") {
-
-            parrafo2.style.fontFamily = "Georgia";
-
-        } else if (selectP2.value === "Gill Sans") {
-
-            parrafo2.style.fontFamily = "Gill Sans";
-
-        } else if (selectP2.value === "sans-serif") {
-
-            parrafo2.style.fontFamily = "sans-serif";
-
-        } else if (selectP2.value === "serif") {
-
-            parrafo2.style.fontFamily = "serif";
-
-        } else if (selectP2.value === "cursive") {
-
-            parrafo2.style.fontFamily = "cursive";
-
-        } else if (selectP2.value === "system-ui") {
-
-            parrafo2.style.fontFamily = "system-ui";
-
-        } else {
-
-            parrafo2.style.fontFamily = "Georgia";
-
-        }
-
-    };
-
     const goBack = () => {
 
         window.location.reload();
@@ -490,8 +508,9 @@ function Diseño() {
 
                             <div className="imgTshirt text-center">
                                 <img
+                                    id="color-img"
                                     className="img-responsive"
-                                    src={colorTshirt}
+                                    src={Buzo1Adelante}
                                     alt="img Tshirt"
                                 />
                             </div>
@@ -532,41 +551,16 @@ function Diseño() {
                         <div className="card bg-ligth container">
 
                             <h3 className="text-center">Settings</h3>
-                            <h4>Change T-Shirt Color</h4>
-
-                            <div className="tshirt-color">
-
-                                <button className="button-tshirt-color" onClick={onClickWhiteTshirt}>
-                                    <img src="https://res.cloudinary.com/dkkgmzpqd/image/upload/v1545217305/T-shirt%20Images/white.png" alt="white-tshirt" />
-                                </button>
-
-                                <button className="button-tshirt-color" onClick={onClickBlackTshirt}>
-                                    <img src="https://res.cloudinary.com/dkkgmzpqd/image/upload/v1545217305/T-shirt%20Images/black.png" alt="black-tshirt" />
-                                </button>
-
-                                <button className="button-tshirt-color" onClick={onClickGreyTshirt}>
-                                    <img src="https://res.cloudinary.com/dkkgmzpqd/image/upload/v1545217305/T-shirt%20Images/grey.png" alt="grey-tshirt" />
-                                </button>
-
-                                <button className="button-tshirt-color" onClick={onClickBlueTshirt}>
-                                    <img src="https://res.cloudinary.com/dkkgmzpqd/image/upload/v1545217305/T-shirt%20Images/blue.png" alt="blue-tshirt" />
-                                </button>
-
-                                <button className="button-tshirt-color" onClick={onClickRedTshirt}>
-                                    <img src="https://res.cloudinary.com/dkkgmzpqd/image/upload/v1545217305/T-shirt%20Images/red.png" alt="red-tshirt" />
-                                </button>
-
-                            </div>
-
-                            <hr />
 
                             <h4>Write Text</h4>
 
                             <input type="text" className="form-control form-control-sm mb-2" placeholder="Text 1" onChange={onChangeText1} />
                             <button className="btn btn-primary btn-sm mb-2" onClick={texto1Agregar}>Agregar Texto 1</button>
+                            <button className="btn btn-primary btn-sm mb-2" onClick={texto1Girar}>Girar Texto 1</button>
 
                             <input type="text" className="form-control form-control-sm mb-2" placeholder="Text 2" onChange={onChangeText2} />
                             <button className="btn btn-primary btn-sm mb-2" onClick={texto2Agregar}>Agregar Texto 2</button>
+                            <button className="btn btn-primary btn-sm mb-2" onClick={texto2Girar}>Girar Texto 2</button>
 
                             <hr />
 
@@ -603,7 +597,7 @@ function Diseño() {
 
                                     </Form.Item>
 
-                                    <button className="btn btn-primary btn-sm mb-2" onClick={handleSubmitImage}>Upload Img</button>
+                                    <button className="btn btn-primary btn-sm mb-2" onClick={handleSubmitImage}>Subir Imagen</button>
 
                                 </Form >
 

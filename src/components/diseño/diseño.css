@@ -10,12 +10,12 @@
 }
 
 .imgTshirt {
-    position: relative;
+    height: 650px;
 }
 
 .imgTshirt img {
-    height: 550px;
-    width: 75%;
+    height: 100%;
+    width: 100%;
 }
 
 .memeText {
@@ -59,7 +59,6 @@
 
 .button-tshirt-color {
     text-decoration: none;
-    background: none;
     border: none;
     width: 15%;
     height: 15%;
