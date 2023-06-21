@@ -1,6 +1,6 @@
 .header-about {
     height: 95vh;
-    background-image: linear-gradient(to right bottom, rgba(172, 134, 134, 0.7), rgba(49, 18, 18, 0.7)), url("https://previews.123rf.com/images/maximkostenko/maximkostenko1410/maximkostenko141000001/32333478-lugar-de-trabajo-hombre-trabajando-en-la-computadora-port%C3%A1til.jpg");
+    background-image: linear-gradient(to right bottom, rgba(34, 13, 13, 0.7), rgba(8, 3, 3, 0.7));
     background-size: cover;
     background-position: top;
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);

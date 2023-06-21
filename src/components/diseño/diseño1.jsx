@@ -15,8 +15,8 @@ function Diseño() {
     const [text2FontSize, setText2FontSixe] = useState("18px");
     const [colorText1, setColorText1] = useState("grey");
     const [colorText2, setColorText2] = useState("grey");
-    const [positionText1 , setPositionText1] = useState("horizontal");
-    const [positionText2 , setPositionText2] = useState("horizontal");
+    const [positionText1, setPositionText1] = useState("horizontal");
+    const [positionText2, setPositionText2] = useState("horizontal");
     const [image, setImage] = useState("http://via.placeholder.com/400x300");
     const [fileList, setFileList] = useState([]);
     const [input, setInput] = useState({
@@ -47,7 +47,7 @@ function Diseño() {
 
         const text1 = document.getElementById("texto-1");
 
-        if(positionText1 === "vertical") {
+        if (positionText1 === "vertical") {
 
             text1.style.writingMode = "horizontal-tb";
 
@@ -69,7 +69,7 @@ function Diseño() {
 
         const text2 = document.getElementById("texto-2");
 
-        if(positionText2 === "vertical") {
+        if (positionText2 === "vertical") {
 
             text2.style.writingMode = "horizontal-tb";
 
@@ -494,6 +494,25 @@ function Diseño() {
         window.location.reload();
     };
 
+
+    // -------------------------- color t-shirt ------------------------------
+
+    const colorBlue = () => {
+
+        const img = document.getElementById("color-img")
+
+        img.style.background = "blue";
+
+    };
+
+    const colorWhite = () => {
+
+        const img = document.getElementById("color-img")
+
+        img.style.background = "white";
+
+    };
+
     return (
 
         <div className="body-diseños">
@@ -540,6 +559,55 @@ function Diseño() {
                                 <div className="box" ref={boxRef2}>
                                     <p id="family-p-2" style={{ fontSize: text2FontSize, color: colorText2 }} >{text2}</p>
                                 </div>
+
+                            </div>
+
+                        </div>
+
+                        <div className="color-body">
+
+                            <div className="color-container">
+
+                                <button className="color-tshirt-white" style={{ background: "white" }} onClick={colorWhite}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+
+                            </div>
+
+                            <div className="color-container">
+
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+
+                            </div>
+
+                            <div className="color-container">
+
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
 
                             </div>
 

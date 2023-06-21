@@ -9,6 +9,33 @@
     display: flex;
 }
 
+.color-body {
+    display: block;
+}
+
+.color-container {
+    display: flex;
+}
+
+.color-tshirt-white {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border: 1px solid black;
+}
+
+.color-tshirt {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+}
+
 .imgTshirt {
     height: 650px;
 }
@@ -43,25 +70,6 @@
 .memeText p {
     font-family: Impact, Charcoal, sans-serif;
     color: #fff;
-}
-
-.tshirt-color {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.tshirt-color img {
-    width: 100%;
-    height: 100%;
-}
-
-.button-tshirt-color {
-    text-decoration: none;
-    border: none;
-    width: 15%;
-    height: 15%;
 }
 
 .box {
