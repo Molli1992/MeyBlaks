@@ -740,7 +740,7 @@ function Diseño() {
                             </div>
 
                             <canvas
-                                className="canvas-draw"
+                                className="canvas-draw-5"
                                 onMouseDown={startDrawing}
                                 onMouseUp={finishDrawing}
                                 onMouseMove={draw}
