@@ -5,6 +5,13 @@
     background-color: #f7f7f7;
 }
 
+.canvas-draw {
+    background-image: url("../../img/buzo1Adelante.png");
+    background-size: cover;
+    width: 700px;
+    height: 700px;
+}
+
 .row-diseño {
     display: flex;
 }

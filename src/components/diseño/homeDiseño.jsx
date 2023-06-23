@@ -82,7 +82,7 @@ function HomeDiseño() {
 
                         <div className='card-diseño'>
 
-                            <img src={Remera2Adelante} alt='Diseño'
+                            <img src={Remera3Atras} alt='Diseño'
                                 className='img-card-diseño' />
 
                             <div className='card-text-diseño'>
@@ -97,7 +97,7 @@ function HomeDiseño() {
 
                         <div className='card-diseño'>
 
-                            <img src={Remera3Adelante} alt='Diseño'
+                            <img src={Remera2Adelante} alt='Diseño'
                                 className='img-card-diseño' />
 
                             <div className='card-text-diseño'>
@@ -157,7 +157,7 @@ function HomeDiseño() {
 
                         <div className='card-diseño'>
 
-                            <img src='https://www.tresovejas.com.ar/uploads/buzo1.svg' alt='Diseño'
+                            <img src={Remera3Adelante} alt='Diseño'
                                 className='img-card-diseño' />
 
                             <div className='card-text-diseño'>
@@ -172,7 +172,7 @@ function HomeDiseño() {
 
                         <div className='card-diseño'>
 
-                            <img src='https://www.tresovejas.com.ar/uploads/buzo1.svg' alt='Diseño'
+                            <img src={Remera3Atras} alt='Diseño'
                                 className='img-card-diseño' />
 
                             <div className='card-text-diseño'>

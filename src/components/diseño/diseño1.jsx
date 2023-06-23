@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
-import "./diseño.css";
+import "./diseño1.css";
 import { Form, Upload } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import Swal from 'sweetalert2';
-import Buzo1Adelante from "../../img/buzo1Adelante.png";
 
 
 
@@ -497,19 +496,197 @@ function Diseño() {
 
     // -------------------------- color t-shirt ------------------------------
 
-    const colorBlue = () => {
+    const colorWhite = () => {
 
-        const img = document.getElementById("color-img")
+        const canvas = canvasRef.current;
+        const context = canvas.getContext("2d");
 
-        img.style.background = "blue";
+        context.strokeStyle = "white";
 
     };
 
-    const colorWhite = () => {
+    const colorBlue = () => {
 
-        const img = document.getElementById("color-img")
+        const canvas = canvasRef.current;
+        const context = canvas.getContext("2d");
 
-        img.style.background = "white";
+        context.strokeStyle = "blue";
+
+    };
+
+    const colorBlack = () => {
+
+        const canvas = canvasRef.current;
+        const context = canvas.getContext("2d");
+
+        context.strokeStyle = "black";
+
+    };
+
+    const colorRed = () => {
+
+        const canvas = canvasRef.current;
+        const context = canvas.getContext("2d");
+
+        context.strokeStyle = "red";
+
+    };
+
+    const colorYellow = () => {
+
+        const canvas = canvasRef.current;
+        const context = canvas.getContext("2d");
+
+        context.strokeStyle = "yellow";
+
+    };
+
+    const colorGreen = () => {
+
+        const canvas = canvasRef.current;
+        const context = canvas.getContext("2d");
+
+        context.strokeStyle = "green";
+
+    };
+
+    const colorGray = () => {
+
+        const canvas = canvasRef.current;
+        const context = canvas.getContext("2d");
+
+        context.strokeStyle = "gray";
+
+    };
+
+    const colorPurpule = () => {
+
+        const canvas = canvasRef.current;
+        const context = canvas.getContext("2d");
+
+        context.strokeStyle = "purpule";
+
+    };
+
+    const colorOrange = () => {
+
+        const canvas = canvasRef.current;
+        const context = canvas.getContext("2d");
+
+        context.strokeStyle = "orange";
+
+    };
+
+    const colorViolet = () => {
+
+        const canvas = canvasRef.current;
+        const context = canvas.getContext("2d");
+
+        context.strokeStyle = "violet";
+
+    };
+
+
+    // ----------------------------------- Canvas -------------------------------------------------------
+
+    const canvasRef = useRef(null);
+    const contextRef = useRef(null);
+    const [isDrawing, setIsDrawing] = useState(false);
+
+    useEffect(() => {
+
+        const canvas = canvasRef.current;
+        canvas.width = 1400;
+        canvas.height = 1400;
+
+        const context = canvas.getContext("2d");
+        context.scale(2, 2);
+        context.lineCap = "round";
+        context.strokeStyle = "black";
+        context.lineWidth = 5;
+        contextRef.current = context;
+
+
+    }, []);
+
+    const startDrawing = ({ nativeEvent }) => {
+
+        const { offsetX, offsetY } = nativeEvent;
+        contextRef.current.beginPath();
+        contextRef.current.moveTo(offsetX, offsetY);
+        setIsDrawing(true);
+
+    };
+
+    const finishDrawing = () => {
+
+        contextRef.current.closePath();
+        setIsDrawing(false);
+
+    };
+
+    const draw = ({ nativeEvent }) => {
+
+        if (!isDrawing) {
+            return
+        }
+
+        const { offsetX, offsetY } = nativeEvent;
+        contextRef.current.lineTo(offsetX, offsetY);
+        contextRef.current.stroke();
+
+    };
+
+    const onChangeSizePincel = (e) => {
+
+        const canvas = canvasRef.current;
+        const context = canvas.getContext("2d");
+
+        console.log(e.target.value)
+
+        if (e.target.value === "5") {
+            context.lineWidth = 5;
+        }
+
+        if (e.target.value === "7") {
+            context.lineWidth = 7;
+        }
+
+        if (e.target.value === "9") {
+            context.lineWidth = 9;
+        }
+
+        if (e.target.value === "11") {
+            context.lineWidth = 11;
+        }
+
+        if (e.target.value === "13") {
+            context.lineWidth = 13;
+        }
+
+        if (e.target.value === "15") {
+            context.lineWidth = 15;
+        }
+
+        if (e.target.value === "17") {
+            context.lineWidth = 17;
+        }
+
+        if (e.target.value === "19") {
+            context.lineWidth = 19;
+        }
+
+        if (e.target.value === "21") {
+            context.lineWidth = 21;
+        }
+
+        if (e.target.value === "23") {
+            context.lineWidth = 23;
+        }
+
+        if (e.target.value === "25") {
+            context.lineWidth = 25;
+        }
 
     };
 
@@ -523,16 +700,9 @@ function Diseño() {
 
                     <div className="col-lg-8 display">
 
-                        <div className="card card-content" ref={constcontainerRef2}>
+                        <h1>Primero pintar luego agregar texto y imagen</h1>
 
-                            <div className="imgTshirt text-center">
-                                <img
-                                    id="color-img"
-                                    className="img-responsive"
-                                    src={Buzo1Adelante}
-                                    alt="img Tshirt"
-                                />
-                            </div>
+                        <div className="card card-content" ref={constcontainerRef2}>
 
                             <div className="memeText" id="img-check" ref={constcontainerRef}>
 
@@ -562,6 +732,16 @@ function Diseño() {
 
                             </div>
 
+                            <canvas
+                                className="canvas-draw"
+                                onMouseDown={startDrawing}
+                                onMouseUp={finishDrawing}
+                                onMouseMove={draw}
+                                ref={canvasRef}
+                            >
+
+                            </canvas>
+
                         </div>
 
                         <div className="color-body">
@@ -570,14 +750,14 @@ function Diseño() {
 
                                 <button className="color-tshirt-white" style={{ background: "white" }} onClick={colorWhite}></button>
                                 <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
+                                <button className="color-tshirt" style={{ background: "black" }} onClick={colorBlack}></button>
+                                <button className="color-tshirt" style={{ background: "red" }} onClick={colorRed}></button>
+                                <button className="color-tshirt" style={{ background: "yellow" }} onClick={colorYellow}></button>
+                                <button className="color-tshirt" style={{ background: "green" }} onClick={colorGreen}></button>
+                                <button className="color-tshirt" style={{ background: "gray" }} onClick={colorGray}></button>
+                                <button className="color-tshirt" style={{ background: "purpule" }} onClick={colorPurpule}></button>
+                                <button className="color-tshirt" style={{ background: "orange" }} onClick={colorOrange}></button>
+                                <button className="color-tshirt" style={{ background: "violet" }} onClick={colorViolet}></button>
 
                             </div>
 
@@ -619,6 +799,25 @@ function Diseño() {
                         <div className="card bg-ligth container">
 
                             <h3 className="text-center">Settings</h3>
+
+                            <h4>Tamaño del pincel</h4>
+
+                            <select className="form-select form-control-sm mb-2" onChange={(e) => onChangeSizePincel(e)}>
+                                <option>Select-Size</option>
+                                <option>5</option>
+                                <option>7</option>
+                                <option>9</option>
+                                <option>11</option>
+                                <option>13</option>
+                                <option>15</option>
+                                <option>17</option>
+                                <option>19</option>
+                                <option>21</option>
+                                <option>23</option>
+                                <option>25</option>
+                            </select>
+
+                            <hr />
 
                             <h4>Write Text</h4>
 
