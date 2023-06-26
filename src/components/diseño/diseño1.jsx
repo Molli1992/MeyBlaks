@@ -697,6 +697,29 @@ function Diseño() {
 
     };
 
+    const saveImageToLocal = (e) => {
+
+        let link = e.currentTarget;
+        link.setAttribute("download", "canvas.png");
+        let image = canvasRef.current.toDataURL("image/png");
+        link.setAttribute("href", image);
+
+    };
+
+    const comoMoverImg = () => {
+
+        Swal.fire({
+            title: 'Informacion',
+            text: 'Para mover la imagen preciona la imagen y mueve levemente, luego suelta el click y continua moviendo suavemente',
+            icon: "info",
+            confirmButtonText: 'Ok',
+            customClass: {
+                confirmButton: "swalButton"
+            }
+        })
+
+    };
+
     return (
 
         <div className="body-diseños">
@@ -708,6 +731,7 @@ function Diseño() {
                     <div className="col-lg-8 display">
 
                         <h1>Primero pintar luego agregar texto y imagen</h1>
+                        <h4>El diseño solo en PC</h4>
 
                         <div className="card card-content" ref={constcontainerRef2}>
 
@@ -887,6 +911,10 @@ function Diseño() {
                                     <button className="btn btn-primary btn-sm mb-2" onClick={redondearImg}>Redondear Imagen</button>
                                 </div>
 
+                                <div>
+                                    <button className="btn btn-primary btn-sm mb-2" onClick={comoMoverImg}>Como mover la Imagen?</button>
+                                </div>
+
                             </div>
 
                             <hr />
@@ -976,8 +1004,15 @@ function Diseño() {
 
                             <hr />
 
-                            <button className="btn btn-primary btn-sm mb-2">Save</button>
+                            <a id="download_image_link"
+                                href="download_link"
+                                className="a-download"
+                                onClick={(e) => saveImageToLocal(e)}>
+                                Save
+                            </a>
+
                             <button className="btn btn-primary btn-sm mb-2" onClick={goBack}> &larr; Atras</button>
+
                         </div>
                     </div>
 

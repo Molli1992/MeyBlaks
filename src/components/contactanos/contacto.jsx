@@ -97,17 +97,17 @@ function Contacto() {
                             </form>
 
                             <div className="contact-input-box">
-                                <input type="text" name="" required="required" />
+                                <input type="text" name="" required="required" placeholder=' ' />
                                 <span>Nombre</span>
                             </div>
 
                             <div className="contact-input-box">
-                                <input type="text" name="" required="required" />
+                                <input type="text" name="" required="required" placeholder=' ' />
                                 <span>Email</span>
                             </div>
 
                             <div className="contact-input-box">
-                                <textarea required="required"></textarea>
+                                <textarea required="required" placeholder=' '></textarea>
                                 <span>Escribi tu mensaje...</span>
                             </div>
 
