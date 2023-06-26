@@ -4,6 +4,7 @@ import { Form, Upload } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import Swal from 'sweetalert2';
 import { useLocation } from 'react-router-dom';
+import html2canvas from "html2canvas";
 
 
 
@@ -720,6 +721,20 @@ function Diseño() {
 
     };
 
+    function guardarContenido() {
+
+        html2canvas(document.getElementById("myDiv")).then(function (canvas) {
+            // Crea un elemento de enlace para descargar la imagen
+            var link = document.createElement("a");
+            document.body.appendChild(link);
+            link.download = "diseñoMeyBlaks.png";
+            link.href = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+            link.click();
+            document.body.removeChild(link);
+        });
+
+    };
+
     return (
 
         <div className="body-diseños">
@@ -733,45 +748,49 @@ function Diseño() {
                         <h1>Primero pintar luego agregar texto y imagen</h1>
                         <h4>El diseño solo en PC</h4>
 
-                        <div className="card card-content" ref={constcontainerRef2}>
+                        <div id="myDiv">
 
-                            <div className="memeText" id="img-check" ref={constcontainerRef}>
+                            <div className="card card-content" ref={constcontainerRef2}>
 
-                                <div className="box" ref={boxRef}>
-                                    <img
-                                        id="img-size"
-                                        src={image}
-                                        alt="meme-text"
-                                    />
+                                <div className="memeText" id="img-check" ref={constcontainerRef}>
+
+                                    <div className="box" ref={boxRef}>
+                                        <img
+                                            id="img-size"
+                                            src={image}
+                                            alt="meme-text"
+                                        />
+                                    </div>
+
                                 </div>
 
-                            </div>
+                                <div className="memeText1" id="texto-1" ref={constcontainerRef3}>
 
-                            <div className="memeText1" id="texto-1" ref={constcontainerRef3}>
+                                    <div className="box" ref={boxRef3}>
+                                        <p id="family-p-1" style={{ fontSize: text1FontSize, color: colorText1 }}>{text1}</p>
+                                    </div>
 
-                                <div className="box" ref={boxRef3}>
-                                    <p id="family-p-1" style={{ fontSize: text1FontSize, color: colorText1 }}>{text1}</p>
                                 </div>
 
-                            </div>
+                                <div className="memeText2" id="texto-2" ref={constcontainerRef2}>
 
-                            <div className="memeText2" id="texto-2" ref={constcontainerRef2}>
+                                    <div className="box" ref={boxRef2}>
+                                        <p id="family-p-2" style={{ fontSize: text2FontSize, color: colorText2 }} >{text2}</p>
+                                    </div>
 
-                                <div className="box" ref={boxRef2}>
-                                    <p id="family-p-2" style={{ fontSize: text2FontSize, color: colorText2 }} >{text2}</p>
                                 </div>
 
+                                <canvas
+                                    className="canvas-draw"
+                                    onMouseDown={startDrawing}
+                                    onMouseUp={finishDrawing}
+                                    onMouseMove={draw}
+                                    ref={canvasRef}
+                                >
+
+                                </canvas>
+
                             </div>
-
-                            <canvas
-                                className="canvas-draw"
-                                onMouseDown={startDrawing}
-                                onMouseUp={finishDrawing}
-                                onMouseMove={draw}
-                                ref={canvasRef}
-                            >
-
-                            </canvas>
 
                         </div>
 
@@ -1004,12 +1023,7 @@ function Diseño() {
 
                             <hr />
 
-                            <a id="download_image_link"
-                                href="download_link"
-                                className="a-download"
-                                onClick={(e) => saveImageToLocal(e)}>
-                                Save
-                            </a>
+                            <button onClick={guardarContenido} className="btn btn-primary btn-sm mb-2">Save</button>
 
                             <button className="btn btn-primary btn-sm mb-2" onClick={goBack}> &larr; Atras</button>
 

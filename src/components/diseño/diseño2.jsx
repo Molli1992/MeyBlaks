@@ -4,6 +4,7 @@ import { Form, Upload } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import Swal from 'sweetalert2';
 import { useLocation } from 'react-router-dom';
+import html2canvas from "html2canvas";
 
 
 
@@ -719,6 +720,20 @@ function Diseño() {
 
     };
 
+    function guardarContenido() {
+
+        html2canvas(document.getElementById("myDiv")).then(function (canvas) {
+            // Crea un elemento de enlace para descargar la imagen
+            var link = document.createElement("a");
+            document.body.appendChild(link);
+            link.download = "diseñoMeyBlaks.png";
+            link.href = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+            link.click();
+            document.body.removeChild(link);
+        });
+
+    };
+
     return (
 
         <div className="body-diseños">
@@ -1003,12 +1018,7 @@ function Diseño() {
 
                             <hr />
 
-                            <a id="download_image_link"
-                                href="download_link"
-                                className="a-download"
-                                onClick={(e) => saveImageToLocal(e)}>
-                                Save
-                            </a>
+                            <button onClick={guardarContenido} className="btn btn-primary btn-sm mb-2">Save</button>
 
                             <button className="btn btn-primary btn-sm mb-2" onClick={goBack}> &larr; Atras</button>
 

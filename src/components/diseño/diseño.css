@@ -10,6 +10,7 @@
     background-size: cover;
     width: 700px;
     height: 700px;
+    cursor: pointer;
 }
 
 .row-diseño {
@@ -82,7 +83,7 @@
 .box {
     display: flex;
     position: relative;
-    cursor: pointer;
+    cursor: grab;
 }
 
 #img-check {
@@ -189,6 +190,7 @@
     background-size: cover;
     width: 700px;
     height: 700px;
+    cursor: pointer;
 }
 
 @media(max-width: 770px) {
@@ -227,6 +229,7 @@
     background-size: cover;
     width: 700px;
     height: 700px;
+    cursor: pointer;
 }
 
 @media(max-width: 770px) {
@@ -265,6 +268,7 @@
     background-size: cover;
     width: 700px;
     height: 700px;
+    cursor: pointer;
 }
 
 @media(max-width: 770px) {
@@ -303,6 +307,7 @@
     background-size: cover;
     width: 700px;
     height: 700px;
+    cursor: pointer;
 }
 
 @media(max-width: 770px) {
@@ -341,6 +346,7 @@
     background-size: cover;
     width: 700px;
     height: 700px;
+    cursor: pointer;
 }
 
 @media(max-width: 770px) {
