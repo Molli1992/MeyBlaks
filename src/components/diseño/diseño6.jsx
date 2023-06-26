@@ -698,15 +698,6 @@ function Diseño() {
 
     };
 
-    const saveImageToLocal = (e) => {
-
-        let link = e.currentTarget;
-        link.setAttribute("download", "canvas.png");
-        let image = canvasRef.current.toDataURL("image/png");
-        link.setAttribute("href", image);
-
-    };
-
     const comoMoverImg = () => {
 
         Swal.fire({
