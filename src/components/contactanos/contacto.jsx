@@ -73,7 +73,7 @@ function Contacto() {
                                 <div className="contact-text">
                                     <h3 className="contact-h3">Telefono</h3>
                                     <p className="contact-p-2">
-                                        112-845-8809
+                                        115-596-7462
                                     </p>
                                 </div>
                             </div>
