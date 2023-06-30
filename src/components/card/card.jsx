@@ -4,13 +4,13 @@ import IMG1Back from "../../img/michael-ham-back.jpeg";
 import IMG2Back from "../../img/buzo-holy-cross-back.jpg";
 import IMG3Back from "../../img/imagen-back-3.jpeg";
 import IMG4Back from "../../img/imagen-back-4.jpeg";
-import IMG5Back from "../../img/imagen-back-5.jpeg";
-import IMG6Back from "../../img/imagen-back-6.jpeg";
+import IMG5Back from "../../img/imagen-back-5.jpg";
+import IMG6Back from "../../img/imagen-back-6.jpg";
 import IMG7Back from "../../img/imagen-back-7.jpeg";
-import IMG8Back from "../../img/imagen-back-8.jpeg";
+import IMG8Back from "../../img/imagen-back-8.jpg";
 import IMG9Back from "../../img/imagen-back-9.jpeg";
-import IMG10Back from "../../img/imagen-back-10.jpeg";
-import IMG11Back from "../../img/imagen-back-11.jpeg";
+import IMG10Back from "../../img/imagen-back-10.jpg";
+import IMG11Back from "../../img/imagen-back-11.jpg";
 import IMG12Back from "../../img/imagen-back-12.jpeg";
 import IMG13Back from "../../img/imagen-back-13.jpeg";
 import IMG14Back from "../../img/imagen-back-14.jpeg";
@@ -180,7 +180,7 @@ function Cards() {
 
                                 <div className='card-detail'>
                                     <ul>
-                                        <li>Holy Cross</li>
+                                        <li>ISI Neuquen</li>
                                         <li>Año 2023</li>
                                         <li>Friza invisble</li>
                                     </ul>
@@ -204,7 +204,7 @@ function Cards() {
 
                                 <div className='card-detail'>
                                     <ul>
-                                        <li>Michael Ham</li>
+                                        <li>Belgrano Day School</li>
                                         <li>Año 2023</li>
                                         <li>Friza invisble</li>
                                     </ul>
@@ -281,7 +281,7 @@ function Cards() {
 
                                 <div className='card-detail'>
                                     <ul>
-                                        <li>Holy Cross</li>
+                                        <li>ISJ de PEHUAJO</li>
                                         <li>Año 2023</li>
                                         <li>Friza invisble</li>
                                     </ul>
@@ -305,7 +305,7 @@ function Cards() {
 
                                 <div className='card-detail'>
                                     <ul>
-                                        <li>Michael Ham</li>
+                                        <li>Escuela 710 Puerto Madryn</li>
                                         <li>Año 2023</li>
                                         <li>Friza invisble</li>
                                     </ul>
@@ -382,7 +382,7 @@ function Cards() {
 
                                 <div className='card-detail'>
                                     <ul>
-                                        <li>Holy Cross</li>
+                                        <li>KENNEDY Buenos Aires</li>
                                         <li>Año 2023</li>
                                         <li>Friza invisble</li>
                                     </ul>
@@ -406,7 +406,7 @@ function Cards() {
 
                                 <div className='card-detail'>
                                     <ul>
-                                        <li>Michael Ham</li>
+                                        <li>ICM Chascomus</li>
                                         <li>Año 2023</li>
                                         <li>Friza invisble</li>
                                     </ul>
@@ -483,7 +483,7 @@ function Cards() {
 
                                 <div className='card-detail'>
                                     <ul>
-                                        <li>Holy Cross</li>
+                                        <li>IGA Miramar</li>
                                         <li>Año 2023</li>
                                         <li>Friza invisble</li>
                                     </ul>
@@ -507,7 +507,7 @@ function Cards() {
 
                                 <div className='card-detail'>
                                     <ul>
-                                        <li>Michael Ham</li>
+                                        <li>Champagnate</li>
                                         <li>Año 2023</li>
                                         <li>Friza invisble</li>
                                     </ul>
@@ -531,7 +531,7 @@ function Cards() {
 
                                 <div className='card-detail'>
                                     <ul>
-                                        <li>BDMS</li>
+                                        <li>IDFS Buenos Aires</li>
                                         <li>Año 2023</li>
                                         <li>Friza invisble</li>
                                     </ul>

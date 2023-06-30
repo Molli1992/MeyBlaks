@@ -30,7 +30,7 @@ function Diseño() {
         img: [],
     });
 
-    const arrayFontSize = ["Select-Size", "16px", "18px", "20px", "22px", "24px", "26px", "28px", "30px",
+    const arrayFontSize = ["Selecciona el tamaño", "16px", "18px", "20px", "22px", "24px", "26px", "28px", "30px",
         "32px", "34px", "36px", "38px", "40px", "42px", "44px", "46px", "48px", "50px", "52px", "54px", "56px"];
     const arrayColorText = ["white", "black", "grey", "blue", "red"];
 
@@ -844,7 +844,7 @@ function Diseño() {
                             <h4>Tamaño del pincel</h4>
 
                             <select className="form-select form-control-sm mb-2" onChange={(e) => onChangeSizePincel(e)}>
-                                <option>Select-Size</option>
+                                <option>Selecciona el tamaño</option>
                                 <option>5</option>
                                 <option>7</option>
                                 <option>9</option>
@@ -860,7 +860,7 @@ function Diseño() {
 
                             <hr />
 
-                            <h4>Write Text</h4>
+                            <h4>Escribi el texto</h4>
 
                             <input type="text" className="form-control form-control-sm mb-2" placeholder="Text 1" onChange={onChangeText1} />
                             <button className="btn btn-primary btn-sm mb-2" onClick={texto1Agregar}>Agregar Texto 1</button>
@@ -872,7 +872,7 @@ function Diseño() {
 
                             <hr />
 
-                            <h4>Select Img</h4>
+                            <h4>Selecciona la Img</h4>
                             <div className="fomr-group">
 
                                 <Form >
@@ -929,9 +929,9 @@ function Diseño() {
 
                             <hr />
 
-                            <h4>Img Size</h4>
+                            <h4>Tamaño de la Img</h4>
                             <select id="selcet-img-size" className="form-select form-control-sm mb-2" onChange={onChangeSizeImg}>
-                                <option>Select-Size</option>
+                                <option>Selecciona el tamaño</option>
                                 <option>50 x 50</option>
                                 <option>100 x 100</option>
                                 <option>150 x 150</option>
@@ -943,7 +943,7 @@ function Diseño() {
 
                             <hr />
 
-                            <h4>Text Size 1</h4>
+                            <h4>Tamaño del texto 1</h4>
                             <select className="form-select form-control-sm mb-2" onChange={onChangeSizeText1}>
                                 {arrayFontSize && arrayFontSize.map((size) => {
                                     return (
@@ -953,7 +953,7 @@ function Diseño() {
                                     );
                                 })}
                             </select>
-                            <h4>Text Size 2</h4>
+                            <h4>Tamaño del texto 2</h4>
                             <select className="form-select form-control-sm mb-2" onChange={onChangeSizeText2}>
                                 {arrayFontSize && arrayFontSize.map((size) => {
                                     return (
@@ -966,9 +966,9 @@ function Diseño() {
 
                             <hr />
 
-                            <h4>Text Color 1</h4>
+                            <h4>Color del texto 1</h4>
                             <select className="form-select form-control-sm mb-2" onChange={onChangeColor1}>
-                                <option>Select-Color</option>
+                                <option>Selecciona el color</option>
                                 {arrayColorText && arrayColorText.map((color) => {
                                     return (
                                         <option>
@@ -977,9 +977,9 @@ function Diseño() {
                                     );
                                 })}
                             </select>
-                            <h4>Text Color 2</h4>
+                            <h4>Color del texto 2</h4>
                             <select className="form-select form-control-sm mb-2" onChange={onChangeColor2}>
-                                <option>Select-Color</option>
+                                <option>Selecciona el color</option>
                                 {arrayColorText && arrayColorText.map((color) => {
                                     return (
                                         <option>
@@ -990,9 +990,9 @@ function Diseño() {
                             </select>
 
                             <hr />
-                            <h4>Text Style 1</h4>
+                            <h4>Estilo del texto 1</h4>
                             <select id="select-family-p-1" className="form-select form-control-sm mb-2" onChange={onChangeStyleText1}>
-                                <option>Select-Style</option>
+                                <option>Selecciona el estilo</option>
                                 <option>Georgia</option>
                                 <option>Gill Sans</option>
                                 <option>sans-serif</option>
@@ -1001,9 +1001,9 @@ function Diseño() {
                                 <option>system-ui</option>
 
                             </select>
-                            <h4>Text Style 2</h4>
+                            <h4>Estilo del texto 2</h4>
                             <select id="select-family-p-2" className="form-select form-control-sm mb-2" onChange={onChangeStyleText2}>
-                                <option>Select-Style</option>
+                                <option>Selecciona el estilo</option>
                                 <option>Georgia</option>
                                 <option>Gill Sans</option>
                                 <option>sans-serif</option>
