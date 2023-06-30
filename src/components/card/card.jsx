@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import "./card.css";
 import IMG1Back from "../../img/michael-ham-back.jpeg";
-import IMG2Back from "../../img/buzo-holy-cross-back.jpg";
+import IMG2Back from "../../img/imagen-back-2.jpg";
 import IMG3Back from "../../img/imagen-back-3.jpeg";
 import IMG4Back from "../../img/imagen-back-4.jpeg";
 import IMG5Back from "../../img/imagen-back-5.jpg";
