@@ -329,7 +329,7 @@ function Cards() {
 
                                 <div className='card-detail'>
                                     <ul>
-                                        <li>BDMS</li>
+                                        <li>HINDENBURG Misiones</li>
                                         <li>Año 2023</li>
                                         <li>Friza invisble</li>
                                     </ul>
@@ -430,7 +430,7 @@ function Cards() {
 
                                 <div className='card-detail'>
                                     <ul>
-                                        <li>BDMS</li>
+                                        <li>ISR Ramallo</li>
                                         <li>Año 2023</li>
                                         <li>Friza invisble</li>
                                     </ul>
