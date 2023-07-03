@@ -1,20 +1,55 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import "./contacto.css";
 import Footer from "../footer/footer";
 import Logo from "../../logo/logo meyblaks-01.png";
 import Navigation from "../navigation/navigation";
 import Features from "../features/features";
+import emailjs from '@emailjs/browser';
+import Swal from "sweetalert2";
 
 
 
 function Contacto() {
 
     const location = useLocation();
+    const form = useRef();
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [location]);
+
+    const sendEmail = (e) => {
+
+        e.preventDefault();
+
+        emailjs.sendForm('service_hbl2w5f', 'template_7xbbuli', e.target, 'tbi5Ki8RtKg_s2RJ4')
+            .then((result) => {
+                console.log(result.text);
+                Swal.fire({
+                    title: "successce",
+                    text: 'Email enviado correctamente',
+                    icon: "success",
+                    confirmButtonText: 'Ok'
+                }).then(() => {
+                    window.location.href = `/`
+                });
+            }, (error) => {
+                console.log(error.text);
+                Swal.fire({
+                    title: "Error!",
+                    text: 'Error en el envio del Email, por favor intentar luego mas tarde o escribinos por nuestar redes sociales',
+                    icon: "error",
+                    confirmButtonText: 'Ok',
+                    customClass: {
+                        confirmButton: "swalButton"
+                    }
+                }).then(() => {
+                    window.location.reload();
+                });;
+            });
+
+    };
 
     return (
 
@@ -96,24 +131,28 @@ function Contacto() {
                                 <h2 className="contact-form-h2">Enviar Mensaje</h2>
                             </form>
 
-                            <div className="contact-input-box">
-                                <input type="text" name="" required="required" placeholder=' ' />
-                                <span>Nombre</span>
-                            </div>
+                            <form ref={form} onSubmit={sendEmail}>
 
-                            <div className="contact-input-box">
-                                <input type="text" name="" required="required" placeholder=' ' />
-                                <span>Email</span>
-                            </div>
+                                <div className="contact-input-box">
+                                    <input type="text" name="from_name" required="required" placeholder=' ' />
+                                    <span>Nombre</span>
+                                </div>
 
-                            <div className="contact-input-box">
-                                <textarea required="required" placeholder=' '></textarea>
-                                <span>Escribi tu mensaje...</span>
-                            </div>
+                                <div className="contact-input-box">
+                                    <input type="text" name="from_email" required="required" placeholder=' ' />
+                                    <span>Email</span>
+                                </div>
 
-                            <div className="contact-input-box">
-                                <input type="submit" name="" value="Enviar" className="btn-contacto" />
-                            </div>
+                                <div className="contact-input-box">
+                                    <textarea required="required" name="message" placeholder=' '></textarea>
+                                    <span>Escribi tu mensaje...</span>
+                                </div>
+
+                                <div className="contact-input-box">
+                                    <input type="submit" name="" value="Enviar" className="btn-contacto" />
+                                </div>
+
+                            </form>
 
                         </div>
 
