@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import "./contacto.css";
 import Footer from "../footer/footer";
@@ -7,6 +7,7 @@ import Navigation from "../navigation/navigation";
 import Features from "../features/features";
 import emailjs from '@emailjs/browser';
 import Swal from "sweetalert2";
+import { LoadingOutlined, } from '@ant-design/icons';
 
 
 
@@ -14,6 +15,7 @@ function Contacto() {
 
     const location = useLocation();
     const form = useRef();
+    const [state, setState] = useState(false);
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -22,6 +24,7 @@ function Contacto() {
     const sendEmail = (e) => {
 
         e.preventDefault();
+        setState(true);
 
         emailjs.sendForm('service_hbl2w5f', 'template_7xbbuli', e.target, 'tbi5Ki8RtKg_s2RJ4')
             .then((result) => {
@@ -148,9 +151,15 @@ function Contacto() {
                                     <span>Escribi tu mensaje...</span>
                                 </div>
 
-                                <div className="contact-input-box">
-                                    <input type="submit" name="" value="Enviar" className="btn-contacto" />
-                                </div>
+                                {state === true ?
+                                    <div className="loader">
+                                        <LoadingOutlined />
+                                    </div>
+                                    :
+                                    <div className="contact-input-box">
+                                        <input type="submit" name="" value="Enviar" className="btn-contacto" />
+                                    </div>
+                                }
 
                             </form>
 
