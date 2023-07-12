@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import React from 'react'
 import "./prueba.css";
 import IMG from "../../img/buzo1Adelante.png";
 
