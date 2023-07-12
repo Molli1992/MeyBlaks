@@ -147,6 +147,31 @@ function Contacto() {
                                 </div>
 
                                 <div className="contact-input-box">
+                                    <input type="text" name="from_celular" required="required" placeholder=' ' />
+                                    <span>Celular</span>
+                                </div>
+
+                                <div className="contact-input-box">
+                                    <input type="text" name="from_colegio" required="required" placeholder=' ' />
+                                    <span>Colegio</span>
+                                </div>
+
+                                <div className="contact-input-box">
+                                    <input type="text" name="from_provincia" required="required" placeholder=' ' />
+                                    <span>Provincia</span>
+                                </div>
+
+                                <div className="contact-input-box">
+                                    <input type="text" name="from_localidad" required="required" placeholder=' ' />
+                                    <span>Localidad</span>
+                                </div>
+
+                                <div className="contact-input-box">
+                                    <input type="text" name="from_promo" required="required" placeholder=' ' />
+                                    <span>Promo</span>
+                                </div>
+
+                                <div className="contact-input-box">
                                     <textarea required="required" name="message" placeholder=' '></textarea>
                                     <span>Escribi tu mensaje...</span>
                                 </div>
