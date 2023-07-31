@@ -547,6 +547,7 @@ function Diseño() {
     };
 
     //----------------- CODIGO DYLAN ------------------//
+
     const images = [
         buzoFrenteBolsillo,
         buzoFrenteCintura,
@@ -564,8 +565,6 @@ function Diseño() {
         'Torso',
         "Mangas"
     ];
-
-
 
     const [selectedItem, setSelectedItem] = useState(buzoFrenteBolsillo);
     const [imageColors, setImageColors] = useState({
@@ -597,7 +596,7 @@ function Diseño() {
         Object.entries(imageColors).forEach(([imageName, color]) => {
             updateImageColor(imageName, color);
         });
-    }, [imageColors, updateImageColor()]);
+    }, [imageColors]);
 
     const updateImageColor = (imageName, color) => {
         const canvas = canvasRefs[imageName].current;
@@ -672,7 +671,7 @@ function Diseño() {
         Object.entries(imageColors2).forEach(([imageNames2, color]) => {
             updateImageColor2(imageNames2, color);
         });
-    }, [imageColors2, updateImageColor2()]);
+    }, [imageColors2]);
 
 
     const updateImageColor2 = (imageName, color) => {
@@ -781,7 +780,7 @@ function Diseño() {
 
                                         <img
                                             src={buzoFrenteContorno}
-                                            className='buzoContorno' >
+                                            className='buzoContorno' />
                                     </div>
                                 </div> :
 
