@@ -772,15 +772,11 @@ function Diseño() {
 
 
                                         ))}
-                                        <img
-                                            src=''
-                                            className='back'
-                                        >
-                                        </img>
 
                                         <img
                                             src={buzoFrenteContorno}
                                             className='buzoContorno' />
+
                                     </div>
                                 </div> :
 
