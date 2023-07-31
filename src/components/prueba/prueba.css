@@ -1,3 +1,130 @@
-.body-prueba {
-    position: relative;
+.position-images{
+    position: absolute;
+    width: 25rem;
+    height: 30rem;
+    transition: all 0.3s;
+    z-index: 2;
 }
+.buzoContorno{
+    position: absolute;
+    width: 25rem;
+    height: 30rem;
+    transition: all 0.3s;
+    z-index: 2;
+
+}
+.buzoContornoAux{
+    position: absolute;
+    width: 25rem;
+    height: 30rem;
+    transition: all 0.3s;
+    z-index: 2;
+    margin-top: 1.5rem;
+
+}
+
+.buzo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20rem;
+    
+}
+
+.card-content{
+    height: 44.5rem;
+}
+
+.imagen-personalizada{
+    position: relative; /* Es necesario para que funcione z-index */
+  z-index: 9999; 
+
+}
+
+.button-frente-imagenesContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.image-buttons{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.button-dorso-imagenesContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputColor{
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.eligeColor{
+    display: flex;
+    color: gray;
+    font-style: oblique;
+    font-size: 0.8rem;
+}
+
+
+.position-imagesAux{
+    position: absolute;
+    width: 25rem;
+    height: 30rem;
+    transition: all 0.3s;
+    z-index: 2;
+    
+}
+
+
+
+@media (max-width: 985px) {
+    .buzoContorno{
+        position: absolute;
+        width: 16rem;
+        height: 20rem;
+        transition: all 0.3s;
+        z-index: 2;
+        margin-bottom: 10rem;
+    
+    }
+    .buzoContornoAux{
+        position: absolute;
+        width: 16rem;
+        height: 20rem;
+        transition: all 0.3s;
+        z-index: 2;
+        margin-top: 1.5rem;
+        margin-bottom: 10rem;
+    
+    }
+    .position-images{
+        position: absolute;
+        width: 16rem;
+        height: 20rem;
+        transition: all 0.3s;
+        z-index: 2;
+        margin-bottom: 10rem;
+    }
+    .position-imagesAux{
+        position: absolute;
+        width: 16rem;
+        height: 20rem;
+        transition: all 0.3s;
+        z-index: 2;
+        margin-bottom: 10rem;
+        
+    }
+
+    .card-content{
+        height: 30rem;
+        
+        
+    }
+    
+    
+  }

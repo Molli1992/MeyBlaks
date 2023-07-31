@@ -6,6 +6,22 @@ import Swal from 'sweetalert2';
 import { useLocation } from 'react-router-dom';
 import html2canvas from "html2canvas";
 
+import '../prueba/prueba.css';
+import { Button } from 'antd';
+
+import buzoFrenteBolsillo from '../diseño/Assets/BuzoCanguroFrente/bolsillo.png';
+import buzoFrenteCintura from '../diseño/Assets/BuzoCanguroFrente/puñoFrente.png';
+import buzoFrentePuños from '../diseño/Assets/BuzoCanguroFrente/puñoMangasFrente.png';
+import buzoFrenteCapuchaInterior from '../diseño/Assets/BuzoCanguroFrente/buzoFrenteCapuchaInterior.png';
+import buzoFrenteTorso from '../diseño/Assets/BuzoCanguroFrente/buzoFrenteTorso.png';
+import buzoFrenteMangas from "../diseño/Assets/BuzoCanguroFrente/buzoFrenteMangas.png"
+import buzoFrenteContorno from '../diseño/Assets/BuzoCanguroFrente/buzoFrenteContorno.png';
+
+import buzoDorsoContorno from "../diseño/Assets/BuzoCanguroDorso/buzoDorsoContorno.png"
+import buzoDorsoPuños from "../diseño/Assets/BuzoCanguroDorso/buzoDorsoPuños.png"
+import buzoDorsoCintura from "../diseño/Assets/BuzoCanguroDorso/buzoDorsoCintura.png"
+import buzoDorsoMangas from "../diseño/Assets/BuzoCanguroDorso/buzoDorsoMangas.png"
+import buzoDorsoTorso from "../diseño/Assets/BuzoCanguroDorso/buzoDorsoTorso.png"
 
 
 function Diseño() {
@@ -24,6 +40,7 @@ function Diseño() {
     const [colorText2, setColorText2] = useState("grey");
     const [positionText1, setPositionText1] = useState("horizontal");
     const [positionText2, setPositionText2] = useState("horizontal");
+    const [frente, setFrente] = useState(true);
     const [image, setImage] = useState("http://via.placeholder.com/400x300");
     const [fileList, setFileList] = useState([]);
     const [input, setInput] = useState({
@@ -449,7 +466,7 @@ function Diseño() {
 
     };
 
-    const onChangeSizeImg = () => {
+   const onChangeSizeImg = () => {
 
         const selectSize = document.getElementById("selcet-img-size");
         const imgSize = document.getElementById("img-size");
@@ -486,7 +503,7 @@ function Diseño() {
 
         }
 
-    };
+    }; 
 
     const redondearImg = () => {
 
@@ -502,98 +519,7 @@ function Diseño() {
     };
 
 
-    // -------------------------- color t-shirt ------------------------------
-
-    const colorWhite = () => {
-
-        const canvas = canvasRef.current;
-        const context = canvas.getContext("2d");
-
-        context.strokeStyle = "white";
-
-    };
-
-    const colorBlue = () => {
-
-        const canvas = canvasRef.current;
-        const context = canvas.getContext("2d");
-
-        context.strokeStyle = "blue";
-
-    };
-
-    const colorBlack = () => {
-
-        const canvas = canvasRef.current;
-        const context = canvas.getContext("2d");
-
-        context.strokeStyle = "black";
-
-    };
-
-    const colorRed = () => {
-
-        const canvas = canvasRef.current;
-        const context = canvas.getContext("2d");
-
-        context.strokeStyle = "red";
-
-    };
-
-    const colorYellow = () => {
-
-        const canvas = canvasRef.current;
-        const context = canvas.getContext("2d");
-
-        context.strokeStyle = "yellow";
-
-    };
-
-    const colorGreen = () => {
-
-        const canvas = canvasRef.current;
-        const context = canvas.getContext("2d");
-
-        context.strokeStyle = "green";
-
-    };
-
-    const colorGray = () => {
-
-        const canvas = canvasRef.current;
-        const context = canvas.getContext("2d");
-
-        context.strokeStyle = "gray";
-
-    };
-
-    const colorPurpule = () => {
-
-        const canvas = canvasRef.current;
-        const context = canvas.getContext("2d");
-
-        context.strokeStyle = "purpule";
-
-    };
-
-    const colorOrange = () => {
-
-        const canvas = canvasRef.current;
-        const context = canvas.getContext("2d");
-
-        context.strokeStyle = "orange";
-
-    };
-
-    const colorViolet = () => {
-
-        const canvas = canvasRef.current;
-        const context = canvas.getContext("2d");
-
-        context.strokeStyle = "violet";
-
-    };
-
+  
 
     // ----------------------------------- Canvas -------------------------------------------------------
 
@@ -601,11 +527,11 @@ function Diseño() {
     const contextRef = useRef(null);
     const [isDrawing, setIsDrawing] = useState(false);
 
-    useEffect(() => {
+/*     useEffect(() => {
 
         const canvas = canvasRef.current;
         canvas.width = 1400;
-        canvas.height = 1400;
+        canvas.height = 1400; 
 
         const context = canvas.getContext("2d");
         context.scale(2, 2);
@@ -615,7 +541,7 @@ function Diseño() {
         contextRef.current = context;
 
 
-    }, []);
+    }, []); */
 
     const startDrawing = ({ nativeEvent }) => {
 
@@ -645,58 +571,6 @@ function Diseño() {
 
     };
 
-    const onChangeSizePincel = (e) => {
-
-        const canvas = canvasRef.current;
-        const context = canvas.getContext("2d");
-
-        console.log(e.target.value)
-
-        if (e.target.value === "5") {
-            context.lineWidth = 5;
-        }
-
-        if (e.target.value === "7") {
-            context.lineWidth = 7;
-        }
-
-        if (e.target.value === "9") {
-            context.lineWidth = 9;
-        }
-
-        if (e.target.value === "11") {
-            context.lineWidth = 11;
-        }
-
-        if (e.target.value === "13") {
-            context.lineWidth = 13;
-        }
-
-        if (e.target.value === "15") {
-            context.lineWidth = 15;
-        }
-
-        if (e.target.value === "17") {
-            context.lineWidth = 17;
-        }
-
-        if (e.target.value === "19") {
-            context.lineWidth = 19;
-        }
-
-        if (e.target.value === "21") {
-            context.lineWidth = 21;
-        }
-
-        if (e.target.value === "23") {
-            context.lineWidth = 23;
-        }
-
-        if (e.target.value === "25") {
-            context.lineWidth = 25;
-        }
-
-    };
 
     const comoMoverImg = () => {
 
@@ -726,6 +600,212 @@ function Diseño() {
 
     };
 
+
+
+
+
+
+//----------------- CODIGO DYLAN ------------------//
+    const images = [
+        buzoFrenteBolsillo,
+        buzoFrenteCintura,
+        buzoFrentePuños,
+        buzoFrenteCapuchaInterior,
+        buzoFrenteTorso,
+        buzoFrenteMangas
+      ];
+    
+      const imageNames = [
+        'Bolsillo',
+        'Cintura',
+        'Puños',
+        'Capucha Interior',
+        'Torso',
+        "Mangas"
+      ];
+
+     
+    
+      const [selectedItem, setSelectedItem] = useState(buzoFrenteBolsillo);
+      const [imageColors, setImageColors] = useState({
+        [buzoFrenteBolsillo]: '#FFFFFF', // Color inicial para cada imagen: rojo
+        [buzoFrenteCintura]: '#FFFFFF',
+        [buzoFrentePuños]: '#FFFFFF',
+        [buzoFrenteCapuchaInterior]: '#FFFFFF',
+        [buzoFrenteTorso]: '#FFFFFF',
+        [buzoFrenteMangas]: '#FFFFFF',
+    
+      });
+
+      
+      const canvasRefs = {};
+      images.forEach((image) => (canvasRefs[image] = React.createRef()));
+
+      
+    
+
+
+
+
+
+
+
+
+
+      const handleImageChange = (image) => {
+        setSelectedItem(image);
+      };
+
+     
+    
+      const handleColorChange = (event) => {
+        setImageColors({
+          ...imageColors,
+          [selectedItem]: event.target.value,
+        });
+      };
+
+      
+    
+      useEffect(() => {
+        Object.entries(imageColors).forEach(([imageName, color]) => {
+          updateImageColor(imageName, color);
+        });
+      }, [imageColors]);
+
+    
+      const updateImageColor = (imageName, color) => {
+        const canvas = canvasRefs[imageName].current;
+        const ctx = canvas.getContext('2d');
+        const img = new Image();
+    
+       img.onload = function () {
+          canvas.width = img.width;
+          canvas.height = img.height;
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.drawImage(img, 0, 0);
+    
+          const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          const data = imageData.data;
+    
+          const red = parseInt(color.substr(1, 2), 16);
+          const green = parseInt(color.substr(3, 2), 16);
+          const blue = parseInt(color.substr(5, 2), 16);
+    
+          for (let i = 0; i < data.length; i += 4) {
+            if (data[i + 3] > 0) {
+              data[i] = red;
+              data[i + 1] = green;
+              data[i + 2] = blue;
+            }
+          }
+    
+          ctx.putImageData(imageData, 0, 0);
+        }; 
+    
+        img.src = imageName;
+      };
+
+
+
+
+      
+      const images2 = [
+        buzoDorsoCintura,
+        buzoDorsoPuños,
+        buzoDorsoTorso,
+        buzoDorsoMangas
+      ];
+    
+      const imageNames2 = [
+        'Cintura',
+        'Puños',
+        'Torso',
+        "Mangas"
+      ];
+
+
+      
+      const [selectedItem2, setSelectedItem2] = useState(buzoDorsoCintura);
+      const [imageColors2, setImageColors2] = useState({
+        [buzoDorsoCintura]: '#FFFFFF',
+        [buzoDorsoPuños]: '#FFFFFF',
+        [buzoDorsoTorso]: '#FFFFFF',
+        [buzoDorsoMangas]: '#FFFFFF',
+    
+      });
+
+     
+  
+
+      const canvasRefs2 = {};
+      images2.forEach((image) => (canvasRefs2[image] = React.createRef()));
+
+      const handleImageChange2 = (image) => {
+        setSelectedItem2(image);
+      };
+      
+      const handleColorChange2 = (event) => {
+        setImageColors2({
+          ...imageColors2,
+          [selectedItem2]: event.target.value,
+        });
+      };
+
+      useEffect(() => {
+        Object.entries(imageColors2).forEach(([imageNames2, color]) => {
+            updateImageColor2(imageNames2, color);
+        });
+      }, [imageColors2]);
+    
+    
+      const updateImageColor2 = (imageName, color) => {
+        const canvas2 = canvasRefs2[imageName].current;
+        if (!canvas2) return; // Ensure canvas2 is not null
+      
+        const ctx2 = canvas2.getContext('2d');
+        const img2 = new Image();
+      
+        img2.onload = function () {
+          canvas2.width = img2.width;
+          canvas2.height = img2.height;
+          ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
+          ctx2.drawImage(img2, 0, 0);
+      
+          const imageData2 = ctx2.getImageData(0, 0, canvas2.width, canvas2.height);
+          const data = imageData2.data;
+      
+          const red = parseInt(color.substr(1, 2), 16);
+          const green = parseInt(color.substr(3, 2), 16);
+          const blue = parseInt(color.substr(5, 2), 16);
+      
+          for (let i = 0; i < data.length; i += 4) {
+            if (data[i + 3] > 0) {
+              data[i] = red;
+              data[i + 1] = green;
+              data[i + 2] = blue;
+            }
+          }
+      
+          ctx2.putImageData(imageData2, 0, 0);
+        };
+      
+        img2.src = imageName;
+      };
+      
+ 
+
+
+        const handleBack = () => {
+        setFrente(false);
+      };
+
+        const handleFront = () => {
+            setFrente(true);
+        };
+
+
+
     return (
 
         <div className="body-diseños">
@@ -747,6 +827,7 @@ function Diseño() {
 
                                     <div className="box" ref={boxRef}>
                                         <img
+                                            className="imagen-personalizada"
                                             id="img-size"
                                             src={image}
                                             alt="meme-text"
@@ -771,7 +852,7 @@ function Diseño() {
 
                                 </div>
 
-                                <canvas
+                               {/*  <canvas
                                     className="canvas-draw"
                                     onMouseDown={startDrawing}
                                     onMouseUp={finishDrawing}
@@ -779,60 +860,55 @@ function Diseño() {
                                     ref={canvasRef}
                                 >
 
-                                </canvas>
+                                </canvas>  */}
+
+                                {frente ? <div className="container-buzoFrente-backbutton">
+                                <div className="buzo-container">  
+                                {images.map((image) => (
+                              
+                                    <canvas key={image} ref={canvasRefs[image]} className="position-images"></canvas>
+                               
+                                
+                                ))}
+                                <img 
+                                src=''
+                                className='back'
+                                >
+                                </img>
+
+                                <img 
+                                src={buzoFrenteContorno}
+                                className='buzoContorno'/>
+                                </div>
+                                </div> :
+
+                                <div className="container-buzoFrente-backbutton">
+                                <div className="buzo-container">  
+                                {images2.map((image) => (
+                              
+                                    <canvas key={image} ref={canvasRefs2[image]} className="position-images"></canvas>
+                               
+                                
+                                ))}
+                                <img 
+                                src=''
+                                className='back'
+                                >
+                                </img>
+
+                                <img 
+                                src={buzoDorsoContorno}
+                                className='buzoContorno'/>
+                                </div>
+                                </div>
+                                }
+                                
 
                             </div>
 
                         </div>
 
-                        <div className="color-body">
-
-                            <div className="color-container">
-
-                                <button className="color-tshirt-white" style={{ background: "white" }} onClick={colorWhite}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "black" }} onClick={colorBlack}></button>
-                                <button className="color-tshirt" style={{ background: "red" }} onClick={colorRed}></button>
-                                <button className="color-tshirt" style={{ background: "yellow" }} onClick={colorYellow}></button>
-                                <button className="color-tshirt" style={{ background: "green" }} onClick={colorGreen}></button>
-                                <button className="color-tshirt" style={{ background: "gray" }} onClick={colorGray}></button>
-                                <button className="color-tshirt" style={{ background: "purpule" }} onClick={colorPurpule}></button>
-                                <button className="color-tshirt" style={{ background: "orange" }} onClick={colorOrange}></button>
-                                <button className="color-tshirt" style={{ background: "violet" }} onClick={colorViolet}></button>
-
-                            </div>
-
-                            <div className="color-container">
-
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-
-                            </div>
-
-                            <div className="color-container">
-
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-                                <button className="color-tshirt" style={{ background: "blue" }} onClick={colorBlue}></button>
-
-                            </div>
-
-                        </div>
+                       
 
                     </div>
 
@@ -841,22 +917,6 @@ function Diseño() {
 
                             <h3 className="text-center">Settings</h3>
 
-                            <h4>Tamaño del pincel</h4>
-
-                            <select className="form-select form-control-sm mb-2" onChange={(e) => onChangeSizePincel(e)}>
-                                <option>Selecciona el tamaño</option>
-                                <option>5</option>
-                                <option>7</option>
-                                <option>9</option>
-                                <option>11</option>
-                                <option>13</option>
-                                <option>15</option>
-                                <option>17</option>
-                                <option>19</option>
-                                <option>21</option>
-                                <option>23</option>
-                                <option>25</option>
-                            </select>
 
                             <hr />
 
@@ -871,6 +931,59 @@ function Diseño() {
                             <button className="btn btn-primary btn-sm mb-2" onClick={texto2Girar}>Girar Texto 2</button>
 
                             <hr />
+
+
+
+
+
+
+
+
+
+                            <div className="button-frente-imagenesContainer">
+                            <Button onClick={handleFront}>Frente</Button>
+                            <div className="image-buttons">
+                            {images.map((image, index) => (
+                            
+                            <Button 
+                            key={image} 
+                            onClick={() => handleImageChange(image)}
+                            >
+                                {imageNames[index]}
+                            </Button>
+                            
+                            ))}
+                            </div>
+                            <div className="eligeColor">ELIGE TU COLOR</div>
+                            <input className="inputColor" type="color" value={imageColors[selectedItem]} onChange={handleColorChange} />     
+                            </div>
+
+                            <div className="button-dorso-imagenesContainer">
+                            <Button onClick={handleBack}>Dorso</Button>
+                            <div className="image-buttons">
+                            {images2.map((image2, index) => (
+                            
+                            <Button 
+                            key={image2} 
+                            onClick={() => handleImageChange2(image2)}
+                            >
+                                {imageNames2[index]}
+                            </Button>
+                            
+                            ))}
+                            </div>
+                            <div className="eligeColor">ELIGE TU COLOR</div>
+                            <input type="color" value={imageColors2[selectedItem2]} onChange={handleColorChange2} />     
+                            </div>               
+                                
+
+
+
+
+
+
+
+
 
                             <h4>Selecciona la Img</h4>
                             <div className="fomr-group">

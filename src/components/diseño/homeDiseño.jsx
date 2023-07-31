@@ -7,15 +7,13 @@ import { Link, useLocation } from 'react-router-dom';
 import Diseño1 from "./diseño1";
 import Diseño2 from "./diseño2";
 import Diseño3 from "./diseño3";
-import Diseño4 from "./diseño4";
+import Diseño4 from "./diseño4";    
 import Diseño5 from "./diseño5";
 import Diseño6 from "./diseño6";
-import Remera1Adelante from "../../img/remera1Adelante.png";
-import Remera2Adelante from "../../img/remera2Adelante.png";
-import Remera3Adelante from "../../img/remera3adelante.png";
-import Remera3Atras from "../../img/remera3Atras.png";
-import Buzo1Adelante from "../../img/buzo1Adelante.png";
-import Buzo1Atras from "../../img/buzo1Atras.png";
+import remeraCuelloRedondoFrenteContorno from "../diseño/Assets/RemeraCuelloRedondoFrente/remeraCuelloRedondoFrenteContorno.png"
+import buzoCanguroFrenteContorno from "../diseño/Assets/BuzoCanguroFrente/buzoFrenteContorno.png"
+import chombaFrenteContorno from "../diseño/Assets/ChombaFrente/chombaFrenteContorno.png"
+import remeraEscoteVFrenteContorno from "../diseño/Assets/RemeraEscoteVFrente/remeraEscoteVFrenteContorno.png"
 
 
 
@@ -134,7 +132,7 @@ function HomeDiseño() {
 
                         <div className='card-diseño'>
 
-                            <img src={Remera1Adelante} alt='Diseño'
+                            <img src={remeraEscoteVFrenteContorno} alt='Diseño'
                                 className='img-card-diseño' />
 
                             <div className='card-text-diseño'>
@@ -147,24 +145,11 @@ function HomeDiseño() {
 
                         </div>
 
-                        <div className='card-diseño'>
-
-                            <img src={Remera3Atras} alt='Diseño'
-                                className='img-card-diseño' />
-
-                            <div className='card-text-diseño'>
-
-                                <button className='button-card-diseño'
-                                    onClick={onChangeState7}>Diseñar</button>
-
-                            </div>
-
-
-                        </div>
+                        
 
                         <div className='card-diseño'>
 
-                            <img src={Remera2Adelante} alt='Diseño'
+                            <img src={chombaFrenteContorno} alt='Diseño'
                                 className='img-card-diseño' />
 
                             <div className='card-text-diseño'>
@@ -177,24 +162,11 @@ function HomeDiseño() {
 
                         </div>
 
-                        <div className='card-diseño'>
-
-                            <img src={Remera3Atras} alt='Diseño'
-                                className='img-card-diseño' />
-
-                            <div className='card-text-diseño'>
-
-                                <button className='button-card-diseño'
-                                    onClick={onChangeState7}>Diseñar</button>
-
-                            </div>
-
-
-                        </div>
+                      
 
                         <div className='card-diseño'>
 
-                            <img src={Buzo1Adelante} alt='Diseño'
+                            <img src={buzoCanguroFrenteContorno} alt='Diseño'
                                 className='img-card-diseño' />
 
                             <div className='card-text-diseño'>
@@ -207,24 +179,11 @@ function HomeDiseño() {
 
                         </div>
 
-                        <div className='card-diseño'>
-
-                            <img src={Buzo1Atras} alt='Diseño'
-                                className='img-card-diseño' />
-
-                            <div className='card-text-diseño'>
-
-                                <button className='button-card-diseño'
-                                    onClick={onChangeState6}>Diseñar</button>
-
-                            </div>
-
-
-                        </div>
+                        
 
                         <div className='card-diseño'>
 
-                            <img src={Remera3Adelante} alt='Diseño'
+                            <img src={remeraCuelloRedondoFrenteContorno} alt='Diseño'
                                 className='img-card-diseño' />
 
                             <div className='card-text-diseño'>
@@ -237,20 +196,7 @@ function HomeDiseño() {
 
                         </div>
 
-                        <div className='card-diseño'>
-
-                            <img src={Remera3Atras} alt='Diseño'
-                                className='img-card-diseño' />
-
-                            <div className='card-text-diseño'>
-
-                                <button className='button-card-diseño'
-                                    onClick={onChangeState7}>Diseñar</button>
-
-                            </div>
-
-
-                        </div>
+                       
 
                     </div>
 

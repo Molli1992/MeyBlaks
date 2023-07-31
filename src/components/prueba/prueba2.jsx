@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './prueba.css';
-import { Button, Space } from 'antd';
-
 import buzoFrenteBolsillo from '../diseño/Assets/BuzoCanguroFrente/bolsillo.png';
 import buzoFrenteCintura from '../diseño/Assets/BuzoCanguroFrente/puñoFrente.png';
 import buzoFrentePuños from '../diseño/Assets/BuzoCanguroFrente/puñoMangasFrente.png';
 import buzoFrenteCapuchaInterior from '../diseño/Assets/BuzoCanguroFrente/buzoFrenteCapuchaInterior.png';
 import buzoFrenteTorso from '../diseño/Assets/BuzoCanguroFrente/buzoFrenteTorso.png';
 import buzoFrenteMangas from "../diseño/Assets/BuzoCanguroFrente/buzoFrenteMangas.png"
-import buzoFrenteContorno from '../diseño/Assets/BuzoCanguroFrente/buzoFrenteContorno.png';
+import buzoFrenteContorno from '../diseño/Assets/BuzoCanguroFrente/buzoFrenteContorno1.png';
 
 
 function Prueba() {
@@ -97,31 +95,16 @@ function Prueba() {
     <div className="frente-prueba">
       <div className="image-buttons">
         {images.map((image, index) => (
-          
-          <Button 
-
-          key={image} 
-          onClick={() => handleImageChange(image)}
-          >
+          <button key={image} onClick={() => handleImageChange(image)}>
             {imageNames[index]}
-          </Button>
-        
+          </button>
         ))}
       </div>
       <input type="color" value={imageColors[selectedItem]} onChange={handleColorChange} />
       <div className="canvas-container">
         {images.map((image) => (
-          <canvas key={image} ref={canvasRefs[image]} className="position-images"></canvas>
+          <canvas key={image} ref={canvasRefs[image]}></canvas>
         ))}
-        <img 
-        src=''
-        className='back'
-        >
-        </img>
-
-        <img 
-        src={buzoFrenteContorno}
-        className='buzoContorno'/>
       </div>
     </div>
   );

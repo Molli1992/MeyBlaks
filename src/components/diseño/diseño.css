@@ -61,14 +61,13 @@
 
 .memeText1 {
     position: absolute;
-    top: 150px;
-    left: 235px;
+    z-index: 9999; /* Puedes usar cualquier valor alto, mientras sea mayor que el de los otros elementos */
+
 }
 
 .memeText2 {
     position: absolute;
-    top: 150px;
-    left: 400px;
+    z-index: 9999; 
 }
 
 .memeText img {
