@@ -7,9 +7,7 @@ import { Link, useLocation } from 'react-router-dom';
 import Diseño1 from "./diseño1";
 import Diseño2 from "./diseño2";
 import Diseño3 from "./diseño3";
-import Diseño4 from "./diseño4";    
-import Diseño5 from "./diseño5";
-import Diseño6 from "./diseño6";
+import Diseño4 from "./diseño4";
 import remeraCuelloRedondoFrenteContorno from "../diseño/Assets/RemeraCuelloRedondoFrente/remeraCuelloRedondoFrenteContorno.png"
 import buzoCanguroFrenteContorno from "../diseño/Assets/BuzoCanguroFrente/buzoFrenteContorno.png"
 import chombaFrenteContorno from "../diseño/Assets/ChombaFrente/chombaFrenteContorno.png"
@@ -145,7 +143,7 @@ function HomeDiseño() {
 
                         </div>
 
-                        
+
 
                         <div className='card-diseño'>
 
@@ -162,7 +160,7 @@ function HomeDiseño() {
 
                         </div>
 
-                      
+
 
                         <div className='card-diseño'>
 
@@ -179,7 +177,7 @@ function HomeDiseño() {
 
                         </div>
 
-                        
+
 
                         <div className='card-diseño'>
 
@@ -196,7 +194,7 @@ function HomeDiseño() {
 
                         </div>
 
-                       
+
 
                     </div>
 
@@ -233,21 +231,6 @@ function HomeDiseño() {
 
                 :
                 null}
-
-            {state === 6 ?
-
-                < Diseño5 />
-
-                :
-                null}
-
-            {state === 7 ?
-
-                < Diseño6 />
-
-                :
-                null}
-
 
             <Footer />
 

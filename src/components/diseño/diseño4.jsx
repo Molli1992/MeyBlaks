@@ -468,7 +468,7 @@ function Diseño() {
 
     };
 
-   const onChangeSizeImg = () => {
+    const onChangeSizeImg = () => {
 
         const selectSize = document.getElementById("selcet-img-size");
         const imgSize = document.getElementById("img-size");
@@ -505,7 +505,7 @@ function Diseño() {
 
         }
 
-    }; 
+    };
 
     const redondearImg = () => {
 
@@ -519,60 +519,6 @@ function Diseño() {
 
         window.location.reload();
     };
-
-
-  
-
-    // ----------------------------------- Canvas -------------------------------------------------------
-
-    const canvasRef = useRef(null);
-    const contextRef = useRef(null);
-    const [isDrawing, setIsDrawing] = useState(false);
-
-/*     useEffect(() => {
-
-        const canvas = canvasRef.current;
-        canvas.width = 1400;
-        canvas.height = 1400; 
-
-        const context = canvas.getContext("2d");
-        context.scale(2, 2);
-        context.lineCap = "round";
-        context.strokeStyle = "black";
-        context.lineWidth = 5;
-        contextRef.current = context;
-
-
-    }, []); */
-
-    const startDrawing = ({ nativeEvent }) => {
-
-        const { offsetX, offsetY } = nativeEvent;
-        contextRef.current.beginPath();
-        contextRef.current.moveTo(offsetX, offsetY);
-        setIsDrawing(true);
-
-    };
-
-    const finishDrawing = () => {
-
-        contextRef.current.closePath();
-        setIsDrawing(false);
-
-    };
-
-    const draw = ({ nativeEvent }) => {
-
-        if (!isDrawing) {
-            return
-        }
-
-        const { offsetX, offsetY } = nativeEvent;
-        contextRef.current.lineTo(offsetX, offsetY);
-        contextRef.current.stroke();
-
-    };
-
 
     const comoMoverImg = () => {
 
@@ -607,7 +553,7 @@ function Diseño() {
 
 
 
-//----------------- CODIGO DYLAN ------------------//
+    //----------------- CODIGO DYLAN ------------------//
 
 
     const images = [
@@ -618,36 +564,33 @@ function Diseño() {
         remeraCuelloRedondoFrenteTorso,
         remeraCuelloRedondoFrenteCintura
 
-      ];
-    
-      const imageNames = [
+    ];
+
+    const imageNames = [
         'Cuello',
         'Interior',
         'Mangas',
         'Puños',
         'Torso',
         "Cintura"
-      ];
+    ];
 
-     
-    
-      const [selectedItem, setSelectedItem] = useState(remeraCuelloRedondoFrenteCuello);
-      const [imageColors, setImageColors] = useState({
+
+
+    const [selectedItem, setSelectedItem] = useState(remeraCuelloRedondoFrenteCuello);
+    const [imageColors, setImageColors] = useState({
         [remeraCuelloRedondoFrenteCuello]: '#FFFFFF', // Color inicial para cada imagen: rojo
         [remeraCuelloRedondoFrenteInterior]: '#FFFFFF',
         [remeraCuelloRedondoFrenteMangas]: '#FFFFFF',
         [remeraCuelloRedondoFrentePuños]: '#FFFFFF',
         [remeraCuelloRedondoFrenteTorso]: '#FFFFFF',
         [remeraCuelloRedondoFrenteCintura]: '#FFFFFF',
-    
-      });
 
-      
-      const canvasRefs = {};
-      images.forEach((image) => (canvasRefs[image] = React.createRef()));
+    });
 
-      
-    
+
+    const canvasRefs = {};
+    images.forEach((image) => (canvasRefs[image] = React.createRef()));
 
 
 
@@ -657,159 +600,159 @@ function Diseño() {
 
 
 
-      const handleImageChange = (image) => {
+
+
+
+    const handleImageChange = (image) => {
         setSelectedItem(image);
-      };
+    };
 
-     
-    
-      const handleColorChange = (event) => {
+
+
+    const handleColorChange = (event) => {
         setImageColors({
-          ...imageColors,
-          [selectedItem]: event.target.value,
+            ...imageColors,
+            [selectedItem]: event.target.value,
         });
-      };
+    };
 
-      
-    
-      useEffect(() => {
+
+
+    useEffect(() => {
         Object.entries(imageColors).forEach(([imageName, color]) => {
-          updateImageColor(imageName, color);
+            updateImageColor(imageName, color);
         });
-      }, [imageColors]);
+    }, [imageColors]);
 
-    
-      const updateImageColor = (imageName, color) => {
+
+    const updateImageColor = (imageName, color) => {
         const canvas = canvasRefs[imageName].current;
         const ctx = canvas.getContext('2d');
         const img = new Image();
-    
-       img.onload = function () {
-          canvas.width = img.width;
-          canvas.height = img.height;
-          ctx.clearRect(0, 0, canvas.width, canvas.height);
-          ctx.drawImage(img, 0, 0);
-    
-          const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-          const data = imageData.data;
-    
-          const red = parseInt(color.substr(1, 2), 16);
-          const green = parseInt(color.substr(3, 2), 16);
-          const blue = parseInt(color.substr(5, 2), 16);
-    
-          for (let i = 0; i < data.length; i += 4) {
-            if (data[i + 3] > 0) {
-              data[i] = red;
-              data[i + 1] = green;
-              data[i + 2] = blue;
+
+        img.onload = function () {
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img, 0, 0);
+
+            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            const data = imageData.data;
+
+            const red = parseInt(color.substr(1, 2), 16);
+            const green = parseInt(color.substr(3, 2), 16);
+            const blue = parseInt(color.substr(5, 2), 16);
+
+            for (let i = 0; i < data.length; i += 4) {
+                if (data[i + 3] > 0) {
+                    data[i] = red;
+                    data[i + 1] = green;
+                    data[i + 2] = blue;
+                }
             }
-          }
-    
-          ctx.putImageData(imageData, 0, 0);
-        }; 
-    
+
+            ctx.putImageData(imageData, 0, 0);
+        };
+
         img.src = imageName;
-      };
+    };
 
-
-      
-      
-      const images2 = [
+    const images2 = [
         remeraCuelloRedondoDorsoCintura,
         remeraCuelloRedondoDorsoCuello,
         remeraCuelloRedondoDorsoMangas,
         remeraCuelloRedondoDorsoPuños,
         remeraCuelloRedondoDorsoTorso
-      ];
-    
-      const imageNames2 = [
+    ];
+
+    const imageNames2 = [
         'Cintura',
         'Cuello',
         'Mangas',
         "Puños",
         'Torso'
-      ];
+    ];
 
 
-      
-      const [selectedItem2, setSelectedItem2] = useState(remeraCuelloRedondoDorsoCintura);
-      const [imageColors2, setImageColors2] = useState({
+
+    const [selectedItem2, setSelectedItem2] = useState(remeraCuelloRedondoDorsoCintura);
+    const [imageColors2, setImageColors2] = useState({
         [remeraCuelloRedondoDorsoCintura]: '#FFFFFF',
         [remeraCuelloRedondoDorsoCuello]: '#FFFFFF',
         [remeraCuelloRedondoDorsoMangas]: '#FFFFFF',
         [remeraCuelloRedondoDorsoPuños]: '#FFFFFF',
         [remeraCuelloRedondoDorsoTorso]: '#FFFFFF',
-    
-      });
 
-     
-  
+    });
 
-      const canvasRefs2 = {};
-      images2.forEach((image) => (canvasRefs2[image] = React.createRef()));
 
-      const handleImageChange2 = (image) => {
+
+
+    const canvasRefs2 = {};
+    images2.forEach((image) => (canvasRefs2[image] = React.createRef()));
+
+    const handleImageChange2 = (image) => {
         setSelectedItem2(image);
-      };
-      
-      const handleColorChange2 = (event) => {
-        setImageColors2({
-          ...imageColors2,
-          [selectedItem2]: event.target.value,
-        });
-      };
+    };
 
-      useEffect(() => {
+    const handleColorChange2 = (event) => {
+        setImageColors2({
+            ...imageColors2,
+            [selectedItem2]: event.target.value,
+        });
+    };
+
+    useEffect(() => {
         Object.entries(imageColors2).forEach(([imageNames2, color]) => {
             updateImageColor2(imageNames2, color);
         });
-      }, [imageColors2]);
-    
-    
-      const updateImageColor2 = (imageName, color) => {
+    }, [imageColors2]);
+
+
+    const updateImageColor2 = (imageName, color) => {
         const canvas2 = canvasRefs2[imageName].current;
         if (!canvas2) return; // Ensure canvas2 is not null
-      
+
         const ctx2 = canvas2.getContext('2d');
         const img2 = new Image();
-      
+
         img2.onload = function () {
-          canvas2.width = img2.width;
-          canvas2.height = img2.height;
-          ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
-          ctx2.drawImage(img2, 0, 0);
-      
-          const imageData2 = ctx2.getImageData(0, 0, canvas2.width, canvas2.height);
-          const data = imageData2.data;
-      
-          const red = parseInt(color.substr(1, 2), 16);
-          const green = parseInt(color.substr(3, 2), 16);
-          const blue = parseInt(color.substr(5, 2), 16);
-      
-          for (let i = 0; i < data.length; i += 4) {
-            if (data[i + 3] > 0) {
-              data[i] = red;
-              data[i + 1] = green;
-              data[i + 2] = blue;
+            canvas2.width = img2.width;
+            canvas2.height = img2.height;
+            ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
+            ctx2.drawImage(img2, 0, 0);
+
+            const imageData2 = ctx2.getImageData(0, 0, canvas2.width, canvas2.height);
+            const data = imageData2.data;
+
+            const red = parseInt(color.substr(1, 2), 16);
+            const green = parseInt(color.substr(3, 2), 16);
+            const blue = parseInt(color.substr(5, 2), 16);
+
+            for (let i = 0; i < data.length; i += 4) {
+                if (data[i + 3] > 0) {
+                    data[i] = red;
+                    data[i + 1] = green;
+                    data[i + 2] = blue;
+                }
             }
-          }
-      
-          ctx2.putImageData(imageData2, 0, 0);
+
+            ctx2.putImageData(imageData2, 0, 0);
         };
-      
+
         img2.src = imageName;
-      };
-      
- 
+    };
 
 
-        const handleBack = () => {
+
+
+    const handleBack = () => {
         setFrente(false);
-      };
+    };
 
-        const handleFront = () => {
-            setFrente(true);
-        };
+    const handleFront = () => {
+        setFrente(true);
+    };
 
 
 
@@ -859,63 +802,53 @@ function Diseño() {
 
                                 </div>
 
-                               {/*  <canvas
-                                    className="canvas-draw"
-                                    onMouseDown={startDrawing}
-                                    onMouseUp={finishDrawing}
-                                    onMouseMove={draw}
-                                    ref={canvasRef}
-                                >
-
-                                </canvas>  */}
-
                                 {frente ? <div className="container-buzoFrente-backbutton">
-                                <div className="buzo-container">  
-                                {images.map((image) => (
-                              
-                                    <canvas key={image} ref={canvasRefs[image]} className="position-images"></canvas>
-                               
-                                
-                                ))}
-                                <img 
-                                src=''
-                                className='back'
-                                >
-                                </img>
+                                    <div className="buzo-container">
+                                        {images.map((image) => (
 
-                                <img 
-                                src={remeraCuelloRedondoFrenteContorno}
-                                className='buzoContorno'/>
-                                </div>
+                                            <canvas key={image} ref={canvasRefs[image]} className="position-images"></canvas>
+
+
+                                        ))}
+                                        <img
+                                            src=''
+                                            className='back'
+                                        >
+                                        </img>
+
+                                        <img
+                                            src={remeraCuelloRedondoFrenteContorno}
+                                            className='buzoContorno' />
+                                    </div>
                                 </div> :
 
-                                <div className="container-buzoFrente-backbutton">
-                                <div className="buzo-container">  
-                                {images2.map((image) => (
-                              
-                                    <canvas key={image} ref={canvasRefs2[image]} className="position-images"></canvas>
-                               
-                                
-                                ))}
-                                <img 
-                                src=''
-                                className='back'
-                                >
-                                </img>
+                                    <div className="container-buzoFrente-backbutton">
+                                        <div className="buzo-container">
+                                            {images2.map((image) => (
 
-                                <img 
-                                src={remeraCuelloRedondoDorsoContorno}
-                                className='buzoContorno'/>
-                                </div>
-                                </div>
+                                                <canvas key={image} ref={canvasRefs2[image]} className="position-images"></canvas>
+
+
+                                            ))}
+                                            <img
+                                                src=''
+                                                className='back'
+                                            >
+                                            </img>
+
+                                            <img
+                                                src={remeraCuelloRedondoDorsoContorno}
+                                                className='buzoContorno' />
+                                        </div>
+                                    </div>
                                 }
-                                
+
 
                             </div>
 
                         </div>
 
-                       
+
 
                     </div>
 
@@ -948,41 +881,41 @@ function Diseño() {
 
 
                             <div className="button-frente-imagenesContainer">
-                            <Button onClick={handleFront}>Frente</Button>
-                            <div className="image-buttons">
-                            {images.map((image, index) => (
-                            
-                            <Button 
-                            key={image} 
-                            onClick={() => handleImageChange(image)}
-                            >
-                                {imageNames[index]}
-                            </Button>
-                            
-                            ))}
-                            </div>
-                            <div className="eligeColor">ELIGE TU COLOR</div>
-                            <input className="inputColor" type="color" value={imageColors[selectedItem]} onChange={handleColorChange} />     
+                                <Button onClick={handleFront}>Frente</Button>
+                                <div className="image-buttons">
+                                    {images.map((image, index) => (
+
+                                        <Button
+                                            key={image}
+                                            onClick={() => handleImageChange(image)}
+                                        >
+                                            {imageNames[index]}
+                                        </Button>
+
+                                    ))}
+                                </div>
+                                <div className="eligeColor">ELIGE TU COLOR</div>
+                                <input className="inputColor" type="color" value={imageColors[selectedItem]} onChange={handleColorChange} />
                             </div>
 
                             <div className="button-dorso-imagenesContainer">
-                            <Button onClick={handleBack}>Dorso</Button>
-                            <div className="image-buttons">
-                            {images2.map((image2, index) => (
-                            
-                            <Button 
-                            key={image2} 
-                            onClick={() => handleImageChange2(image2)}
-                            >
-                                {imageNames2[index]}
-                            </Button>
-                            
-                            ))}
+                                <Button onClick={handleBack}>Dorso</Button>
+                                <div className="image-buttons">
+                                    {images2.map((image2, index) => (
+
+                                        <Button
+                                            key={image2}
+                                            onClick={() => handleImageChange2(image2)}
+                                        >
+                                            {imageNames2[index]}
+                                        </Button>
+
+                                    ))}
+                                </div>
+                                <div className="eligeColor">ELIGE TU COLOR</div>
+                                <input type="color" value={imageColors2[selectedItem2]} onChange={handleColorChange2} />
                             </div>
-                            <div className="eligeColor">ELIGE TU COLOR</div>
-                            <input type="color" value={imageColors2[selectedItem2]} onChange={handleColorChange2} />     
-                            </div>        
-                                
+
 
 
 
