@@ -1,13 +1,13 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, createContext } from "react";
 import "./diseño.css";
-import { Form, Upload } from 'antd';
+import { Form, Input, Upload } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import Swal from 'sweetalert2';
 import { useLocation } from 'react-router-dom';
 import html2canvas from "html2canvas";
 
 import '../prueba/prueba.css';
-import { Button } from 'antd';
+import { Button, Modal, Space } from 'antd'
 
 import remeraCuelloRedondoFrenteContorno from '../diseño/Assets/RemeraCuelloRedondoFrente/remeraCuelloRedondoFrenteContorno.png';
 import remeraCuelloRedondoFrenteCuello from '../diseño/Assets/RemeraCuelloRedondoFrente/remeraCuelloRedondoFrenteCuello.png';
@@ -24,7 +24,8 @@ import remeraCuelloRedondoDorsoPuños from "../diseño/Assets/RemeraCuelloRedond
 import remeraCuelloRedondoDorsoTorso from "../diseño/Assets/RemeraCuelloRedondoDorso/remeraCuelloRedondoDorsoTorso.png"
 import remeraCuelloRedondoDorsoContorno from "../diseño/Assets/RemeraCuelloRedondoDorso/remeraCuelloRedondoDorsoContorno.png"
 
-
+const ReachableContext = createContext(null);
+const UnreachableContext = createContext(null);
 
 function Diseño() {
 
@@ -34,6 +35,11 @@ function Diseño() {
         window.scrollTo(0, 0);
     }, [location]);
 
+
+    const [disabledButtons, setdisabledButtons] = useState(true);
+    const [activeButtons, setActiveButtons] = useState([]);
+    const [modal, contextHolder] = Modal.useModal();
+    
     const [text1, setText1] = useState("Text 1");
     const [text2, setText2] = useState("Text 2");
     const [text1FontSize, setText1FontSixe] = useState("18px");
@@ -605,8 +611,12 @@ function Diseño() {
 
     const handleImageChange = (image) => {
         setSelectedItem(image);
+        setActiveButtons((prevActiveButtons) =>
+        prevActiveButtons.includes(image)
+          ? prevActiveButtons.filter((item) => item !== image)
+          : [image]
+      );
     };
-
 
 
     const handleColorChange = (event) => {
@@ -693,8 +703,12 @@ function Diseño() {
 
     const handleImageChange2 = (image) => {
         setSelectedItem2(image);
+        setActiveButtons((prevActiveButtons) =>
+        prevActiveButtons.includes(image)
+          ? prevActiveButtons.filter((item) => item !== image)
+          : [image]
+      );
     };
-
     const handleColorChange2 = (event) => {
         setImageColors2({
             ...imageColors2,
@@ -746,15 +760,36 @@ function Diseño() {
 
 
 
-    const handleBack = () => {
-        setFrente(false);
-    };
-
     const handleFront = () => {
         setFrente(true);
+        setdisabledButtons(true)
+
     };
 
+    const handleBack = () => {
+        setFrente(false);
+        setdisabledButtons(false) 
+    };
+    
+      const config = {
+        title: '¡Guarda esta parte antes de continuar!',
+        content: (
+            
+            <div>¿Seguro que quieres avanzar?</div>
+            
+        ),
+        onOk: handleBack,
+        };
 
+    const config2 = {
+        title: '¡Guarda esta parte antes de continuar!',
+        content: (
+            
+            <div>¿Seguro que quieres avanzar?</div>
+            
+        ),
+        onOk: handleFront,
+        };
 
     return (
 
@@ -881,39 +916,140 @@ function Diseño() {
 
 
                             <div className="button-frente-imagenesContainer">
-                                <Button onClick={handleFront}>Frente</Button>
-                                <div className="image-buttons">
-                                    {images.map((image, index) => (
+                            <ReachableContext.Provider value="Light">
+                            <Space>
+                                <Button
+                                onClick={() => {
+                                    modal.confirm(config2);
+                                }}
+                                style={{ width: '408px' }} 
 
-                                        <Button
-                                            key={image}
-                                            onClick={() => handleImageChange(image)}
-                                        >
-                                            {imageNames[index]}
-                                        </Button>
+                                >
+                                Frente
+                                </Button>
+                                
+                            </Space>
+                            {/* `contextHolder` should always be placed under the context you want to access */}
+                            {contextHolder}
 
-                                    ))}
+                            {/* Can not access this context since `contextHolder` is not in it */}
+                            <UnreachableContext.Provider value="Bamboo" />
+                            </ReachableContext.Provider>
+
+
+
+                            <div className="image-buttons">
+                                {images.map((image, index) =>
+                                disabledButtons ? (
+                                    <Button
+                                    key={image}
+                                    onClick={() => handleImageChange(image)}
+                                    type={activeButtons.includes(image) ? 'primary' : 'default'}
+                                    style={{margin:"0.5rem"}}
+                                    >
+                                    {imageNames[index]}
+                                    </Button>
+                                    ) 
+                                    : 
+                                    <Button 
+                                    disabled={true}
+                                    style={{margin:"0.5rem"}}
+                                    key={image} 
+                                    onClick={() => handleImageChange(image)}>
+                                    {imageNames[index]}
+                                    </Button>
+                                )}
                                 </div>
                                 <div className="eligeColor">ELIGE TU COLOR</div>
-                                <input className="inputColor" type="color" value={imageColors[selectedItem]} onChange={handleColorChange} />
+                                { disabledButtons ? 
+                               <Input
+                                style={{width:"70px", marginBottom:"1rem"}}
+                                type="color" 
+                                value={imageColors[selectedItem]} 
+                                onChange={handleColorChange} 
+                                />
+                                :
+                                <Input
+                                style={{width:"70px", marginBottom:"1rem"}}
+                                disabled
+                                type="color" 
+                                value={imageColors[selectedItem]} 
+                                onChange={handleColorChange} 
+                                />
+                                }
+                              
                             </div>
 
                             <div className="button-dorso-imagenesContainer">
-                                <Button onClick={handleBack}>Dorso</Button>
+
+
+                            <ReachableContext.Provider value="Light">
+                            <Space>
+                                <Button
+                                onClick={() => {
+                                    modal.confirm(config);
+                                }}
+                                style={{ width: '408px' }} 
+
+                                >
+                                Dorso
+                                </Button>
+                                
+                            </Space>
+                            {/* `contextHolder` should always be placed under the context you want to access */}
+                            {contextHolder}
+
+                            {/* Can not access this context since `contextHolder` is not in it */}
+                            <UnreachableContext.Provider value="Bamboo" />
+                            </ReachableContext.Provider>
+
+{/*                             <Button onClick={handleBack}>Dorso</Button>
+ */}
+
+
+
                                 <div className="image-buttons">
                                     {images2.map((image2, index) => (
-
+                                         disabledButtons ? (
                                         <Button
+                                            disabled={true}
                                             key={image2}
                                             onClick={() => handleImageChange2(image2)}
+                                            style={{margin:"0.5rem"}}
+                                            type={activeButtons.includes(image2) ? 'primary' : 'default'}
                                         >
                                             {imageNames2[index]}
                                         </Button>
-
+                                         )
+                                         : 
+                                         <Button
+                                            key={image2}
+                                            style={{margin:"0.5rem"}}
+                                            onClick={() => handleImageChange2(image2)}
+                                            type={activeButtons.includes(image2) ? 'primary' : 'default'}
+                                        >
+                                            {imageNames2[index]}
+                                        </Button>
                                     ))}
                                 </div>
                                 <div className="eligeColor">ELIGE TU COLOR</div>
-                                <input type="color" value={imageColors2[selectedItem2]} onChange={handleColorChange2} />
+
+                               { disabledButtons ? 
+                                <Input
+                                style={{width:"70px", marginBottom:"1rem"}} 
+                               disabled
+                                type="color" 
+                                value={imageColors2[selectedItem2]} 
+                                onChange={handleColorChange2} 
+                                />
+                                :
+                                <Input
+                                style={{width:"70px", marginBottom:"1rem"}}
+                                type="color" 
+                                value={imageColors2[selectedItem2]} 
+                                onChange={handleColorChange2} 
+                                />
+                                }
                             </div>
 
 
