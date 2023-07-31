@@ -597,7 +597,7 @@ function Diseño() {
         Object.entries(imageColors).forEach(([imageName, color]) => {
             updateImageColor(imageName, color);
         });
-    }, [imageColors]);
+    }, [imageColors, updateImageColor()]);
 
     const updateImageColor = (imageName, color) => {
         const canvas = canvasRefs[imageName].current;
@@ -672,7 +672,7 @@ function Diseño() {
         Object.entries(imageColors2).forEach(([imageNames2, color]) => {
             updateImageColor2(imageNames2, color);
         });
-    }, [imageColors2]);
+    }, [imageColors2, updateImageColor2()]);
 
 
     const updateImageColor2 = (imageName, color) => {
@@ -781,7 +781,7 @@ function Diseño() {
 
                                         <img
                                             src={buzoFrenteContorno}
-                                            className='buzoContorno' />
+                                            className='buzoContorno' >
                                     </div>
                                 </div> :
 
