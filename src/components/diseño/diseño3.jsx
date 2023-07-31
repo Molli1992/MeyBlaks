@@ -887,18 +887,19 @@ function Diseño() {
 
                             <div className="button-frente-imagenesContainer">
                             <ReachableContext.Provider value="Light">
-                            <Space>
+                            <div className="container">
                                 <Button
                                 onClick={() => {
                                     modal.confirm(config2);
                                 }}
-                                style={{ width: '408px' }} 
+                                
+                                className="botonesResponsive" 
 
                                 >
                                 Frente
                                 </Button>
                                 
-                            </Space>
+                            </div>
                             {/* `contextHolder` should always be placed under the context you want to access */}
                             {contextHolder}
 
@@ -954,18 +955,20 @@ function Diseño() {
 
 
                             <ReachableContext.Provider value="Light">
-                            <Space>
+                            <div className="container">
                                 <Button
                                 onClick={() => {
                                     modal.confirm(config);
                                 }}
-                                style={{ width: '408px' }} 
+                                
+                                className="botonesResponsive" 
+
 
                                 >
                                 Dorso
                                 </Button>
                                 
-                            </Space>
+                            </div>
                             {/* `contextHolder` should always be placed under the context you want to access */}
                             {contextHolder}
 
