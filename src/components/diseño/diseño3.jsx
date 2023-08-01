@@ -556,12 +556,12 @@ function Diseño() {
 
 
     const images = useMemo(() => [
-        buzoFrenteBolsillo,
-        buzoFrenteCintura,
-        buzoFrentePuños,
-        buzoFrenteCapuchaInterior,
-        buzoFrenteTorso,
-        buzoFrenteMangas
+        chombaFrenteBotonera,
+        chombaFrenteCuello,
+        chombaFrenteInterior,
+        chombaFrenteMangas,
+        chombaFrentePuños,
+        chombaFrenteTorso
     ], []);
 
 
@@ -610,10 +610,10 @@ function Diseño() {
     };
 
     const images2 = useMemo(() => [
-        buzoDorsoCintura,
-        buzoDorsoPuños,
-        buzoDorsoTorso,
-        buzoDorsoMangas
+        chombaDorsoCuello,
+        chombaDorsoMangas,
+        chombaDorsoPuños,
+        chombaDorsoTorso
     ], []);
 
     const imageNames2 = [

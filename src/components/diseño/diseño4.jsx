@@ -563,12 +563,12 @@ function Diseño() {
 
 
     const images = useMemo(() => [
-        buzoFrenteBolsillo,
-        buzoFrenteCintura,
-        buzoFrentePuños,
-        buzoFrenteCapuchaInterior,
-        buzoFrenteTorso,
-        buzoFrenteMangas
+        remeraCuelloRedondoFrenteCuello,
+        remeraCuelloRedondoFrenteInterior,
+        remeraCuelloRedondoFrenteMangas,
+        remeraCuelloRedondoFrentePuños,
+        remeraCuelloRedondoFrenteTorso,
+        remeraCuelloRedondoFrenteCintura
     ], []);
 
     const imageNames = [
@@ -615,10 +615,11 @@ function Diseño() {
     };
 
     const images2 = useMemo(() => [
-        buzoDorsoCintura,
-        buzoDorsoPuños,
-        buzoDorsoTorso,
-        buzoDorsoMangas
+        remeraCuelloRedondoDorsoCintura,
+        remeraCuelloRedondoDorsoCuello,
+        remeraCuelloRedondoDorsoMangas,
+        remeraCuelloRedondoDorsoPuños,
+        remeraCuelloRedondoDorsoTorso
     ], []);
 
     const imageNames2 = [
