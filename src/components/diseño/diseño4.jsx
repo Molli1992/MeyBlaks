@@ -819,15 +819,12 @@ function Diseño() {
 
 
                                         ))}
-                                        <img
-                                            src=''
-                                            className='back'
-                                        >
-                                        </img>
 
                                         <img
                                             src={remeraCuelloRedondoFrenteContorno}
-                                            className='buzoContorno' />
+                                            className='buzoContorno'
+                                            alt="Remera"
+                                        />
                                     </div>
                                 </div> :
 
@@ -839,15 +836,12 @@ function Diseño() {
 
 
                                             ))}
-                                            <img
-                                                src=''
-                                                className='back'
-                                            >
-                                            </img>
 
                                             <img
                                                 src={remeraCuelloRedondoDorsoContorno}
-                                                className='buzoContorno' />
+                                                className='buzoContorno'
+                                                alt="Remera"
+                                            />
                                         </div>
                                     </div>
                                 }

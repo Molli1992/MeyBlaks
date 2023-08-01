@@ -56,18 +56,6 @@ function HomeDiseño() {
 
     };
 
-    const onChangeState6 = () => {
-
-        setState(6);
-
-    };
-
-    const onChangeState7 = () => {
-
-        setState(7);
-
-    };
-
 
     return (
 
