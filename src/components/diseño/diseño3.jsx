@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef, createContext, useMemo } from "react";
+import React, { useState, useEffect, createContext, useMemo } from "react";
 import "./diseño.css";
 import { Input } from 'antd';
-import Swal from 'sweetalert2';
 import { useLocation } from 'react-router-dom';
 import html2canvas from "html2canvas";
 

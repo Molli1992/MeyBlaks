@@ -1,9 +1,8 @@
 import React, { useState, useEffect, createContext, useMemo } from "react";
 import "./diseño.css";
-import { PlusOutlined } from '@ant-design/icons';
 import { useLocation } from 'react-router-dom';
 import html2canvas from "html2canvas";
-import { Form, Input, Upload } from 'antd';
+import { Input } from 'antd';
 
 import '../prueba/prueba.css';
 import { Button, Modal } from 'antd'
