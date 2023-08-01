@@ -139,6 +139,46 @@
     .row-diseño {
         display: block;
     }
+
+    .memeText1-1 {
+        position: absolute;
+        top: 200px;
+        left: 50%;
+        z-index: 9999;
+        display: none;
+        font-weight: bold;
+    }
+
+    .memeText2-1 {
+        position: absolute;
+        top: 330px;
+        left: 44%;
+        z-index: 9999;
+        display: none;
+        font-weight: bold;
+    }
+
+    .memeText3-1 {
+        position: absolute;
+        top: 230px;
+        left: 283px;
+        z-index: 9999;
+        display: none;
+        writing-mode: vertical-rl;
+        /* Cambiar a vertical-lr para la dirección opuesta */
+        font-weight: bold;
+    }
+
+    .memeText4-1 {
+        position: absolute;
+        top: 230px;
+        left: 115px;
+        z-index: 9999;
+        display: none;
+        writing-mode: vertical-rl;
+        /* Cambiar a vertical-lr para la dirección opuesta */
+        font-weight: bold;
+    }
 }
 
 @media(max-width: 770px) {
@@ -165,6 +205,91 @@
     }
 }
 
+@media(max-width: 500px) {
+
+    .memeText1-1 {
+        position: absolute;
+        top: 200px;
+        left: 50%;
+        z-index: 9999;
+        display: none;
+        font-weight: bold;
+    }
+
+    .memeText2-1 {
+        position: absolute;
+        top: 330px;
+        left: 44%;
+        z-index: 9999;
+        display: none;
+        font-weight: bold;
+    }
+
+    .memeText3-1 {
+        position: absolute;
+        top: 230px;
+        left: 68%;
+        z-index: 9999;
+        display: none;
+        writing-mode: vertical-rl;
+        /* Cambiar a vertical-lr para la dirección opuesta */
+        font-weight: bold;
+    }
+
+    .memeText4-1 {
+        position: absolute;
+        top: 230px;
+        left: 24%;
+        z-index: 9999;
+        display: none;
+        writing-mode: vertical-rl;
+        /* Cambiar a vertical-lr para la dirección opuesta */
+        font-weight: bold;
+    }
+
+
+    .memeText1-2 {
+        position: absolute;
+        top: 220px;
+        left: 50%;
+        z-index: 9999;
+        display: none;
+        font-weight: bold;
+    }
+
+    .memeText2-2 {
+        position: absolute;
+        top: 350px;
+        left: 44%;
+        z-index: 9999;
+        display: none;
+        font-weight: bold;
+    }
+
+    .memeText3-2 {
+        position: absolute;
+        top: 195px;
+        left: 68%;
+        z-index: 9999;
+        display: none;
+        writing-mode: vertical-rl;
+        /* Cambiar a vertical-lr para la dirección opuesta */
+        font-weight: bold;
+    }
+
+    .memeText4-2 {
+        position: absolute;
+        top: 195px;
+        left: 24%;
+        z-index: 9999;
+        display: none;
+        writing-mode: vertical-rl;
+        /* Cambiar a vertical-lr para la dirección opuesta */
+        font-weight: bold;
+    }
+
+}
+
 @media(max-width: 470px) {
     .canvas-draw {
         width: 300px;
@@ -182,6 +307,111 @@
         width: 25px;
         margin: 7px;
     }
+}
+
+@media(max-width: 450px) {
+
+    .memeText2-1 {
+        position: absolute;
+        top: 330px;
+        left: 42%;
+        z-index: 9999;
+        display: none;
+        font-weight: bold;
+    }
+
+    .memeText3-1 {
+        position: absolute;
+        top: 230px;
+        left: 69%;
+        z-index: 9999;
+        display: none;
+        writing-mode: vertical-rl;
+        /* Cambiar a vertical-lr para la dirección opuesta */
+        font-weight: bold;
+    }
+
+    .memeText4-1 {
+        position: absolute;
+        top: 230px;
+        left: 23%;
+        z-index: 9999;
+        display: none;
+        writing-mode: vertical-rl;
+        /* Cambiar a vertical-lr para la dirección opuesta */
+        font-weight: bold;
+    }
+
+    .memeText3-2 {
+        position: absolute;
+        top: 195px;
+        left: 69%;
+        z-index: 9999;
+        display: none;
+        writing-mode: vertical-rl;
+        /* Cambiar a vertical-lr para la dirección opuesta */
+        font-weight: bold;
+    }
+
+    .memeText4-2 {
+        position: absolute;
+        top: 195px;
+        left: 23%;
+        z-index: 9999;
+        display: none;
+        writing-mode: vertical-rl;
+        /* Cambiar a vertical-lr para la dirección opuesta */
+        font-weight: bold;
+    }
+
+}
+
+@media(max-width: 420px) {
+
+    .memeText3-1 {
+        position: absolute;
+        top: 230px;
+        left: 75%;
+        z-index: 9999;
+        display: none;
+        writing-mode: vertical-rl;
+        /* Cambiar a vertical-lr para la dirección opuesta */
+        font-weight: bold;
+    }
+
+    .memeText4-1 {
+        position: absolute;
+        top: 230px;
+        left: 17%;
+        z-index: 9999;
+        display: none;
+        writing-mode: vertical-rl;
+        /* Cambiar a vertical-lr para la dirección opuesta */
+        font-weight: bold;
+    }
+
+    .memeText3-2 {
+        position: absolute;
+        top: 195px;
+        left: 75%;
+        z-index: 9999;
+        display: none;
+        writing-mode: vertical-rl;
+        /* Cambiar a vertical-lr para la dirección opuesta */
+        font-weight: bold;
+    }
+
+    .memeText4-2 {
+        position: absolute;
+        top: 195px;
+        left: 17%;
+        z-index: 9999;
+        display: none;
+        writing-mode: vertical-rl;
+        /* Cambiar a vertical-lr para la dirección opuesta */
+        font-weight: bold;
+    }
+
 }
 
 @media(max-width: 370px) {
