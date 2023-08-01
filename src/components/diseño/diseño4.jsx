@@ -784,8 +784,7 @@ function Diseño() {
 
                     <div className="col-lg-8 display">
 
-                        <h1>Primero pintar luego agregar texto y imagen</h1>
-                        <h4>El diseño solo en PC</h4>
+                        <h1>Agregar texto y imagen solo en PC</h1>
 
                         <div id="myDiv">
 
