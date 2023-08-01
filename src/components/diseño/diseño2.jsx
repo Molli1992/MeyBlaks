@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, createContext } from "react";
+import React, { useState, useEffect, useRef, createContext, useMemo } from "react";
 import "./diseño.css";
 import { PlusOutlined } from '@ant-design/icons';
 import Swal from 'sweetalert2';
@@ -588,8 +588,11 @@ function Diseño() {
 
     });
 
-    const canvasRefs = {};
-    images.forEach((image) => (canvasRefs[image] = React.createRef()));
+    const canvasRefs = useMemo(() => {
+        const refs = {};
+        images.forEach((image) => (refs[image] = React.createRef()));
+        return refs;
+    }, [images]);
 
     const handleImageChange = (image) => {
         setSelectedItem(image);
@@ -633,8 +636,11 @@ function Diseño() {
 
     });
 
-    const canvasRefs2 = {};
-    images2.forEach((image) => (canvasRefs2[image] = React.createRef()));
+    const canvasRefs2 = useMemo(() => {
+        const refs = {};
+        images2.forEach((image) => (refs[image] = React.createRef()));
+        return refs;
+    }, [images2]);
 
     const handleImageChange2 = (image) => {
         setSelectedItem2(image);
@@ -737,7 +743,7 @@ function Diseño() {
             updateImageColor(imageName, color);
         });
 
-    }, [imageColors, canvasRefs]);
+    }, [imageColors]);
 
     useEffect(() => {
 
@@ -779,7 +785,7 @@ function Diseño() {
             updateImageColor2(imageNames2, color);
         });
 
-    }, [imageColors2, canvasRefs2]);
+    }, [imageColors2]);
 
     return (
 
