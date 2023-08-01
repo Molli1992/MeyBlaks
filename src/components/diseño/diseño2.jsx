@@ -785,7 +785,7 @@ function Diseño() {
             updateImageColor2(imageNames2, color);
         });
 
-    }, [imageColors2, , canvasRefs2]);
+    }, [imageColors2, canvasRefs2]);
 
     return (
 
