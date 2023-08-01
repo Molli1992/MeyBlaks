@@ -737,7 +737,7 @@ function Diseño() {
             updateImageColor(imageName, color);
         });
 
-    }, [imageColors]);
+    }, [imageColors, canvasRefs]);
 
     useEffect(() => {
 
@@ -779,7 +779,7 @@ function Diseño() {
             updateImageColor2(imageNames2, color);
         });
 
-    }, [imageColors2]);
+    }, [imageColors2, canvasRefs2]);
 
     return (
 
