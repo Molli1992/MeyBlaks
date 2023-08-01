@@ -5,14 +5,6 @@
     background-color: #f7f7f7;
 }
 
-.canvas-draw {
-    background-image: url("../../img/buzo1Adelante.png");
-    background-size: cover;
-    width: 700px;
-    height: 700px;
-    cursor: pointer;
-}
-
 .row-diseño {
     display: flex;
 }
@@ -25,53 +17,85 @@
     display: flex;
 }
 
-.color-tshirt-white {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    margin: 10px;
-    cursor: pointer;
-    border: none;
-    border: 1px solid black;
-}
-
-.color-tshirt {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    margin: 10px;
-    cursor: pointer;
-    border: none;
-}
-
-.imgTshirt {
-    height: 650px;
-}
-
-.imgTshirt img {
-    height: 100%;
-    width: 100%;
-}
-
-.memeText {
+.memeText1-1 {
     position: absolute;
-    top: 200px;
-    left: 235px;
+    top: 280px;
+    left: 410px;
+    z-index: 9999;
+    display: none;
+    font-weight: bold;
 }
 
-.memeText1 {
+.memeText2-1 {
     position: absolute;
-    z-index: 9999; /* Puedes usar cualquier valor alto, mientras sea mayor que el de los otros elementos */
-
+    top: 455px;
+    left: 347px;
+    z-index: 9999;
+    display: none;
+    font-weight: bold;
 }
 
-.memeText2 {
+.memeText3-1 {
     position: absolute;
-    z-index: 9999; 
+    top: 310px;
+    left: 485px;
+    z-index: 9999;
+    display: none;
+    writing-mode: vertical-rl;
+    /* Cambiar a vertical-lr para la dirección opuesta */
+    font-weight: bold;
 }
 
-.memeText img {
-    width: 300px;
+.memeText4-1 {
+    position: absolute;
+    top: 310px;
+    left: 225px;
+    z-index: 9999;
+    display: none;
+    writing-mode: vertical-rl;
+    /* Cambiar a vertical-lr para la dirección opuesta */
+    font-weight: bold;
+}
+
+
+.memeText1-2 {
+    position: absolute;
+    top: 280px;
+    left: 410px;
+    z-index: 9999;
+    display: none;
+    font-weight: bold;
+}
+
+.memeText2-2 {
+    position: absolute;
+    top: 480px;
+    left: 347px;
+    z-index: 9999;
+    display: none;
+    font-weight: bold;
+}
+
+.memeText3-2 {
+    position: absolute;
+    top: 250px;
+    left: 485px;
+    z-index: 9999;
+    display: none;
+    writing-mode: vertical-rl;
+    /* Cambiar a vertical-lr para la dirección opuesta */
+    font-weight: bold;
+}
+
+.memeText4-2 {
+    position: absolute;
+    top: 250px;
+    left: 225px;
+    z-index: 9999;
+    display: none;
+    writing-mode: vertical-rl;
+    /* Cambiar a vertical-lr para la dirección opuesta */
+    font-weight: bold;
 }
 
 .memeText p {
@@ -82,7 +106,6 @@
 .box {
     display: flex;
     position: relative;
-    cursor: grab;
 }
 
 #img-check {
