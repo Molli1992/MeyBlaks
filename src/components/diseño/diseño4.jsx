@@ -562,15 +562,14 @@ function Diseño() {
     //----------------- CODIGO DYLAN ------------------//
 
 
-    const images = [
-        remeraCuelloRedondoFrenteCuello,
-        remeraCuelloRedondoFrenteInterior,
-        remeraCuelloRedondoFrenteMangas,
-        remeraCuelloRedondoFrentePuños,
-        remeraCuelloRedondoFrenteTorso,
-        remeraCuelloRedondoFrenteCintura
-
-    ];
+    const images = useMemo(() => [
+        buzoFrenteBolsillo,
+        buzoFrenteCintura,
+        buzoFrentePuños,
+        buzoFrenteCapuchaInterior,
+        buzoFrenteTorso,
+        buzoFrenteMangas
+    ], []);
 
     const imageNames = [
         'Cuello',
@@ -615,13 +614,12 @@ function Diseño() {
         });
     };
 
-    const images2 = [
-        remeraCuelloRedondoDorsoCintura,
-        remeraCuelloRedondoDorsoCuello,
-        remeraCuelloRedondoDorsoMangas,
-        remeraCuelloRedondoDorsoPuños,
-        remeraCuelloRedondoDorsoTorso
-    ];
+    const images2 = useMemo(() => [
+        buzoDorsoCintura,
+        buzoDorsoPuños,
+        buzoDorsoTorso,
+        buzoDorsoMangas
+    ], []);
 
     const imageNames2 = [
         'Cintura',

@@ -555,15 +555,15 @@ function Diseño() {
     //----------------- CODIGO DYLAN ------------------//
 
 
-    const images = [
-        chombaFrenteBotonera,
-        chombaFrenteCuello,
-        chombaFrenteInterior,
-        chombaFrenteMangas,
-        chombaFrentePuños,
-        chombaFrenteTorso
+    const images = useMemo(() => [
+        buzoFrenteBolsillo,
+        buzoFrenteCintura,
+        buzoFrentePuños,
+        buzoFrenteCapuchaInterior,
+        buzoFrenteTorso,
+        buzoFrenteMangas
+    ], []);
 
-    ];
 
     const imageNames = [
         'Botonera',
@@ -609,12 +609,12 @@ function Diseño() {
         });
     };
 
-    const images2 = [
-        chombaDorsoCuello,
-        chombaDorsoMangas,
-        chombaDorsoPuños,
-        chombaDorsoTorso
-    ];
+    const images2 = useMemo(() => [
+        buzoDorsoCintura,
+        buzoDorsoPuños,
+        buzoDorsoTorso,
+        buzoDorsoMangas
+    ], []);
 
     const imageNames2 = [
         'Cuello',
