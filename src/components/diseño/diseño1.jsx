@@ -607,38 +607,6 @@ function Diseño() {
         });
     };
 
-    const updateImageColor = (imageName, color) => {
-        const canvas = canvasRefs[imageName].current;
-        const ctx = canvas.getContext('2d');
-        const img = new Image();
-
-        img.onload = function () {
-            canvas.width = img.width;
-            canvas.height = img.height;
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.drawImage(img, 0, 0);
-
-            const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-            const data = imageData.data;
-
-            const red = parseInt(color.substr(1, 2), 16);
-            const green = parseInt(color.substr(3, 2), 16);
-            const blue = parseInt(color.substr(5, 2), 16);
-
-            for (let i = 0; i < data.length; i += 4) {
-                if (data[i + 3] > 0) {
-                    data[i] = red;
-                    data[i + 1] = green;
-                    data[i + 2] = blue;
-                }
-            }
-
-            ctx.putImageData(imageData, 0, 0);
-        };
-
-        img.src = imageName;
-    };
-
     const images2 = [
         buzoDorsoCintura,
         buzoDorsoPuños,
@@ -681,40 +649,6 @@ function Diseño() {
         });
     };
 
-    const updateImageColor2 = (imageName, color) => {
-        const canvas2 = canvasRefs2[imageName].current;
-        if (!canvas2) return; // Ensure canvas2 is not null
-
-        const ctx2 = canvas2.getContext('2d');
-        const img2 = new Image();
-
-        img2.onload = function () {
-            canvas2.width = img2.width;
-            canvas2.height = img2.height;
-            ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
-            ctx2.drawImage(img2, 0, 0);
-
-            const imageData2 = ctx2.getImageData(0, 0, canvas2.width, canvas2.height);
-            const data = imageData2.data;
-
-            const red = parseInt(color.substr(1, 2), 16);
-            const green = parseInt(color.substr(3, 2), 16);
-            const blue = parseInt(color.substr(5, 2), 16);
-
-            for (let i = 0; i < data.length; i += 4) {
-                if (data[i + 3] > 0) {
-                    data[i] = red;
-                    data[i + 1] = green;
-                    data[i + 2] = blue;
-                }
-            }
-
-            ctx2.putImageData(imageData2, 0, 0);
-        };
-
-        img2.src = imageName;
-    };
-
     const handleFront = () => {
         setFrente(true);
         setdisabledButtons(true)
@@ -747,16 +681,86 @@ function Diseño() {
     };
 
     useEffect(() => {
+
+        const updateImageColor = (imageName, color) => {
+            const canvas = canvasRefs[imageName].current;
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+
+            img.onload = function () {
+                canvas.width = img.width;
+                canvas.height = img.height;
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.drawImage(img, 0, 0);
+
+                const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+                const data = imageData.data;
+
+                const red = parseInt(color.substr(1, 2), 16);
+                const green = parseInt(color.substr(3, 2), 16);
+                const blue = parseInt(color.substr(5, 2), 16);
+
+                for (let i = 0; i < data.length; i += 4) {
+                    if (data[i + 3] > 0) {
+                        data[i] = red;
+                        data[i + 1] = green;
+                        data[i + 2] = blue;
+                    }
+                }
+
+                ctx.putImageData(imageData, 0, 0);
+            };
+
+            img.src = imageName;
+        };
+
         Object.entries(imageColors).forEach(([imageName, color]) => {
             updateImageColor(imageName, color);
         });
+
     }, [imageColors]);
 
     useEffect(() => {
+
+        const updateImageColor2 = (imageName, color) => {
+            const canvas2 = canvasRefs2[imageName].current;
+            if (!canvas2) return; // Ensure canvas2 is not null
+
+            const ctx2 = canvas2.getContext('2d');
+            const img2 = new Image();
+
+            img2.onload = function () {
+                canvas2.width = img2.width;
+                canvas2.height = img2.height;
+                ctx2.clearRect(0, 0, canvas2.width, canvas2.height);
+                ctx2.drawImage(img2, 0, 0);
+
+                const imageData2 = ctx2.getImageData(0, 0, canvas2.width, canvas2.height);
+                const data = imageData2.data;
+
+                const red = parseInt(color.substr(1, 2), 16);
+                const green = parseInt(color.substr(3, 2), 16);
+                const blue = parseInt(color.substr(5, 2), 16);
+
+                for (let i = 0; i < data.length; i += 4) {
+                    if (data[i + 3] > 0) {
+                        data[i] = red;
+                        data[i + 1] = green;
+                        data[i + 2] = blue;
+                    }
+                }
+
+                ctx2.putImageData(imageData2, 0, 0);
+            };
+
+            img2.src = imageName;
+        };
+
         Object.entries(imageColors2).forEach(([imageNames2, color]) => {
             updateImageColor2(imageNames2, color);
         });
-    }, [imageColors2, updateImageColor2]);
+
+    }, [imageColors2]);
 
 
     return (
