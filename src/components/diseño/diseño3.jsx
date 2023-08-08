@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext, useMemo } from "react";
+import React, { useState, useEffect, createContext, useMemo, useRef } from "react";
 import "./diseño.css";
 import { Input } from 'antd';
 import { useLocation } from 'react-router-dom';
@@ -196,6 +196,234 @@ function Diseño() {
         });
 
     };
+
+    //-------------------------------------------------------------
+
+    const boxRef = useRef(null);
+    const constcontainerRef = useRef(null);
+    const isClicked = useRef(false);
+    const coords = useRef({
+        starX: 0,
+        starY: 0,
+        lastX: 0,
+        lastY: 0
+    });
+
+    useEffect(() => {
+        if (!boxRef.current || !constcontainerRef.current) return;
+
+        const box = boxRef.current;
+        const container = constcontainerRef.current;
+
+        const onMouseDown = (e = MouseEvent) => {
+            isClicked.current = true;
+            coords.current.starX = e.clientX;
+            coords.current.starY = e.clientY;
+        };
+
+        const onMouseUp = (e = MouseEvent) => {
+            isClicked.current = false;
+            coords.current.lastX = box.offsetLeft;
+            coords.current.lastY = box.offsetTop;
+        };
+
+        const onMouseMove = (e = MouseEvent) => {
+            if (!isClicked.current) return;
+
+            const nextX = e.clientX - coords.current.starX + coords.current.lastX;
+            const nextY = e.clientY - coords.current.starY + coords.current.lastY;
+
+            box.style.top = `${nextY}px`;
+            box.style.left = `${nextX}px`;
+        };
+
+        box.addEventListener("mousedown", onMouseDown);
+        box.addEventListener("mouseup", onMouseUp);
+        container.addEventListener("mousemove", onMouseMove);
+        container.addEventListener("mouseleave", onMouseUp);
+
+        const cleanUp = () => {
+            box.removeEventListener("mousedown", onMouseDown);
+            box.removeEventListener("mouseup", onMouseUp);
+            container.removeEventListener("mousemove", onMouseMove);
+            container.removeEventListener("mouseleave", onMouseUp);
+        };
+
+        return cleanUp;
+
+    }, []);
+
+    //--------------------------------------------
+
+    const boxRef2 = useRef(null);
+    const constcontainerRef2 = useRef(null);
+    const isClicked2 = useRef(false);
+    const coords2 = useRef({
+        starX: 0,
+        starY: 0,
+        lastX: 0,
+        lastY: 0
+    });
+
+    useEffect(() => {
+        if (!boxRef2.current || !constcontainerRef2.current) return;
+
+        const box2 = boxRef2.current;
+        const container2 = constcontainerRef2.current;
+
+        const onMouseDown2 = (e = MouseEvent) => {
+            isClicked2.current = true;
+            coords2.current.starX = e.clientX;
+            coords2.current.starY = e.clientY;
+        };
+
+        const onMouseUp2 = (e = MouseEvent) => {
+            isClicked2.current = false;
+            coords2.current.lastX = box2.offsetLeft;
+            coords2.current.lastY = box2.offsetTop;
+        };
+
+        const onMouseMove2 = (e = MouseEvent) => {
+            if (!isClicked2.current) return;
+
+            const nextX2 = e.clientX - coords2.current.starX + coords2.current.lastX;
+            const nextY2 = e.clientY - coords2.current.starY + coords2.current.lastY;
+
+            box2.style.top = `${nextY2}px`;
+            box2.style.left = `${nextX2}px`;
+        };
+
+        box2.addEventListener("mousedown", onMouseDown2);
+        box2.addEventListener("mouseup", onMouseUp2);
+        container2.addEventListener("mousemove", onMouseMove2);
+        container2.addEventListener("mouseleave", onMouseUp2);
+
+        const cleanUp2 = () => {
+            box2.removeEventListener("mousedown", onMouseDown2);
+            box2.removeEventListener("mouseup", onMouseUp2);
+            container2.removeEventListener("mousemove", onMouseMove2);
+            container2.removeEventListener("mouseleave", onMouseUp2);
+        };
+
+        return cleanUp2;
+
+    }, []);
+
+    // ---------------------------------------------------------------------------
+
+    const boxRef3 = useRef(null);
+    const constcontainerRef3 = useRef(null);
+    const isClicked3 = useRef(false);
+    const coords3 = useRef({
+        starX: 0,
+        starY: 0,
+        lastX: 0,
+        lastY: 0
+    });
+
+    useEffect(() => {
+        if (!boxRef3.current || !constcontainerRef3.current) return;
+
+        const box3 = boxRef3.current;
+        const container3 = constcontainerRef3.current;
+
+        const onMouseDown3 = (e = MouseEvent) => {
+            isClicked3.current = true;
+            coords3.current.starX = e.clientX;
+            coords3.current.starY = e.clientY;
+        };
+
+        const onMouseUp3 = (e = MouseEvent) => {
+            isClicked3.current = false;
+            coords3.current.lastX = box3.offsetLeft;
+            coords3.current.lastY = box3.offsetTop;
+        };
+
+        const onMouseMove3 = (e = MouseEvent) => {
+            if (!isClicked3.current) return;
+
+            const nextX3 = e.clientX - coords3.current.starX + coords3.current.lastX;
+            const nextY3 = e.clientY - coords3.current.starY + coords3.current.lastY;
+
+            box3.style.top = `${nextY3}px`;
+            box3.style.left = `${nextX3}px`;
+        };
+
+        box3.addEventListener("mousedown", onMouseDown3);
+        box3.addEventListener("mouseup", onMouseUp3);
+        container3.addEventListener("mousemove", onMouseMove3);
+        container3.addEventListener("mouseleave", onMouseUp3);
+
+        const cleanUp3 = () => {
+            box3.removeEventListener("mousedown", onMouseDown3);
+            box3.removeEventListener("mouseup", onMouseUp3);
+            container3.removeEventListener("mousemove", onMouseMove3);
+            container3.removeEventListener("mouseleave", onMouseUp3);
+        };
+
+        return cleanUp3;
+
+    }, []);
+
+    // ------------------------------------------------------------------
+
+    // ---------------------------------------------------------------------------
+
+    const boxRef4 = useRef(null);
+    const constcontainerRef4 = useRef(null);
+    const isClicked4 = useRef(false);
+    const coords4 = useRef({
+        starX: 0,
+        starY: 0,
+        lastX: 0,
+        lastY: 0
+    });
+
+    useEffect(() => {
+        if (!boxRef4.current || !constcontainerRef4.current) return;
+
+        const box4 = boxRef4.current;
+        const container4 = constcontainerRef4.current;
+
+        const onMouseDown4 = (e = MouseEvent) => {
+            isClicked4.current = true;
+            coords4.current.starX = e.clientX;
+            coords4.current.starY = e.clientY;
+        };
+
+        const onMouseUp4 = (e = MouseEvent) => {
+            isClicked4.current = false;
+            coords4.current.lastX = box4.offsetLeft;
+            coords4.current.lastY = box4.offsetTop;
+        };
+
+        const onMouseMove4 = (e = MouseEvent) => {
+            if (!isClicked4.current) return;
+
+            const nextX4 = e.clientX - coords4.current.starX + coords4.current.lastX;
+            const nextY4 = e.clientY - coords4.current.starY + coords4.current.lastY;
+
+            box4.style.top = `${nextY4}px`;
+            box4.style.left = `${nextX4}px`;
+        };
+
+        box4.addEventListener("mousedown", onMouseDown4);
+        box4.addEventListener("mouseup", onMouseUp4);
+        container4.addEventListener("mousemove", onMouseMove4);
+        container4.addEventListener("mouseleave", onMouseUp4);
+
+        const cleanUp4 = () => {
+            box4.removeEventListener("mousedown", onMouseDown4);
+            box4.removeEventListener("mouseup", onMouseUp4);
+            container4.removeEventListener("mousemove", onMouseMove4);
+            container4.removeEventListener("mouseleave", onMouseUp4);
+        };
+
+        return cleanUp4;
+
+    }, []);
+
+    // ------------------------------------------------------------------
 
     //----------------- CODIGO DYLAN ------------------//
 
@@ -431,33 +659,33 @@ function Diseño() {
 
                             <div className="card card-content">
 
-                                <div className="memeText1-2" id="texto-1">
+                                <div className="memeText1-2" id="texto-1" ref={constcontainerRef}>
 
-                                    <div className="box">
+                                    <div className="box" ref={boxRef}>
                                         <p id="family-p-1" style={{ fontSize: text1FontSize, color: colorText1 }}>{text1}</p>
                                     </div>
 
                                 </div>
 
-                                <div className="memeText2-2" id="texto-2">
+                                <div className="memeText2-2" id="texto-2" ref={constcontainerRef2}>
 
-                                    <div className="box">
+                                    <div className="box" ref={boxRef2}>
                                         <p id="family-p-2" style={{ fontSize: text2FontSize, color: colorText2 }} >{text2}</p>
                                     </div>
 
                                 </div>
 
-                                <div className="memeText3-2" id="texto-3">
+                                <div className="memeText3-2" id="texto-3" ref={constcontainerRef3}>
 
-                                    <div className="box">
+                                    <div className="box" ref={boxRef3}>
                                         <p id="family-p-1" style={{ fontSize: text3FontSize, color: colorText3 }}>{text3}</p>
                                     </div>
 
                                 </div>
 
-                                <div className="memeText4-2" id="texto-4">
+                                <div className="memeText4-2" id="texto-4" ref={constcontainerRef4}>
 
-                                    <div className="box">
+                                    <div className="box" ref={boxRef4}>
                                         <p id="family-p-2" style={{ fontSize: text4FontSize, color: colorText4 }} >{text4}</p>
                                     </div>
 

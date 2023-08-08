@@ -106,6 +106,7 @@
 .box {
     display: flex;
     position: relative;
+    cursor: pointer;
 }
 
 #img-check {
