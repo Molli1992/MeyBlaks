@@ -53,6 +53,10 @@ function Diseño() {
     const [colorText2, setColorText2] = useState("black");
     const [colorText3, setColorText3] = useState("black");
     const [colorText4, setColorText4] = useState("black");
+    const [positionText1, setPositionText1] = useState("horizontal");
+    const [positionText2, setPositionText2] = useState("horizontal");
+    const [positionText3, setPositionText3] = useState("vertical");
+    const [positionText4, setPositionText4] = useState("vertical");
 
     const arrayFontSize = ["Selecciona el tamaño", "6px", "8px", "10px", "12px", "14px", "16px", "18px", "20px", "22px", "24px", "26px", "28px", "30px",
         "32px", "34px", "36px", "38px", "40px", "42px", "44px", "46px", "48px", "50px", "52px", "54px", "56px"];
@@ -181,6 +185,94 @@ function Diseño() {
 
     }; 
     */
+
+    const texto1Girar = () => {
+
+        const text1 = document.getElementById("texto-1");
+
+        if (positionText1 === "vertical") {
+
+            text1.style.writingMode = "horizontal-tb";
+
+            setPositionText1("horizontal")
+
+        } else {
+
+            text1.style.writingMode = "vertical-rl";
+            text1.style.textOrientation = "mixed";
+            text1.style.whiteSpace = "nowrap";
+
+            setPositionText1("vertical")
+
+        }
+
+    };
+
+    const texto2Girar = () => {
+
+        const text1 = document.getElementById("texto-2");
+
+        if (positionText2 === "vertical") {
+
+            text1.style.writingMode = "horizontal-tb";
+
+            setPositionText2("horizontal")
+
+        } else {
+
+            text1.style.writingMode = "vertical-rl";
+            text1.style.textOrientation = "mixed";
+            text1.style.whiteSpace = "nowrap";
+
+            setPositionText2("vertical")
+
+        }
+
+    };
+
+    const texto3Girar = () => {
+
+        const text1 = document.getElementById("texto-3");
+
+        if (positionText3 === "vertical") {
+
+            text1.style.writingMode = "horizontal-tb";
+
+            setPositionText3("horizontal")
+
+        } else {
+
+            text1.style.writingMode = "vertical-rl";
+            text1.style.textOrientation = "mixed";
+            text1.style.whiteSpace = "nowrap";
+
+            setPositionText3("vertical")
+
+        }
+
+    };
+
+    const texto4Girar = () => {
+
+        const text1 = document.getElementById("texto-4");
+
+        if (positionText4 === "vertical") {
+
+            text1.style.writingMode = "horizontal-tb";
+
+            setPositionText4("horizontal")
+
+        } else {
+
+            text1.style.writingMode = "vertical-rl";
+            text1.style.textOrientation = "mixed";
+            text1.style.whiteSpace = "nowrap";
+
+            setPositionText4("vertical")
+
+        }
+
+    };
 
     const goBack = () => {
 
@@ -661,7 +753,7 @@ function Diseño() {
 
                                 <div className="memeText1-1" id="texto-1" ref={constcontainerRef}>
 
-                                    <div className="box" ref={boxRef}>
+                                    <div className="box" ref={boxRef} id="box-1">
                                         <p id="family-p-1" style={{ fontSize: text1FontSize, color: colorText1 }}>{text1}</p>
                                     </div>
 
@@ -669,7 +761,7 @@ function Diseño() {
 
                                 <div className="memeText2-1" id="texto-2" ref={constcontainerRef2}>
 
-                                    <div className="box" ref={boxRef2}>
+                                    <div className="box" ref={boxRef2} id="box-2">
                                         <p id="family-p-2" style={{ fontSize: text2FontSize, color: colorText2 }} >{text2}</p>
                                     </div>
 
@@ -677,7 +769,7 @@ function Diseño() {
 
                                 <div className="memeText3-1" id="texto-3" ref={constcontainerRef3}>
 
-                                    <div className="box" ref={boxRef3}>
+                                    <div className="box" ref={boxRef3} id="box-3">
                                         <p id="family-p-1" style={{ fontSize: text3FontSize, color: colorText3 }}>{text3}</p>
                                     </div>
 
@@ -685,7 +777,7 @@ function Diseño() {
 
                                 <div className="memeText4-1" id="texto-4" ref={constcontainerRef4}>
 
-                                    <div className="box" ref={boxRef4}>
+                                    <div className="box" ref={boxRef4} id="box-4">
                                         <p id="family-p-2" style={{ fontSize: text4FontSize, color: colorText4 }} >{text4}</p>
                                     </div>
 
@@ -739,9 +831,12 @@ function Diseño() {
                     </div>
 
                     <div className="col-lg-4 settings">
+
                         <div className="card bg-ligth container">
 
                             <h3 className="text-center">Settings</h3>
+
+                            <button onClick={guardarContenido} className="btn btn-primary btn-sm mb-2">Guarda tu buzo</button>
 
                             <hr />
 
@@ -882,15 +977,19 @@ function Diseño() {
 
                             <input type="text" className="form-control form-control-sm mb-2" placeholder="Text 1" onChange={onChangeText1} />
                             <button className="btn btn-primary btn-sm mb-2" onClick={texto1Agregar}>Agregar Texto 1</button>
+                            <button className="btn btn-primary btn-sm mb-2" onClick={texto1Girar}>Girar Texto 1</button>
 
                             <input type="text" className="form-control form-control-sm mb-2" placeholder="Text 2" onChange={onChangeText2} />
                             <button className="btn btn-primary btn-sm mb-2" onClick={texto2Agregar}>Agregar Texto 2</button>
+                            <button className="btn btn-primary btn-sm mb-2" onClick={texto2Girar}>Girar Texto 2</button>
 
                             <input type="text" className="form-control form-control-sm mb-2" placeholder="Text 3" onChange={onChangeText3} />
                             <button className="btn btn-primary btn-sm mb-2" onClick={texto3Agregar}>Agregar Texto 3</button>
+                            <button className="btn btn-primary btn-sm mb-2" onClick={texto3Girar}>Girar Texto 3</button>
 
                             <input type="text" className="form-control form-control-sm mb-2" placeholder="Text 4" onChange={onChangeText4} />
                             <button className="btn btn-primary btn-sm mb-2" onClick={texto4Agregar}>Agregar Texto 4</button>
+                            <button className="btn btn-primary btn-sm mb-2" onClick={texto4Girar}>Girar Texto 4</button>
 
                             <hr />
 
@@ -989,8 +1088,6 @@ function Diseño() {
                             </select>
 
                             <hr />
-
-                            <button onClick={guardarContenido} className="btn btn-primary btn-sm mb-2">Save</button>
 
                             <button className="btn btn-primary btn-sm mb-2" onClick={goBack}> &larr; Atras</button>
 

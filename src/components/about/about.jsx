@@ -43,8 +43,7 @@ function About() {
 
                     <p className="paragraph">
                         MeyBlaks es una empresa  familiar que se dedica desde hace 15 años al rubro de los egresados.
-                        Manejada por sus dueños Joaquín Ochoa y Maria Mercedes Blaksley
-                        ofrecemos un servicio personalizado para que en tu último año de colegio tengas tu buzo
+                        Manejada por sus dueños ofrecemos un servicio personalizado para que en tu último año de colegio tengas tu buzo
                         o campera en tiempo, forma y como te lo imaginaste.
                     </p>
 
