@@ -275,11 +275,6 @@ function Diseño() {
 
     };
 
-    const goBack = () => {
-
-        window.location.reload();
-    };
-
     function guardarContenido() {
 
         var myDiv = document.getElementById("myDiv");
@@ -1090,9 +1085,8 @@ function Diseño() {
 
                             <hr />
 
-                            <button className="btn btn-primary btn-sm mb-2" onClick={goBack}> &larr; Atras</button>
-
                         </div>
+
                     </div>
 
                 </div>
