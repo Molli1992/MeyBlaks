@@ -1,7 +1,8 @@
 import React, { useState, useEffect, createContext, useMemo, useRef } from "react";
 import "./diseño.css";
 import { useLocation } from 'react-router-dom';
-import html2canvas from "html2canvas";
+import domtoimage from 'dom-to-image';
+import { saveAs } from 'file-saver';
 import { Input } from 'antd';
 
 import '../prueba/prueba.css';
@@ -272,22 +273,17 @@ function Diseño() {
 
     };
 
-    const goBack = () => {
-
-        window.location.reload();
-    };
-
     function guardarContenido() {
 
-        html2canvas(document.getElementById("myDiv")).then(function (canvas) {
-            // Crea un elemento de enlace para descargar la imagen
-            var link = document.createElement("a");
-            document.body.appendChild(link);
-            link.download = "diseñoMeyBlaks.png";
-            link.href = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-            link.click();
-            document.body.removeChild(link);
-        });
+        var myDiv = document.getElementById("myDiv");
+
+        domtoimage.toBlob(myDiv)
+            .then(function (blob) {
+                saveAs(blob, "diseñoMeyBlaks.png");
+            })
+            .catch(function (error) {
+                console.error("Error al guardar la imagen:", error);
+            });
 
     };
 
@@ -848,7 +844,7 @@ function Diseño() {
 
                             <h3 className="text-center">Settings</h3>
 
-                            <button onClick={guardarContenido} className="btn btn-primary btn-sm mb-2">Guarda tu buzo</button>
+                            <button onClick={guardarContenido} className="btn btn-primary btn-sm mb-2">Guarda tu remera</button>
 
                             <hr />
 
@@ -1103,9 +1099,8 @@ function Diseño() {
 
                             <hr />
 
-                            <button className="btn btn-primary btn-sm mb-2" onClick={goBack}> &larr; Atras</button>
-
                         </div>
+
                     </div>
 
                 </div>

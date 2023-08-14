@@ -2,7 +2,8 @@ import React, { useState, useEffect, createContext, useMemo, useRef } from "reac
 import "./diseño.css";
 import { Input } from 'antd';
 import { useLocation } from 'react-router-dom';
-import html2canvas from "html2canvas";
+import domtoimage from 'dom-to-image';
+import { saveAs } from 'file-saver';
 
 import '../prueba/prueba.css';
 import { Button, Modal } from 'antd';
@@ -281,15 +282,15 @@ function Diseño() {
 
     function guardarContenido() {
 
-        html2canvas(document.getElementById("myDiv")).then(function (canvas) {
-            // Crea un elemento de enlace para descargar la imagen
-            var link = document.createElement("a");
-            document.body.appendChild(link);
-            link.download = "diseñoMeyBlaks.png";
-            link.href = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-            link.click();
-            document.body.removeChild(link);
-        });
+        var myDiv = document.getElementById("myDiv");
+
+        domtoimage.toBlob(myDiv)
+            .then(function (blob) {
+                saveAs(blob, "diseñoMeyBlaks.png");
+            })
+            .catch(function (error) {
+                console.error("Error al guardar la imagen:", error);
+            });
 
     };
 
