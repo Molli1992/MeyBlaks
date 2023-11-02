@@ -28,7 +28,7 @@ function Footer() {
                                 <Link to='/contact' className='footer-link'>Contact us</Link>
                             </li>
                             <li className='footer-item'>
-                                <a href="https://api.whatsapp.com/send?phone=1128458809" target="_blank" rel="noreferrer" className='footer-link'>WhatsApp</a>
+                                <a href="https://api.whatsapp.com/send?phone=5491155967462" target="_blank" rel="noreferrer" className='footer-link'>WhatsApp</a>
                             </li>
                             <li className='footer-item'>
                                 <a href="https://www.instagram.com/meyblaks/" target="_blank" rel="noreferrer" className='footer-link'>Instagram</a>
