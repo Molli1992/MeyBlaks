@@ -654,20 +654,21 @@ function Diseño() {
             const canvas = canvasRefs[imageName].current;
             const ctx = canvas.getContext('2d');
             const img = new Image();
-
+        
             img.onload = function () {
                 canvas.width = img.width;
                 canvas.height = img.height;
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
                 ctx.drawImage(img, 0, 0);
-
+        
                 const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
                 const data = imageData.data;
-
-                const red = parseInt(color.substr(1, 2), 16);
-                const green = parseInt(color.substr(4, 2), 16);
-                const blue = parseInt(color.substr(5, 2), 16);
-
+        
+                // Extracción correcta de componentes RGB del valor hexadecimal
+                const red = parseInt(color.substring(1, 3), 16);
+                const green = parseInt(color.substring(3, 5), 16);
+                const blue = parseInt(color.substring(5, 7), 16);
+        
                 for (let i = 0; i < data.length; i += 4) {
                     if (data[i + 3] > 0) {
                         data[i] = red;
@@ -675,10 +676,10 @@ function Diseño() {
                         data[i + 2] = blue;
                     }
                 }
-
+        
                 ctx.putImageData(imageData, 0, 0);
             };
-
+        
             img.src = imageName;
         };
 
