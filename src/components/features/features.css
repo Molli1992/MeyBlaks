@@ -1,190 +1,128 @@
 /* ------------------------------------ Features -----------------------------------------------------------*/
 .body-reviews {
-    margin-top: -145px;
-    padding-top: 150px;
+  margin-top: -145px;
+  padding-top: 150px;
 }
 
 .section-features {
-    min-height: 95vh;
-    padding: 100px 0px;
-    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)), url("https://cdn1.eldia.com/122019/1575783727117.jpg?cw=5000&ch=3333");
-    background-size: cover;
-    transform: skewY(-7deg);
-    margin-top: -85px;
-    min-height: 98vh;
+  padding: 100px 0px;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(126, 213, 111, 0.8),
+      rgba(40, 180, 131, 0.8)
+    ),
+    url("https://cdn1.eldia.com/122019/1575783727117.jpg?cw=5000&ch=3333");
+  background-size: cover;
+  transform: skewY(-7deg);
+  min-height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .row-feature {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 70px;
-    transform: skewY(7deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: skewY(7deg);
+  gap: 100px;
 }
 
 .col-1-of-4 {
-    width: 20%;
-    padding-left: 30px;
+  width: 20%;
 }
 
 .feature-box {
-    height: 275px;
-    width: 225px;
-    background-color: #fff;
-    font-size: 15px;
-    padding: 25px;
-    text-align: center;
-    border-radius: 3px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, .15);
-    transition: all .3s;
+  height: 275px;
+  width: 225px;
+  background-color: #fff;
+  font-size: 15px;
+  padding: 25px;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s;
 }
 
 .pincel-color ion-icon {
-    color: orangered;
+  color: orangered;
 }
 
 .whatsapp-color ion-icon {
-    color: greenyellow;
+  color: greenyellow;
 }
 
 .instagram-color ion-icon {
-    color: blueviolet;
+  color: blueviolet;
 }
 
 .contactanos-color ion-icon {
-    color: black;
+  color: black;
 }
 
 .feature-box:hover {
-    transform: translateY(-15px) scale(1.03);
+  transform: translateY(-15px) scale(1.03);
 }
 
 .a-features-pincel {
-    text-decoration: none;
-    color: #777;
+  text-decoration: none;
+  color: #777;
 }
 
 .a-features-pincel:hover {
-    color: orangered;
+  color: orangered;
 }
 
 .a-features-instagram {
-    text-decoration: none;
-    color: #777;
+  text-decoration: none;
+  color: #777;
 }
 
 .a-features-instagram:hover {
-    color: blueviolet;
+  color: blueviolet;
 }
 
 .a-features-whatsapp {
-    text-decoration: none;
-    color: #777;
+  text-decoration: none;
+  color: #777;
 }
 
 .a-features-whatsapp:hover {
-    color: green;
+  color: green;
 }
 
 .a-features-contactanos {
-    text-decoration: none;
-    color: #777;
+  text-decoration: none;
+  color: #777;
 }
 
 .a-features-contactanos:hover {
-    color: black;
+  color: black;
 }
 
 /* --------------------------------- @media Features------------------------------------------------------*/
 
-@media(max-width: 1100px) {
-
-
-    .row-feature {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        align-items: center;
-        justify-content: center;
-    }
-
-    .col-1-of-4 {
-        padding-bottom: 30px;
-    }
-
+@media (max-width: 1300px) {
+  .row-feature {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+  }
 }
 
-@media(max-width: 850px) {
-
-
-    .row-feature {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        align-items: center;
-        justify-content: center;
-    }
-
-    .col-1-of-4 {
-        padding-bottom: 30px;
-    }
-
+@media (max-width: 975px) {
+  .row-feature {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    justify-content: center;
+  }
 }
 
-@media(max-width: 630px) {
-
-
-    .row-feature {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .col-1-of-4 {
-        padding-bottom: 30px;
-        padding-left: 100px;
-    }
-
-}
-
-@media(max-width: 500px) {
-
-
-    .row-feature {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .col-1-of-4 {
-        padding-bottom: 30px;
-        padding-left: 75px;
-    }
-
-}
-
-@media(max-width: 430px) {
-
-
-    .row-feature {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .col-1-of-4 {
-        padding-bottom: 30px;
-        padding-left: 50px;
-    }
-
-}
-
-@media(max-width: 390px) {
-
-
-    .row-feature {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-    }
-
-    .col-1-of-4 {
-        padding-bottom: 30px;
-        padding-left: 25px;
-    }
-
+@media (max-width: 650px) {
+  .row-feature {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
