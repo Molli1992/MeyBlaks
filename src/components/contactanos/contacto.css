@@ -97,9 +97,8 @@
   display: flex;
 }
 
-.contact-icon ion-icon {
-  min-width: 40px;
-  height: 40px;
+.icons-contact {
+  font-size: 40px;
   display: flex;
   justify-content: center;
   align-items: center;

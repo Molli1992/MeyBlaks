@@ -1,149 +1,151 @@
 .navigation-checkbox {
-    display: none;
+  display: none;
 }
 
 .navigation-button {
-    background-color: black;
-    height: 60px;
-    width: 60px;
-    position: fixed;
-    top: 65px;
-    right: 65px;
-    border-radius: 50%;
-    z-index: 2000;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, black, 0.1);
+  background-color: black;
+  height: 60px;
+  width: 60px;
+  position: fixed;
+  top: 65px;
+  right: 65px;
+  border-radius: 50%;
+  z-index: 2000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, black, 0.1);
 }
 
-.navigation-button ion-icon {
-    color: #fff;
-    position: relative;
-    height: 45px;
-    width: 45px;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
+.navigation-icon {
+  color: #fff;
+  position: relative;
+  height: 45px;
+  width: 45px;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  cursor: pointer;
 }
 
 .navigation-button-X {
-    display: none;
-    background-color: black;
-    height: 60px;
-    width: 60px;
-    position: fixed;
-    top: 65px;
-    right: 65px;
-    border-radius: 50%;
-    z-index: 2000;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, black, 0.1);
+  display: none;
+  background-color: black;
+  height: 60px;
+  width: 60px;
+  position: fixed;
+  top: 65px;
+  right: 65px;
+  border-radius: 50%;
+  z-index: 2000;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, black, 0.1);
 }
 
-.navigation-button-X ion-icon {
-    color: #fff;
-    position: relative;
-    height: 45px;
-    width: 45px;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
+.navigation-x-icon {
+  color: #fff;
+  position: relative;
+  height: 45px;
+  width: 45px;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  cursor: pointer;
 }
 
 .navigation-background {
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    position: fixed;
-    top: 65px;
-    right: 65px;
-    background-image: radial-gradient(#171816, #070707);
-    z-index: 1000;
-    transition: transform .8s;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  position: fixed;
+  top: 65px;
+  right: 65px;
+  background-image: radial-gradient(#171816, #070707);
+  z-index: 1000;
+  transition: transform 0.8s;
 }
 
 .navigation-nav {
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: 0;
-    z-index: 1500;
-    opacity: 0;
-    width: 0;
-    transition: all .8s;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1500;
+  opacity: 0;
+  width: 0;
+  transition: all 0.8s;
 }
 
 .navigation-list {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateY(-50%) translateX(-50%);
-    list-style: none;
-    text-align: center;
-    width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  list-style: none;
+  text-align: center;
+  width: 100%;
 }
 
 .navigation-item {
-    margin: 10px;
+  margin: 10px;
 }
 
 .navigation-link {
-    display: inline-block;
-    text-decoration: none;
-    padding: 10px 20px;
-    font-size: 30px;
-    font-weight: 300;
-    color: #fff;
-    text-transform: uppercase;
-    background-image: linear-gradient(130deg, transparent 0%, transparent 50%, #fff 50%);
-    background-size: 245%;
-    transition: all 1s;
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-size: 30px;
+  font-weight: 300;
+  color: #fff;
+  text-transform: uppercase;
+  background-image: linear-gradient(
+    130deg,
+    transparent 0%,
+    transparent 50%,
+    #fff 50%
+  );
+  background-size: 245%;
+  transition: all 1s;
 }
 
 .navigation-link:hover {
-    background-position: 100%;
-    color: black;
-    transform: translateX(10px);
+  background-position: 100%;
+  color: black;
+  transform: translateX(10px);
 }
 
 .navigation-link span {
-    margin-right: 15px;
-    display: inline-block;
+  margin-right: 15px;
+  display: inline-block;
 }
 
-.navigation-checkbox:checked~.navigation-background {
-    transform: scale(80);
+.navigation-checkbox:checked ~ .navigation-background {
+  transform: scale(80);
 }
 
-.navigation-checkbox:checked~.navigation-nav {
-    opacity: 1;
-    width: 100%;
+.navigation-checkbox:checked ~ .navigation-nav {
+  opacity: 1;
+  width: 100%;
 }
 
-.navigation-checkbox:checked~.navigation-button-X {
-    display: inline-block;
+.navigation-checkbox:checked ~ .navigation-button-X {
+  display: inline-block;
 }
 
-.navigation-checkbox:checked~.navigation-button-X {
-    display: inline-block;
+.navigation-checkbox:checked ~ .navigation-button-X {
+  display: inline-block;
 }
 
-.navigation-checkbox:checked~.navigation-button {
-    display: none;
+.navigation-checkbox:checked ~ .navigation-button {
+  display: none;
 }
 
-
-@media(max-width: 450px) {
-
-    .navigation-link {
-        padding: 10px 20px;
-        font-size: 25px;
-    }
-
+@media (max-width: 450px) {
+  .navigation-link {
+    padding: 10px 20px;
+    font-size: 25px;
+  }
 }
 
-@media(max-width: 395px) {
-
-    .navigation-link {
-        padding: 10px 20px;
-        font-size: 20px;
-    }
-
+@media (max-width: 395px) {
+  .navigation-link {
+    padding: 10px 20px;
+    font-size: 20px;
+  }
 }

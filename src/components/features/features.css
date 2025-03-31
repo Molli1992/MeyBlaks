@@ -44,20 +44,9 @@
   transition: all 0.3s;
 }
 
-.pincel-color ion-icon {
-  color: orangered;
-}
-
-.whatsapp-color ion-icon {
-  color: greenyellow;
-}
-
-.instagram-color ion-icon {
-  color: blueviolet;
-}
-
-.contactanos-color ion-icon {
-  color: black;
+.feature-icons {
+  font-size: 32px;
+  margin-bottom: 10px;
 }
 
 .feature-box:hover {

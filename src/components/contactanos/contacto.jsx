@@ -8,6 +8,9 @@ import Features from "../features/features";
 import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { LoadingOutlined } from "@ant-design/icons";
+import { IoLocation } from "react-icons/io5";
+import { FaPhoneVolume } from "react-icons/fa6";
+import { IoMdMail } from "react-icons/io";
 
 function Contacto() {
   const location = useLocation();
@@ -94,7 +97,7 @@ function Contacto() {
             <div className="contact-info">
               <div className="contact-box">
                 <div className="contact-icon">
-                  <ion-icon name="location-outline"></ion-icon>
+                  <IoLocation className="icons-contact" />
                 </div>
                 <div className="contact-text">
                   <h3 className="contact-h3">Direccion</h3>
@@ -106,7 +109,7 @@ function Contacto() {
 
               <div className="contact-box">
                 <div className="contact-icon">
-                  <ion-icon name="call-outline"></ion-icon>
+                  <FaPhoneVolume className="icons-contact"/>
                 </div>
                 <div className="contact-text">
                   <h3 className="contact-h3">Telefono</h3>
@@ -116,7 +119,7 @@ function Contacto() {
 
               <div className="contact-box">
                 <div className="contact-icon">
-                  <ion-icon name="mail-outline"></ion-icon>
+                  <IoMdMail className="icons-contact"/>
                 </div>
                 <div className="contact-text">
                   <h3 className="contact-h3">Email</h3>
