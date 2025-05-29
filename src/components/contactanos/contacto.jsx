@@ -41,7 +41,8 @@ function Contacto() {
             icon: "success",
             confirmButtonText: "Ok",
           }).then(() => {
-            window.location.reload();
+            form.current.reset();
+            setState(false);
           });
         },
         (error) => {
@@ -55,7 +56,8 @@ function Contacto() {
               confirmButton: "swalButton",
             },
           }).then(() => {
-            window.location.reload();
+            form.current.reset();
+            setState(false);
           });
         }
       );
