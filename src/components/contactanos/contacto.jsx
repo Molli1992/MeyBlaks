@@ -41,7 +41,7 @@ function Contacto() {
             icon: "success",
             confirmButtonText: "Ok",
           }).then(() => {
-            window.location.href = `/`;
+            window.location.reload();
           });
         },
         (error) => {
