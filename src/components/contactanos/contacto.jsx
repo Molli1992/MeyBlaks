@@ -47,9 +47,9 @@ function Contacto() {
         (error) => {
           console.log(error.text);
           Swal.fire({
-            title: "Error!",
-            text: "Error en el envio del Email, por favor intentar luego mas tarde o escribinos por nuestar redes sociales",
-            icon: "error",
+            title: "Info!",
+            text: "El servicio de correo electrónico está temporalmente fuera de servicio. Disculpe las molestias. Si lo desea, puede contactarnos a través de otros medios.",
+            icon: "info",
             confirmButtonText: "Ok",
             customClass: {
               confirmButton: "swalButton",
@@ -109,7 +109,7 @@ function Contacto() {
 
               <div className="contact-box">
                 <div className="contact-icon">
-                  <FaPhoneVolume className="icons-contact"/>
+                  <FaPhoneVolume className="icons-contact" />
                 </div>
                 <div className="contact-text">
                   <h3 className="contact-h3">Telefono</h3>
@@ -119,7 +119,7 @@ function Contacto() {
 
               <div className="contact-box">
                 <div className="contact-icon">
-                  <IoMdMail className="icons-contact"/>
+                  <IoMdMail className="icons-contact" />
                 </div>
                 <div className="contact-text">
                   <h3 className="contact-h3">Email</h3>
