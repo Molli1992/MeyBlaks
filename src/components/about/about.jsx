@@ -14,7 +14,7 @@ function About() {
         </h2>
       </div>
 
-      <div className="row">
+      <div className="row" style={{ width: "100%" }}>
         <div className="col-1-of-2">
           <h3 className="heading-tertiary">Nuestra Forma de trabajo</h3>
 
