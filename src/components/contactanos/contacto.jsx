@@ -5,7 +5,6 @@ import Footer from "../footer/footer";
 import Logo from "../../logo/logo meyblaks-01.png";
 import Navigation from "../navigation/navigation";
 import Features from "../features/features";
-import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { LoadingOutlined } from "@ant-design/icons";
 import { IoLocation } from "react-icons/io5";
@@ -17,50 +16,133 @@ function Contacto() {
   const form = useRef();
   const [state, setState] = useState(false);
 
+  const [formData, setFormData] = useState({
+    clientName: "",
+    clientEmail: "",
+    clientPhone: "",
+    clientColegio: "",
+    clientProvincia: "",
+    clientLocalidad: "",
+    clientPromo: "",
+    clientMessage: "",
+  });
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
 
-  const sendEmail = (e) => {
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
+
+  const validatePhone = (phone) => {
+    const re = /^[0-9]{8,}$/;
+    return re.test(phone);
+  };
+
+  const sendEmail = async (e) => {
     e.preventDefault();
     setState(true);
 
-    emailjs
-      .sendForm(
-        "service_hbl2w5f",
-        "template_7xbbuli",
-        e.target,
-        "tbi5Ki8RtKg_s2RJ4"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          Swal.fire({
-            title: "successce",
-            text: "Email enviado correctamente",
-            icon: "success",
-            confirmButtonText: "Ok",
-          }).then(() => {
-            form.current.reset();
-            setState(false);
-          });
-        },
-        (error) => {
-          console.log(error.text);
-          Swal.fire({
-            title: "Info!",
-            text: "El servicio de correo electrónico está temporalmente fuera de servicio. Disculpe las molestias. Si lo desea, puede contactarnos a través de otros medios.",
-            icon: "info",
-            confirmButtonText: "Ok",
-            customClass: {
-              confirmButton: "swalButton",
-            },
-          }).then(() => {
-            form.current.reset();
-            setState(false);
-          });
+    const {
+      clientName,
+      clientEmail,
+      clientPhone,
+      clientColegio,
+      clientProvincia,
+      clientLocalidad,
+      clientPromo,
+      clientMessage,
+    } = formData;
+
+    if (
+      !clientName ||
+      !clientEmail ||
+      !clientPhone ||
+      !clientColegio ||
+      !clientProvincia ||
+      !clientLocalidad ||
+      !clientPromo ||
+      !clientMessage
+    ) {
+      Swal.fire({
+        title: "Info!",
+        text: "Por favor completá todos los campos.",
+        icon: "info",
+        confirmButtonText: "OK",
+      });
+      setState(false);
+      return;
+    }
+
+    if (!validateEmail(clientEmail)) {
+      Swal.fire({
+        title: "Info!",
+        text: "El email ingresado no es válido.",
+        icon: "info",
+        confirmButtonText: "OK",
+      });
+      setState(false);
+      return;
+    }
+
+    if (!validatePhone(clientPhone)) {
+      Swal.fire({
+        title: "Info!",
+        text: "El teléfono ingresado no es válido (mínimo 8 dígitos, solo números).",
+        icon: "info",
+        confirmButtonText: "OK",
+      });
+      setState(false);
+      return;
+    }
+
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/api/emails/meyBlaksEmail`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
         }
       );
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Error al enviar el mensaje");
+      }
+
+      Swal.fire({
+        title: "Éxito!",
+        text: "Tu mensaje fue enviado correctamente.",
+        icon: "success",
+        confirmButtonText: "OK",
+      });
+
+      setFormData({
+        clientName: "",
+        clientEmail: "",
+        clientPhone: "",
+        clientColegio: "",
+        clientProvincia: "",
+        clientLocalidad: "",
+        clientPromo: "",
+        clientMessage: "",
+      });
+    } catch (error) {
+      console.error("Error:", error);
+      Swal.fire({
+        title: "Error!",
+        text: "Hubo un error al enviar el mensaje. Intentá más tarde.",
+        icon: "error",
+        confirmButtonText: "OK",
+      });
+    } finally {
+      setState(false);
+    }
   };
 
   return (
@@ -131,37 +213,47 @@ function Contacto() {
             </div>
 
             <div className="contact-form">
-              <form>
-                <h2 className="contact-form-h2">Enviar Mensaje</h2>
-              </form>
-
               <form ref={form} onSubmit={sendEmail}>
+                <h2 className="contact-form-h2">Enviar Mensaje</h2>
+
                 <div className="contact-input-box">
                   <input
                     type="text"
-                    name="from_name"
-                    required="required"
+                    name="clientName"
+                    required
                     placeholder=" "
+                    value={formData.clientName}
+                    onChange={(e) =>
+                      setFormData({ ...formData, clientName: e.target.value })
+                    }
                   />
                   <span>Nombre</span>
                 </div>
 
                 <div className="contact-input-box">
                   <input
-                    type="text"
-                    name="from_email"
-                    required="required"
+                    type="email"
+                    name="clientEmail"
+                    required
                     placeholder=" "
+                    value={formData.clientEmail}
+                    onChange={(e) =>
+                      setFormData({ ...formData, clientEmail: e.target.value })
+                    }
                   />
                   <span>Email</span>
                 </div>
 
                 <div className="contact-input-box">
                   <input
-                    type="text"
-                    name="from_celular"
-                    required="required"
+                    type="number"
+                    name="clientPhone"
+                    required
                     placeholder=" "
+                    value={formData.clientPhone}
+                    onChange={(e) =>
+                      setFormData({ ...formData, clientPhone: e.target.value })
+                    }
                   />
                   <span>Celular</span>
                 </div>
@@ -169,9 +261,16 @@ function Contacto() {
                 <div className="contact-input-box">
                   <input
                     type="text"
-                    name="from_colegio"
-                    required="required"
+                    name="clientColegio"
+                    required
                     placeholder=" "
+                    value={formData.clientColegio}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        clientColegio: e.target.value,
+                      })
+                    }
                   />
                   <span>Colegio</span>
                 </div>
@@ -179,9 +278,16 @@ function Contacto() {
                 <div className="contact-input-box">
                   <input
                     type="text"
-                    name="from_provincia"
-                    required="required"
+                    name="clientProvincia"
+                    required
                     placeholder=" "
+                    value={formData.clientProvincia}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        clientProvincia: e.target.value,
+                      })
+                    }
                   />
                   <span>Provincia</span>
                 </div>
@@ -189,9 +295,16 @@ function Contacto() {
                 <div className="contact-input-box">
                   <input
                     type="text"
-                    name="from_localidad"
-                    required="required"
+                    name="clientLocalidad"
+                    required
                     placeholder=" "
+                    value={formData.clientLocalidad}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        clientLocalidad: e.target.value,
+                      })
+                    }
                   />
                   <span>Localidad</span>
                 </div>
@@ -199,23 +312,34 @@ function Contacto() {
                 <div className="contact-input-box">
                   <input
                     type="text"
-                    name="from_promo"
-                    required="required"
+                    name="clientPromo"
+                    required
                     placeholder=" "
+                    value={formData.clientPromo}
+                    onChange={(e) =>
+                      setFormData({ ...formData, clientPromo: e.target.value })
+                    }
                   />
                   <span>Promo</span>
                 </div>
 
                 <div className="contact-input-box">
                   <textarea
-                    required="required"
-                    name="message"
+                    required
+                    name="clientMessage"
                     placeholder=" "
+                    value={formData.clientMessage}
+                    onChange={(e) =>
+                      setFormData({
+                        ...formData,
+                        clientMessage: e.target.value,
+                      })
+                    }
                   ></textarea>
-                  <span>Escribi tu mensaje...</span>
+                  <span>Escribí tu mensaje...</span>
                 </div>
 
-                {state === true ? (
+                {state ? (
                   <div className="loader">
                     <LoadingOutlined />
                   </div>
@@ -223,7 +347,6 @@ function Contacto() {
                   <div className="contact-input-box">
                     <input
                       type="submit"
-                      name=""
                       value="Enviar"
                       className="btn-contacto"
                     />
