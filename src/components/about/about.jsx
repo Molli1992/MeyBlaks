@@ -8,14 +8,14 @@ import IMGabout3 from "../../img/imagen-about-3.jpeg";
 function About() {
   return (
     <section className="section-about">
-      <div className="u-text-position u-margin-bottom-80">
-        <h2 className="heading-secondary">
-          Mas de 15 años junto a los egresados
-        </h2>
-      </div>
-
-      <div className="row" style={{ width: "100%" }}>
+      <div className="row">
         <div className="col-1-of-2">
+          <div className="u-text-position">
+            <h2 className="heading-secondary">
+              Mas de 15 años junto a los egresados
+            </h2>
+          </div>
+
           <h3 className="heading-tertiary">Nuestra Forma de trabajo</h3>
 
           <p className="paragraph">
@@ -47,19 +47,19 @@ function About() {
             <img
               src={IMGabout1}
               alt="Diseño"
-              className="composition_photo composition_photo--p1"
+              className="composition_photo--p1 img-about"
             />
 
             <img
               src={IMGabout2}
               alt="Diseño"
-              className="composition_photo composition_photo--p2"
+              className="composition_photo--p2 img-about"
             />
 
             <img
               src={IMGabout3}
               alt="Diseño"
-              className="composition_photo composition_photo--p3"
+              className="composition_photo--p3 img-about"
             />
           </div>
         </div>

@@ -8,16 +8,15 @@ color-grey-ligth-1 = #f7f7f7
   background-color: #f7f7f7;
   padding: 250px 0px;
   margin-top: -20vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .u-text-position {
   text-align: left;
-  width: 45%;
-  margin-left: 130px;
-}
-
-.u-margin-bottom-80 {
-  margin-bottom: 80px;
+  width: 100%;
 }
 
 .heading-secondary {
@@ -28,6 +27,7 @@ color-grey-ligth-1 = #f7f7f7
   color: black;
   transition: all 0.2s;
   letter-spacing: 2px;
+  margin-bottom: 40px;
 }
 
 .heading-secondary:hover {
@@ -36,18 +36,16 @@ color-grey-ligth-1 = #f7f7f7
 }
 
 .row {
+  width: 100%;
+  max-width: 1400px;
   align-items: center;
-  padding-left: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .col-1-of-2 {
-  float: left;
-  width: 45%;
-}
-
-.col-2-of-2 {
-  float: right;
-  width: 45%;
+  width: 50%;
 }
 
 .heading-tertiary {
@@ -86,33 +84,35 @@ color-grey-ligth-1 = #f7f7f7
   transform: translateY(3px);
 }
 
+.col-2-of-2 {
+  width: 50%;
+}
+
 .composition {
   position: relative;
 }
 
-.composition_photo {
-  width: 55%;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-  border-radius: 2px;
-  position: absolute;
-  z-index: 10;
-  transition: all 0.2s;
-  outline-offset: 10px;
+.img-about {
+  width: 300px;
+  height: 350px;
 }
 
 .composition_photo--p1 {
-  left: 0;
-  bottom: -120px;
+  position: absolute;
+  left: 30%;
+  bottom: -50px;
 }
 
 .composition_photo--p2 {
-  right: 0;
-  bottom: -60px;
+  position: absolute;
+  left: 50%;
+  bottom: -150px;
 }
 
 .composition_photo--p3 {
+  position: absolute;
   left: 20%;
-  bottom: -260px;
+  bottom: -300px;
 }
 
 .composition_photo--p1:hover {
@@ -137,62 +137,131 @@ color-grey-ligth-1 = #f7f7f7
 }
 
 /* --------------------------------- @media Section About------------------------------------------------------*/
-@media (max-width: 1450px) {
-  .u-text-position {
-    text-align: center;
-    width: 100%;
-    margin-left: 0px;
-    padding: 0px 10px;
-  }
-}
 
-@media (max-width: 1200px) {
-  .composition_photo {
-    width: 55%;
-  }
-
+@media (max-width: 1300px) {
   .composition_photo--p1 {
-    left: 0;
-    bottom: -40px;
+    position: absolute;
+    left: 20%;
+    bottom: -50px;
   }
 
   .composition_photo--p2 {
-    right: 0;
-    bottom: -10px;
+    position: absolute;
+    left: 40%;
+    bottom: -150px;
   }
 
   .composition_photo--p3 {
+    position: absolute;
+    left: 10%;
+    bottom: -300px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .composition_photo--p1 {
+    position: absolute;
+    left: 10%;
+    bottom: -50px;
+  }
+
+  .composition_photo--p2 {
+    position: absolute;
+    left: 30%;
+    bottom: -150px;
+  }
+
+  .composition_photo--p3 {
+    position: absolute;
+    left: 0%;
+    bottom: -300px;
+  }
+}
+
+@media (max-width: 900px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .col-1-of-2 {
+    width: 100%;
+  }
+
+  .col-2-of-2 {
+    width: 100%;
+    height: 450px;
+  }
+
+  .composition_photo--p1 {
+    left: 25%;
+    bottom: -400px;
+  }
+
+  .composition_photo--p2 {
+    left: 45%;
+    bottom: -500px;
+  }
+
+  .composition_photo--p3 {
+    left: 15%;
+    bottom: -600px;
+  }
+}
+
+@media (max-width: 660px) {
+  .composition_photo--p1 {
+    left: 15%;
+  }
+
+  .composition_photo--p2 {
+    left: 35%;
+  }
+
+  .composition_photo--p3 {
+    left: 5%;
+  }
+}
+
+@media (max-width: 520px) {
+  .col-2-of-2 {
+    width: 100%;
+    height: 350px;
+  }
+
+  .img-about {
+    width: 200px;
+    height: 250px;
+  }
+
+  .composition_photo--p1 {
     left: 20%;
-    bottom: -110px;
+    bottom: -300px;
+  }
+
+  .composition_photo--p2 {
+    left: 40%;
+    bottom: -400px;
+  }
+
+  .composition_photo--p3 {
+    left: 10%;
+    bottom: -500px;
   }
 }
 
-@media (max-width: 850px) {
-  .row {
-    align-items: center;
-    padding-left: 50px;
+@media (max-width: 400px) {
+  .composition_photo--p1 {
+    left: 15%;
+    bottom: -300px;
   }
 
-  .col-1-of-2 {
-    width: 90%;
+  .composition_photo--p2 {
+    left: 35%;
+    bottom: -400px;
   }
 
-  .col-2-of-2 {
-    display: none;
-  }
-}
-
-@media (max-width: 500px) {
-  .row {
-    align-items: center;
-    padding-left: 20px;
-  }
-
-  .col-2-of-2 {
-    display: none;
-  }
-
-  .col-1-of-2 {
-    width: 90%;
+  .composition_photo--p3 {
+    left: 5%;
+    bottom: -500px;
   }
 }
